@@ -3,11 +3,11 @@
   <channel>
     <title>DouO's Blog</title>
     <description>DouO's Blog</description>
-    <link>https://douo.github.io/moon-2013/</link>
+    <link>https://douo.github.io</link>
     <pubDate>2014-05-05</pubDate>
     <item>
       <title>2012&#x5E74;11&#x6708;07&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/11/note-2012-11-07</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/11/note-2012-11-07</link>
       <pubDate>2012-11-07</pubDate>
       <description>&lt;h3 id="toc_0"&gt;&#x6DD8;&#x5B9D;&#x5F69;&#x7968;&#x79FB;&#x52A8;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x5B9E;&#x8DF5;&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://ued.taobao.com/blog/2012/10/11/%e6%b7%98%e5%ae%9d%e5%bd%a9%e7%a5%a8%e7%a7%bb%e5%8a%a8%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e5%ae%9e%e8%b7%b5/"&gt;http://ued.taobao.com/blog/2012/10/11/%e6%b7%98%e5%ae%9d%e5%bd%a9%e7%a5%a8%e7%a7%bb%e5%8a%a8%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e5%ae%9e%e8%b7%b5/&lt;/a&gt;&lt;/p&gt;
@@ -107,7 +107,7 @@
     </item>
     <item>
       <title>2012&#x5E74;11&#x6708;14&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/11/note-2012-11-14</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/11/note-2012-11-14</link>
       <pubDate>2012-11-14</pubDate>
       <description>&lt;p&gt;notification &#x4E2D;&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x70B9;&#x51FB;&#x8DF3;&#x8F6C;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x58F0;&#x660E;PendingIntent&lt;/p&gt;
 &lt;pre&gt;&lt;code class=""&gt;PendingIntent.getActivity(getApplicationContext(), 0, new Intent(), 0)
@@ -124,7 +124,7 @@
     </item>
     <item>
       <title>2012&#x5E74;11&#x6708;15&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/11/note-2012-11-15</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/11/note-2012-11-15</link>
       <pubDate>2012-11-15</pubDate>
       <description>&lt;h3 id="toc_0"&gt;TOC&lt;/h3&gt;
 &lt;p&gt;Server-side or client-side? Server-side!!&lt;/p&gt;
@@ -136,7 +136,7 @@
     </item>
     <item>
       <title>2012&#x5E74;11&#x6708;20&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/11/note-2012-11-20</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/11/note-2012-11-20</link>
       <pubDate>2012-11-20</pubDate>
       <description>&lt;p&gt;&#x4E2D;&#x82F1;&#x6DF7;&#x6392;,&#x662F;&#x5426;&#x8981;&#x52A0;&#x7A7A;&#x683C;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x786E;&#x5B9E;&#x9EBB;&#x70E6;,&#x867D;&#x7136;&#x4E3A;&#x82F1;&#x6587;&#x5DE6;&#x53F3;&#x52A0;&#x4E0A;&#x534A;&#x89D2;&#x7A7A;&#x683C;&#x66F4;&#x7F8E;&#x89C2;,&#x5408;&#x7406;.&lt;/p&gt;
 
@@ -147,7 +147,7 @@
     </item>
     <item>
       <title>2012&#x5E74;11&#x6708;21&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/11/note-2012-11-21</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/11/note-2012-11-21</link>
       <pubDate>2012-11-21</pubDate>
       <description>&lt;p&gt;RWD (Responsive web design) &#x76F8;&#x7576;&#x56F0;&#x96E3;&#xFF0C;&#x535A;&#x5BA2;&#x7684;&#x5C0E;&#x822A;&#x6B04;&#x4E0D;&#x77E5;&#x5728;&#x79FB;&#x52D5;&#x8A2D;&#x5099;&#x4E0A;&#x8A72;&#x5982;&#x4F55;&#x653E;&#x597D;&#x3002;&#x770B;&#x4E86;&#x4E0B; &lt;a href="http://snugug.com/musings/principles-responsive-web-design"&gt;http://snugug.com/musings/principles-responsive-web-design&lt;/a&gt; &#xFF0C;&#x9084;&#x6709;&#x5176;&#x4ED6;&#x6587;&#x7AE0;&#xFF0C;&#x90FD;&#x770B;&#x4E0D;&#x600E;&#x9EBC;&#x4E0B;&#x53BB;&#x3002;&#x5927;&#x6982;&#x662F;&#x56E0;&#x70BA;&#x4E00;&#x958B;&#x59CB;&#x6C92;&#x6709;&#x9075;&#x5FAA;mobile first &#x539F;&#x5247;&#xFF0C;&#x91CD;&#x5C0F;&#x5230;&#x5927;&#x8A2D;&#x8A08;&#x3002;&#x73FE;&#x5728;&#x662F;&#x5F9E;&#x5927;&#x5230;&#x5C0F;&#xFF0C;&#x5982;&#x82E5;&#x4E0D;&#x505A;&#x5207;&#x5272;,&#x770B;&#x4F3C;&#x53EA;&#x80FD;&#x6C42;&#x52A9;&#x65BC;js.&lt;/p&gt;
 
@@ -156,7 +156,7 @@
     </item>
     <item>
       <title>2012&#x5E74;11&#x6708;22&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/11/note-2012-11-22</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/11/note-2012-11-22</link>
       <pubDate>2012-11-22</pubDate>
       <description>&lt;p&gt;Liskov&#x4EE3;&#x6362;&#x539F;&#x5219;&#xFF1A;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;&#x80FD;&#x591F;&#x66FF;&#x6362;&#x5176;&#x7236;&#x985E;&#x5BF9;&#x8C61;&#x88AB;&#x4F7F;&#x7528;&#x3002;&lt;/p&gt;
 
@@ -167,7 +167,7 @@
     </item>
     <item>
       <title>2012&#x5E74;12&#x6708;10&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/12/note-2012-12-10</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/12/note-2012-12-10</link>
       <pubDate>2012-12-10</pubDate>
       <description>&lt;p&gt;&#x95DC;&#x65BC;ARC&#x548C;MRC&#x8F49;&#x63DB;ARC&#x7684;&#x6559;&#x7A0B;:&lt;a href="http://www.onevcat.com/2012/06/arc-hand-by-hand/"&gt;http://www.onevcat.com/2012/06/arc-hand-by-hand/&lt;/a&gt;&lt;/p&gt;
 
@@ -197,7 +197,7 @@
     </item>
     <item>
       <title>2012&#x5E74;12&#x6708;11&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/12/note-2012-12-11</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/12/note-2012-12-11</link>
       <pubDate>2012-12-11</pubDate>
       <description>&lt;p&gt;coursera &#x7684;&#x5929;&#x6587;&#x5B78;&#x5C0E;&#x8AD6;&#x4E0D;&#x80FD;&#x932F;&#x904E;&#x4E86;&#x3002;&lt;a href="https://class.coursera.org/introastro-2012-001/forum/index"&gt;https://class.coursera.org/introastro-2012-001/forum/index&lt;/a&gt;&lt;/p&gt;
 
@@ -208,7 +208,7 @@
     </item>
     <item>
       <title>2012&#x5E74;12&#x6708;20&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/12/note-2012-12-20</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/12/note-2012-12-20</link>
       <pubDate>2012-12-20</pubDate>
       <description>&lt;p&gt;&#x773C;&#x524D;&#x4E00;&#x4EAE;&#x7684;&#x8BBE;&#x8BA1;  &lt;a href="http://beforweb.com/node/134"&gt;http://beforweb.com/node/134&lt;/a&gt;&lt;/p&gt;
 
@@ -219,7 +219,7 @@
     </item>
     <item>
       <title>2012&#x5E74;12&#x6708;21&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/12/note-2012-12-21</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/12/note-2012-12-21</link>
       <pubDate>2012-12-21</pubDate>
       <description>&lt;p&gt;&#x7C7B;&#x7684;&#x547D;&#x540D;&#x4E0D;&#x8981;&#x81EA;&#x6211;&#x5F15;&#x7528;&#xFF0C;NSStringObject &#x662F;&#x4E0D;&#x597D;&#x7684;&#xFF0C;NSXxxModel&#x4E5F;&#x662F;&#x3002;&lt;/p&gt;
 
@@ -230,7 +230,7 @@
     </item>
     <item>
       <title>2012&#x5E74;12&#x6708;22&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2012/12/note-2012-12-22</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2012/12/note-2012-12-22</link>
       <pubDate>2012-12-22</pubDate>
       <description>&lt;p&gt;&#x5173;&#x4E8E;&#x4E66;&#x7B7E;&lt;/p&gt;
 
@@ -263,13 +263,13 @@
     </item>
     <item>
       <title>2013&#x5E74;01&#x6708;08&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2013/01/note-2013-01-08</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2013/01/note-2013-01-08</link>
       <pubDate>2013-01-08</pubDate>
       <description/>
     </item>
     <item>
       <title>2013&#x5E74;01&#x6708;09&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2013/01/note-2013-01-09</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2013/01/note-2013-01-09</link>
       <pubDate>2013-01-09</pubDate>
       <description>&lt;p&gt;Ruhoh 2.0 &#x53C8;&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#x4E86;&lt;/p&gt;
 
@@ -294,7 +294,7 @@
     </item>
     <item>
       <title>2013&#x5E74;02&#x6708;04&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2013/02/note-2013-02-04</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2013/02/note-2013-02-04</link>
       <pubDate>2013-02-04</pubDate>
       <description>&lt;p&gt;&#x5728;linux&#x4E0B;&#x67E5;&#x770B;&#x624B;&#x518C;&#x7684;&#x65F6;&#x5019;&#xFF0C;manual &#x540E;&#x9762;&#x603B;&#x5E26;&#x7740;&#x62EC;&#x53F7;&#x8D77;&#x6765;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x5B57;&#x5C31;&#x662F; manual section &#x7684;&#x610F;&#x601D;&#x3002;&#x4E00;&#x822C;&#x8868;&#x793A;&#x5982;&#x4E0B;&#x7684;&#x610F;&#x4E49;&#xFF1A;&lt;/p&gt;
 
@@ -314,7 +314,7 @@
     </item>
     <item>
       <title>2013&#x5E74;02&#x6708;14&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2013/02/note-2013-02-14</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2013/02/note-2013-02-14</link>
       <pubDate>2013-02-14</pubDate>
       <description>&lt;p&gt;&#x81EA;&#x7531;&#x804C;&#x4E1A;&#x8005;&#x8FFD;&#x6C42;&#x81EA;&#x7531;&#xFF0C;&#x521B;&#x4E1A;&#x8005;&#x8FFD;&#x6C42;&#x6210;&#x529F;&#x3002; &lt;a href="http://zhi.hu/QAal"&gt;http://zhi.hu/QAal&lt;/a&gt;&lt;/p&gt;
 
@@ -323,7 +323,7 @@
     </item>
     <item>
       <title>2013&#x5E74;03&#x6708;06&#x65E5;&#x6742;&#x8BB0;</title>
-      <link>https://douo.github.io/moon-2013//notes/Quick/2013/03/note-2013-03-06</link>
+      <link>https://douo.github.io/moon-2013/notes/Quick/2013/03/note-2013-03-06</link>
       <pubDate>2013-03-06</pubDate>
       <description>&lt;pre&gt;&lt;code class=""&gt;[core]
     repositoryformatversion = 0
@@ -346,7 +346,7 @@
     </item>
     <item>
       <title>Activity</title>
-      <link>https://douo.github.io/moon-2013//notes/Programming/Android/activity</link>
+      <link>https://douo.github.io/moon-2013/notes/Programming/Android/activity</link>
       <pubDate>2012-08-18</pubDate>
       <description>&lt;h3 id="toc_0"&gt;lifecycle&lt;/h3&gt;
 &lt;p&gt;&lt;img class="lazy img-polaroid display" src="https://developer.android.com/images/activity_lifecycle.png" title=""  alt="Activity Lifecycle"&gt;&lt;/p&gt;
@@ -403,7 +403,7 @@ onUserLeaveHint &#x5F53;activity&#x7531;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x8FDB;
     </item>
     <item>
       <title>Android</title>
-      <link>https://douo.github.io/moon-2013//notes/Programming/Android</link>
+      <link>https://douo.github.io/moon-2013/notes/Programming/Android</link>
       <pubDate>2012-09-11</pubDate>
       <description>&lt;ul class="nav"&gt;
 &lt;/ul&gt;
@@ -411,7 +411,7 @@ onUserLeaveHint &#x5F53;activity&#x7531;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x8FDB;
     </item>
     <item>
       <title>Android Studio</title>
-      <link>https://douo.github.io/moon-2013//notes/Tools/android-studio</link>
+      <link>https://douo.github.io/moon-2013/notes/Tools/android-studio</link>
       <pubDate>2013-05-24</pubDate>
       <description>&lt;h3 id="toc_0"&gt;2014&lt;/h3&gt;&lt;h3 id="toc_1"&gt;&#x6253;&#x5305; .so &#x6587;&#x4EF6;&#x7684;&#x6280;&#x5DE7;&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://groups.google.com/forum/?fromgroups#!topic/adt-dev/nQobKd2Gl_8"&gt;https://groups.google.com/forum/?fromgroups#!topic/adt-dev/nQobKd2Gl_8&lt;/a&gt;&lt;/p&gt;
@@ -576,7 +576,7 @@ Run with --stacktrace option to get the stack trace. Run with --info or --debug 
     </item>
     <item>
       <title>Cocos2dx</title>
-      <link>https://douo.github.io/moon-2013//notes/Programming/Android/cocos2dx</link>
+      <link>https://douo.github.io/moon-2013/notes/Programming/Android/cocos2dx</link>
       <description>&lt;hr&gt;
 
 &lt;p&gt;title: cocos2dx
