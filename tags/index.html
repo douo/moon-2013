@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Tags | 
+      DouO's Blog
+    </title>
+    <meta name="author" content="DouO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-93b47f97c3444c4711853ed5140d82a1.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/bootstrap-responsive.min-6be942c8ec424a44aa4f31e099bae1fc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-2a78e0c366d18704c93f8db7772659c6.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>    
+
+    <!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/bootstrap.min-240e44e4195f0836ced0eab636f9cb0c.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>    
+    
+	
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+    
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+
+    <link rel="shortcut icon" href="/assets/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	 <link rel="shortcut icon" href="images/favicon.ico">
+	 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	 <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	 -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    <!-- processing -->
+    
+<script type="text/javascript"
+  src="http://cdn.staticfile.org/processing.js/1.4.1/processing.min.js">
+</script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <header class="header pull-left">
+	    <h1>Tags | <a href="/archives">Date</a> | <a href="/categories">Categories</a></h1>
+	  </header>
+  	  <button type="button" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    </button>
+	</div> <!-- header -->
+
+         </div>
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8 content">
+	  <div class="nav-wrapper nav-collapse collapse"   data-spy="affix" data-offset-top="70" >
+	    <nav class="nav moon-nav-list">
+	      <ul>
+	        <li><a href="/" rel="tooltip" data-placement="top" title="主頁">home</a></li>
+	        <li><a href="/archives" rel="tooltip" data-placement="top" title="文章歸檔">archives</a></li>
+	        <li><a href="/notes" rel="tooltip" data-placement="top" title="我的個人筆記">notes</a></li>
+	        <li><a href="/rss.xml" rel="tooltip" data-placement="top" title="訂閱">feed</a></li>
+	        <li><a href="/about" rel="tooltip" data-placement="top" title="關於我">about</a></li>
+	        <li  class="separate"></li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	      <article class="post box">
+<ul class="tag_box inline">
+  <li>
+    <a href="/tags#猫-ref">猫 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Android-ref">Android <span>6</span></a>
+  </li>
+  <li>
+    <a href="/tags#Android Studio-ref">Android Studio <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#gradle-ref">gradle <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#博客-ref">博客 <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#Google Reader-ref">Google Reader <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#阅读-ref">阅读 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#写作-ref">写作 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#ruhoh-ref">ruhoh <span>4</span></a>
+  </li>
+  <li>
+    <a href="/tags#ruby-ref">ruby <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#markdown-ref">markdown <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#toc-ref">toc <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#mustache-ref">mustache <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#拖延症-ref">拖延症 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#bootstrap-ref">bootstrap <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#staticfile-ref">staticfile <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#todo-ref">todo <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#笔记-ref">笔记 <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#Evernote-ref">Evernote <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#google keep-ref">google keep <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#swiftype-ref">swiftype <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#jqplot-ref">jqplot <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#cousera-ref">cousera <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#stackoverflow-ref">stackoverflow <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#读书-ref">读书 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#J2ME-ref">J2ME <span>3</span></a>
+  </li>
+  <li>
+    <a href="/tags#控制台-ref">控制台 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Java-ref">Java <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#System.in-ref">System.in <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#独立游戏-ref">独立游戏 <span>3</span></a>
+  </li>
+  <li>
+    <a href="/tags#processing.js-ref">processing.js <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#Wordpress-ref">Wordpress <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Wordpress Theme-ref">Wordpress Theme <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#吐槽-ref">吐槽 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#工作-ref">工作 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#翻译-ref">翻译 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#NBAdroid-ref">NBAdroid <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#Netbeans-ref">Netbeans <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#CodeColorer-ref">CodeColorer <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#wordpress插件-ref">wordpress插件 <span>3</span></a>
+  </li>
+  <li>
+    <a href="/tags#插件翻译-ref">插件翻译 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#语法高亮-ref">语法高亮 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#GBK-ref">GBK <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#MTK-ref">MTK <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#Unicode-ref">Unicode <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#forkosh-ref">forkosh <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#LaTex-ref">LaTex <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#mathtex-ref">mathtex <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Robot-ref">Robot <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#数学公式-ref">数学公式 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#dokuwiki-ref">dokuwiki <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#FML-ref">FML <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#php-ref">php <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#UTF-8-ref">UTF-8 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#java2d-ref">java2d <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#twitter-ref">twitter <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Tetris-ref">Tetris <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#foobar2000-ref">foobar2000 <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#Lyrics Grabber2-ref">Lyrics Grabber2 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#python-ref">python <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#歌词搜索-ref">歌词搜索 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#cookie-ref">cookie <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#google-ref">google <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#Groovy-ref">Groovy <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#闭包-ref">闭包 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#慈善-ref">慈善 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Modis-ref">Modis <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#crc-ref">crc <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#FileConnection-ref">FileConnection <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#J2ME文件系统-ref">J2ME文件系统 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#JSR 75-ref">JSR 75 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#LightsOut-ref">LightsOut <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#游戏-ref">游戏 <span>2</span></a>
+  </li>
+  <li>
+    <a href="/tags#算法-ref">算法 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#线性代数-ref">线性代数 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#GPT-ref">GPT <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#分区恢复-ref">分区恢复 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#硬盘-ref">硬盘 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Google Code-ref">Google Code <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#hg-ref">hg <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Mercurial-ref">Mercurial <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#javascript-ref">javascript <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#图论-ref">图论 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#迷宫-ref">迷宫 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Ad-Hoc-ref">Ad-Hoc <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Hero-ref">Hero <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#HTC G3-ref">HTC G3 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#无线网卡-ref">无线网卡 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#gfw-ref">gfw <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#minesweeper-ref">minesweeper <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#扫雷-ref">扫雷 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#proguard-ref">proguard <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#synchronized-ref">synchronized <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#valatile-ref">valatile <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#多线程-ref">多线程 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#空循环-ref">空循环 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Prototype-ref">Prototype <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#原型体-ref">原型体 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#随机副标题-ref">随机副标题 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#adb-ref">adb <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#ADT-ref">ADT <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#Chrome-ref">Chrome <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#css-ref">css <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#通用字体-ref">通用字体 <span>1</span></a>
+  </li>
+  <li>
+    <a href="/tags#WebGL-ref">WebGL <span>1</span></a>
+  </li>
+</ul>
+  <h3 id="猫-ref">猫</h3>
+ <ul id="猫" class="collapse in">
+      <li class="listing-item"><time>2012-07-20</time> &raquo; <a href="/2012/07/20/cat">猫</a></li>
+ </ul>
+  <h3 id="Android-ref">Android</h3>
+ <ul id="Android" class="collapse in">
+      <li class="listing-item"><time>2013-05-29</time> &raquo; <a href="/2013/05/29/first-glance-in-android-studio">初尝 Android Studio</a></li>
+      <li class="listing-item"><time>2011-10-10</time> &raquo; <a href="/2011/10/10/browse-android-sources-on-netbeans">在Netbeans上查看Android源码</a></li>
+      <li class="listing-item"><time>2012-04-29</time> &raquo; <a href="/2012/04/29/lonely-android">Lonely Android</a></li>
+      <li class="listing-item"><time>2010-06-25</time> &raquo; <a href="/2010/06/25/my-wifi-for-htc-hero">让HTC Hero通过我的笔记本无线网卡共享上网</a></li>
+      <li class="listing-item"><time>2010-05-22</time> &raquo; <a href="/2010/05/22/netbeans-as-android-ide">在Netbeans上配置Android开发环境</a></li>
+      <li class="listing-item"><time>2012-06-26</time> &raquo; <a href="/2012/06/26/selecting-adb-device">可交互的 adb devices</a></li>
+ </ul>
+  <h3 id="Android Studio-ref">Android Studio</h3>
+ <ul id="Android Studio" class="collapse in">
+      <li class="listing-item"><time>2013-05-29</time> &raquo; <a href="/2013/05/29/first-glance-in-android-studio">初尝 Android Studio</a></li>
+ </ul>
+  <h3 id="gradle-ref">gradle</h3>
+ <ul id="gradle" class="collapse in">
+      <li class="listing-item"><time>2013-05-29</time> &raquo; <a href="/2013/05/29/first-glance-in-android-studio">初尝 Android Studio</a></li>
+ </ul>
+  <h3 id="博客-ref">博客</h3>
+ <ul id="博客" class="collapse in">
+      <li class="listing-item"><time>2013-03-17</time> &raquo; <a href="/2013/03/17/for-whom-the-blog-tolls">博客为谁而写</a></li>
+      <li class="listing-item"><time>2009-11-17</time> &raquo; <a href="/2009/11/17/fb">哈哈，FB</a></li>
+ </ul>
+  <h3 id="Google Reader-ref">Google Reader</h3>
+ <ul id="Google Reader" class="collapse in">
+      <li class="listing-item"><time>2013-03-17</time> &raquo; <a href="/2013/03/17/for-whom-the-blog-tolls">博客为谁而写</a></li>
+ </ul>
+  <h3 id="阅读-ref">阅读</h3>
+ <ul id="阅读" class="collapse in">
+      <li class="listing-item"><time>2013-03-17</time> &raquo; <a href="/2013/03/17/for-whom-the-blog-tolls">博客为谁而写</a></li>
+ </ul>
+  <h3 id="写作-ref">写作</h3>
+ <ul id="写作" class="collapse in">
+      <li class="listing-item"><time>2013-03-17</time> &raquo; <a href="/2013/03/17/for-whom-the-blog-tolls">博客为谁而写</a></li>
+ </ul>
+  <h3 id="ruhoh-ref">ruhoh</h3>
+ <ul id="ruhoh" class="collapse in">
+      <li class="listing-item"><time>2012-11-20</time> &raquo; <a href="/2012/11/20/generating-a-toc-in-ruhoh">为 Ruhoh 生成文章目录</a></li>
+      <li class="listing-item"><time>2012-08-20</time> &raquo; <a href="/2012/08/20/something-about-ruhoh">Ruhoh 札记</a></li>
+      <li class="listing-item"><time>2013-10-22</time> &raquo; <a href="/2013/10/22/the-pain-of-note-2">笔记之舛·破</a></li>
+      <li class="listing-item"><time>2013-08-16</time> &raquo; <a href="/2013/08/16/the-pain-of-note">笔记之舛·序</a></li>
+ </ul>
+  <h3 id="ruby-ref">ruby</h3>
+ <ul id="ruby" class="collapse in">
+      <li class="listing-item"><time>2012-11-20</time> &raquo; <a href="/2012/11/20/generating-a-toc-in-ruhoh">为 Ruhoh 生成文章目录</a></li>
+      <li class="listing-item"><time>2012-08-20</time> &raquo; <a href="/2012/08/20/something-about-ruhoh">Ruhoh 札记</a></li>
+ </ul>
+  <h3 id="markdown-ref">markdown</h3>
+ <ul id="markdown" class="collapse in">
+      <li class="listing-item"><time>2012-11-20</time> &raquo; <a href="/2012/11/20/generating-a-toc-in-ruhoh">为 Ruhoh 生成文章目录</a></li>
+      <li class="listing-item"><time>2012-08-20</time> &raquo; <a href="/2012/08/20/something-about-ruhoh">Ruhoh 札记</a></li>
+ </ul>
+  <h3 id="toc-ref">toc</h3>
+ <ul id="toc" class="collapse in">
+      <li class="listing-item"><time>2012-11-20</time> &raquo; <a href="/2012/11/20/generating-a-toc-in-ruhoh">为 Ruhoh 生成文章目录</a></li>
+ </ul>
+  <h3 id="mustache-ref">mustache</h3>
+ <ul id="mustache" class="collapse in">
+      <li class="listing-item"><time>2012-11-20</time> &raquo; <a href="/2012/11/20/generating-a-toc-in-ruhoh">为 Ruhoh 生成文章目录</a></li>
+ </ul>
+  <h3 id="拖延症-ref">拖延症</h3>
+ <ul id="拖延症" class="collapse in">
+      <li class="listing-item"><time>2012-12-06</time> &raquo; <a href="/2012/12/06/life-doesn-t-make-sense">Life Doesn't Make Sense</a></li>
+ </ul>
+  <h3 id="bootstrap-ref">bootstrap</h3>
+ <ul id="bootstrap" class="collapse in">
+      <li class="listing-item"><time>2012-08-20</time> &raquo; <a href="/2012/08/20/something-about-ruhoh">Ruhoh 札记</a></li>
+ </ul>
+  <h3 id="staticfile-ref">staticfile</h3>
+ <ul id="staticfile" class="collapse in">
+      <li class="listing-item"><time>2013-10-07</time> &raquo; <a href="/2013/10/07/staticfile-org">staticfile.org</a></li>
+ </ul>
+  <h3 id="todo-ref">todo</h3>
+ <ul id="todo" class="collapse in">
+      <li class="listing-item"><time>2013-10-07</time> &raquo; <a href="/2013/10/07/staticfile-org">staticfile.org</a></li>
+      <li class="listing-item"><time>2013-10-22</time> &raquo; <a href="/2013/10/22/the-pain-of-note-2">笔记之舛·破</a></li>
+ </ul>
+  <h3 id="笔记-ref">笔记</h3>
+ <ul id="笔记" class="collapse in">
+      <li class="listing-item"><time>2013-10-22</time> &raquo; <a href="/2013/10/22/the-pain-of-note-2">笔记之舛·破</a></li>
+      <li class="listing-item"><time>2013-08-16</time> &raquo; <a href="/2013/08/16/the-pain-of-note">笔记之舛·序</a></li>
+ </ul>
+  <h3 id="Evernote-ref">Evernote</h3>
+ <ul id="Evernote" class="collapse in">
+      <li class="listing-item"><time>2013-10-22</time> &raquo; <a href="/2013/10/22/the-pain-of-note-2">笔记之舛·破</a></li>
+ </ul>
+  <h3 id="google keep-ref">google keep</h3>
+ <ul id="google keep" class="collapse in">
+      <li class="listing-item"><time>2013-10-22</time> &raquo; <a href="/2013/10/22/the-pain-of-note-2">笔记之舛·破</a></li>
+ </ul>
+  <h3 id="swiftype-ref">swiftype</h3>
+ <ul id="swiftype" class="collapse in">
+      <li class="listing-item"><time>2013-10-22</time> &raquo; <a href="/2013/10/22/the-pain-of-note-2">笔记之舛·破</a></li>
+ </ul>
+  <h3 id="jqplot-ref">jqplot</h3>
+ <ul id="jqplot" class="collapse in">
+      <li class="listing-item"><time>2013-08-16</time> &raquo; <a href="/2013/08/16/the-pain-of-note">笔记之舛·序</a></li>
+ </ul>
+  <h3 id="cousera-ref">cousera</h3>
+ <ul id="cousera" class="collapse in">
+      <li class="listing-item"><time>2014-02-05</time> &raquo; <a href="/2014/02/05/the-year-of-the-snake">癸巳年小结</a></li>
+ </ul>
+  <h3 id="stackoverflow-ref">stackoverflow</h3>
+ <ul id="stackoverflow" class="collapse in">
+      <li class="listing-item"><time>2014-02-05</time> &raquo; <a href="/2014/02/05/the-year-of-the-snake">癸巳年小结</a></li>
+ </ul>
+  <h3 id="读书-ref">读书</h3>
+ <ul id="读书" class="collapse in">
+      <li class="listing-item"><time>2012-11-05</time> &raquo; <a href="/2012/11/05/too-many-books-to-read">囤书成瘾</a></li>
+ </ul>
+  <h3 id="J2ME-ref">J2ME</h3>
+ <ul id="J2ME" class="collapse in">
+      <li class="listing-item"><time>2010-05-15</time> &raquo; <a href="/2010/05/15/a-logger-for-j2me">Java ME通用Logger包和控制台</a></li>
+      <li class="listing-item"><time>2010-01-02</time> &raquo; <a href="/2010/01/02/j2me-didnt-check-crc-in-png">J2ME对PNG格式的支持很诡异–不校检CRC?</a></li>
+      <li class="listing-item"><time>2010-04-22</time> &raquo; <a href="/2010/04/22/j2me-jsr-75">Java Me读取本地文件(JSR 75)</a></li>
+ </ul>
+  <h3 id="控制台-ref">控制台</h3>
+ <ul id="控制台" class="collapse in">
+      <li class="listing-item"><time>2010-05-15</time> &raquo; <a href="/2010/05/15/a-logger-for-j2me">Java ME通用Logger包和控制台</a></li>
+ </ul>
+  <h3 id="Java-ref">Java</h3>
+ <ul id="Java" class="collapse in">
+      <li class="listing-item"><time>2011-05-28</time> &raquo; <a href="/2011/05/28/a-puzzle-of-system-in">System.in的困惑</a></li>
+      <li class="listing-item"><time>2010-12-30</time> &raquo; <a href="/2010/12/30/groovy-introduce">Groovy初接触</a></li>
+ </ul>
+  <h3 id="System.in-ref">System.in</h3>
+ <ul id="System.in" class="collapse in">
+      <li class="listing-item"><time>2011-05-28</time> &raquo; <a href="/2011/05/28/a-puzzle-of-system-in">System.in的困惑</a></li>
+ </ul>
+  <h3 id="独立游戏-ref">独立游戏</h3>
+ <ul id="独立游戏" class="collapse in">
+      <li class="listing-item"><time>2009-12-21</time> &raquo; <a href="/2009/12/21/achievement-unlocked">成就狂!专属游戏Achievement Unlocked</a></li>
+      <li class="listing-item"><time>2010-01-27</time> &raquo; <a href="/2010/01/27/first-person-tetris">惊叹!第一人称俄罗斯方块!?</a></li>
+      <li class="listing-item"><time>2010-01-21</time> &raquo; <a href="/2010/01/21/passage_pass_age">Passage,浓缩的人生</a></li>
+ </ul>
+  <h3 id="processing.js-ref">processing.js</h3>
+ <ul id="processing.js" class="collapse in">
+      <li class="listing-item"><time>2011-12-25</time> &raquo; <a href="/2011/12/25/before-2012">来除草了。。。</a></li>
+      <li class="listing-item"><time>2012-04-29</time> &raquo; <a href="/2012/04/29/lonely-android">Lonely Android</a></li>
+ </ul>
+  <h3 id="Wordpress-ref">Wordpress</h3>
+ <ul id="Wordpress" class="collapse in">
+      <li class="listing-item"><time>2011-12-25</time> &raquo; <a href="/2011/12/25/before-2012">来除草了。。。</a></li>
+ </ul>
+  <h3 id="Wordpress Theme-ref">Wordpress Theme</h3>
+ <ul id="Wordpress Theme" class="collapse in">
+      <li class="listing-item"><time>2011-12-25</time> &raquo; <a href="/2011/12/25/before-2012">来除草了。。。</a></li>
+ </ul>
+  <h3 id="吐槽-ref">吐槽</h3>
+ <ul id="吐槽" class="collapse in">
+      <li class="listing-item"><time>2011-12-25</time> &raquo; <a href="/2011/12/25/before-2012">来除草了。。。</a></li>
+ </ul>
+  <h3 id="工作-ref">工作</h3>
+ <ul id="工作" class="collapse in">
+      <li class="listing-item"><time>2009-12-17</time> &raquo; <a href="/2009/12/17/bestjobs-report-from-careercast">时下最好职业,软件工程师排名第五</a></li>
+ </ul>
+  <h3 id="翻译-ref">翻译</h3>
+ <ul id="翻译" class="collapse in">
+      <li class="listing-item"><time>2009-12-17</time> &raquo; <a href="/2009/12/17/bestjobs-report-from-careercast">时下最好职业,软件工程师排名第五</a></li>
+ </ul>
+  <h3 id="NBAdroid-ref">NBAdroid</h3>
+ <ul id="NBAdroid" class="collapse in">
+      <li class="listing-item"><time>2011-10-10</time> &raquo; <a href="/2011/10/10/browse-android-sources-on-netbeans">在Netbeans上查看Android源码</a></li>
+      <li class="listing-item"><time>2010-05-22</time> &raquo; <a href="/2010/05/22/netbeans-as-android-ide">在Netbeans上配置Android开发环境</a></li>
+ </ul>
+  <h3 id="Netbeans-ref">Netbeans</h3>
+ <ul id="Netbeans" class="collapse in">
+      <li class="listing-item"><time>2011-10-10</time> &raquo; <a href="/2011/10/10/browse-android-sources-on-netbeans">在Netbeans上查看Android源码</a></li>
+      <li class="listing-item"><time>2010-05-22</time> &raquo; <a href="/2010/05/22/netbeans-as-android-ide">在Netbeans上配置Android开发环境</a></li>
+ </ul>
+  <h3 id="CodeColorer-ref">CodeColorer</h3>
+ <ul id="CodeColorer" class="collapse in">
+      <li class="listing-item"><time>2010-08-03</time> &raquo; <a href="/2010/08/03/codecolorer-doc-cn">CodeColorer中文帮助</a></li>
+ </ul>
+  <h3 id="wordpress插件-ref">wordpress插件</h3>
+ <ul id="wordpress插件" class="collapse in">
+      <li class="listing-item"><time>2010-08-03</time> &raquo; <a href="/2010/08/03/codecolorer-doc-cn">CodeColorer中文帮助</a></li>
+      <li class="listing-item"><time>2012-04-29</time> &raquo; <a href="/2012/04/29/lonely-android">Lonely Android</a></li>
+      <li class="listing-item"><time>2010-12-04</time> &raquo; <a href="/2010/12/04/random-words-my-chosen">Random Words My Chosen</a></li>
+ </ul>
+  <h3 id="插件翻译-ref">插件翻译</h3>
+ <ul id="插件翻译" class="collapse in">
+      <li class="listing-item"><time>2010-08-03</time> &raquo; <a href="/2010/08/03/codecolorer-doc-cn">CodeColorer中文帮助</a></li>
+ </ul>
+  <h3 id="语法高亮-ref">语法高亮</h3>
+ <ul id="语法高亮" class="collapse in">
+      <li class="listing-item"><time>2010-08-03</time> &raquo; <a href="/2010/08/03/codecolorer-doc-cn">CodeColorer中文帮助</a></li>
+ </ul>
+  <h3 id="GBK-ref">GBK</h3>
+ <ul id="GBK" class="collapse in">
+      <li class="listing-item"><time>2010-06-24</time> &raquo; <a href="/2010/06/24/convert-gbk-to-unicode">从GBK到Unicode的中文字符映射</a></li>
+ </ul>
+  <h3 id="MTK-ref">MTK</h3>
+ <ul id="MTK" class="collapse in">
+      <li class="listing-item"><time>2010-06-24</time> &raquo; <a href="/2010/06/24/convert-gbk-to-unicode">从GBK到Unicode的中文字符映射</a></li>
+      <li class="listing-item"><time>2010-07-15</time> &raquo; <a href="/2010/07/15/how-to-add-new-module-in-mtk">如何为MTK平台添加新模块</a></li>
+ </ul>
+  <h3 id="Unicode-ref">Unicode</h3>
+ <ul id="Unicode" class="collapse in">
+      <li class="listing-item"><time>2010-06-24</time> &raquo; <a href="/2010/06/24/convert-gbk-to-unicode">从GBK到Unicode的中文字符映射</a></li>
+ </ul>
+  <h3 id="forkosh-ref">forkosh</h3>
+ <ul id="forkosh" class="collapse in">
+      <li class="listing-item"><time>2010-08-31</time> &raquo; <a href="/2010/08/31/display-formulatest">插入!数学公式测试，附上一个很SB的Java程序</a></li>
+ </ul>
+  <h3 id="LaTex-ref">LaTex</h3>
+ <ul id="LaTex" class="collapse in">
+      <li class="listing-item"><time>2010-08-31</time> &raquo; <a href="/2010/08/31/display-formulatest">插入!数学公式测试，附上一个很SB的Java程序</a></li>
+ </ul>
+  <h3 id="mathtex-ref">mathtex</h3>
+ <ul id="mathtex" class="collapse in">
+      <li class="listing-item"><time>2010-08-31</time> &raquo; <a href="/2010/08/31/display-formulatest">插入!数学公式测试，附上一个很SB的Java程序</a></li>
+ </ul>
+  <h3 id="Robot-ref">Robot</h3>
+ <ul id="Robot" class="collapse in">
+      <li class="listing-item"><time>2010-08-31</time> &raquo; <a href="/2010/08/31/display-formulatest">插入!数学公式测试，附上一个很SB的Java程序</a></li>
+ </ul>
+  <h3 id="数学公式-ref">数学公式</h3>
+ <ul id="数学公式" class="collapse in">
+      <li class="listing-item"><time>2010-08-31</time> &raquo; <a href="/2010/08/31/display-formulatest">插入!数学公式测试，附上一个很SB的Java程序</a></li>
+ </ul>
+  <h3 id="dokuwiki-ref">dokuwiki</h3>
+ <ul id="dokuwiki" class="collapse in">
+      <li class="listing-item"><time>2010-12-09</time> &raquo; <a href="/2010/12/09/dokuwiki-new-realease">dokuwiki新版本&quot;Anteater&quot;支持UTF-8文件名</a></li>
+ </ul>
+  <h3 id="FML-ref">FML</h3>
+ <ul id="FML" class="collapse in">
+      <li class="listing-item"><time>2010-12-09</time> &raquo; <a href="/2010/12/09/dokuwiki-new-realease">dokuwiki新版本&quot;Anteater&quot;支持UTF-8文件名</a></li>
+ </ul>
+  <h3 id="php-ref">php</h3>
+ <ul id="php" class="collapse in">
+      <li class="listing-item"><time>2010-12-09</time> &raquo; <a href="/2010/12/09/dokuwiki-new-realease">dokuwiki新版本&quot;Anteater&quot;支持UTF-8文件名</a></li>
+      <li class="listing-item"><time>2010-12-04</time> &raquo; <a href="/2010/12/04/random-words-my-chosen">Random Words My Chosen</a></li>
+ </ul>
+  <h3 id="UTF-8-ref">UTF-8</h3>
+ <ul id="UTF-8" class="collapse in">
+      <li class="listing-item"><time>2010-12-09</time> &raquo; <a href="/2010/12/09/dokuwiki-new-realease">dokuwiki新版本&quot;Anteater&quot;支持UTF-8文件名</a></li>
+ </ul>
+  <h3 id="java2d-ref">java2d</h3>
+ <ul id="java2d" class="collapse in">
+      <li class="listing-item"><time>2009-11-21</time> &raquo; <a href="/2009/11/21/draw-a-star">畫個星星，容易么！</a></li>
+ </ul>
+  <h3 id="twitter-ref">twitter</h3>
+ <ul id="twitter" class="collapse in">
+      <li class="listing-item"><time>2009-11-17</time> &raquo; <a href="/2009/11/17/fb">哈哈，FB</a></li>
+ </ul>
+  <h3 id="Tetris-ref">Tetris</h3>
+ <ul id="Tetris" class="collapse in">
+      <li class="listing-item"><time>2010-01-27</time> &raquo; <a href="/2010/01/27/first-person-tetris">惊叹!第一人称俄罗斯方块!?</a></li>
+ </ul>
+  <h3 id="foobar2000-ref">foobar2000</h3>
+ <ul id="foobar2000" class="collapse in">
+      <li class="listing-item"><time>2011-08-08</time> &raquo; <a href="/2011/08/08/fixed-ttplayer-lrc-py">修复了 Lyrics Grabber2 的千千静听歌词抓取脚本</a></li>
+      <li class="listing-item"><time>2009-11-19</time> &raquo; <a href="/2009/11/19/foo-w7shell">Foobar2000的win7界面整合插件</a></li>
+ </ul>
+  <h3 id="Lyrics Grabber2-ref">Lyrics Grabber2</h3>
+ <ul id="Lyrics Grabber2" class="collapse in">
+      <li class="listing-item"><time>2011-08-08</time> &raquo; <a href="/2011/08/08/fixed-ttplayer-lrc-py">修复了 Lyrics Grabber2 的千千静听歌词抓取脚本</a></li>
+ </ul>
+  <h3 id="python-ref">python</h3>
+ <ul id="python" class="collapse in">
+      <li class="listing-item"><time>2011-08-08</time> &raquo; <a href="/2011/08/08/fixed-ttplayer-lrc-py">修复了 Lyrics Grabber2 的千千静听歌词抓取脚本</a></li>
+ </ul>
+  <h3 id="歌词搜索-ref">歌词搜索</h3>
+ <ul id="歌词搜索" class="collapse in">
+      <li class="listing-item"><time>2011-08-08</time> &raquo; <a href="/2011/08/08/fixed-ttplayer-lrc-py">修复了 Lyrics Grabber2 的千千静听歌词抓取脚本</a></li>
+ </ul>
+  <h3 id="cookie-ref">cookie</h3>
+ <ul id="cookie" class="collapse in">
+      <li class="listing-item"><time>2010-04-22</time> &raquo; <a href="/2010/04/22/google-cookies-analysize">Google Cookies 分析</a></li>
+ </ul>
+  <h3 id="google-ref">google</h3>
+ <ul id="google" class="collapse in">
+      <li class="listing-item"><time>2010-04-22</time> &raquo; <a href="/2010/04/22/google-cookies-analysize">Google Cookies 分析</a></li>
+      <li class="listing-item"><time>2011-05-11</time> &raquo; <a href="/2011/05/11/managing-google-code-project-with-mercurial">如何用Mercurial开始GoogleCode项目</a></li>
+ </ul>
+  <h3 id="Groovy-ref">Groovy</h3>
+ <ul id="Groovy" class="collapse in">
+      <li class="listing-item"><time>2010-12-30</time> &raquo; <a href="/2010/12/30/groovy-introduce">Groovy初接触</a></li>
+ </ul>
+  <h3 id="闭包-ref">闭包</h3>
+ <ul id="闭包" class="collapse in">
+      <li class="listing-item"><time>2010-12-30</time> &raquo; <a href="/2010/12/30/groovy-introduce">Groovy初接触</a></li>
+ </ul>
+  <h3 id="慈善-ref">慈善</h3>
+ <ul id="慈善" class="collapse in">
+      <li class="listing-item"><time>2010-01-22</time> &raquo; <a href="/2010/01/22/help-to-build-country-library">请关注!帮助乡村建图书馆你的1票=100$</a></li>
+ </ul>
+  <h3 id="Modis-ref">Modis</h3>
+ <ul id="Modis" class="collapse in">
+      <li class="listing-item"><time>2010-07-15</time> &raquo; <a href="/2010/07/15/how-to-add-new-module-in-mtk">如何为MTK平台添加新模块</a></li>
+ </ul>
+  <h3 id="crc-ref">crc</h3>
+ <ul id="crc" class="collapse in">
+      <li class="listing-item"><time>2010-01-02</time> &raquo; <a href="/2010/01/02/j2me-didnt-check-crc-in-png">J2ME对PNG格式的支持很诡异–不校检CRC?</a></li>
+ </ul>
+  <h3 id="FileConnection-ref">FileConnection</h3>
+ <ul id="FileConnection" class="collapse in">
+      <li class="listing-item"><time>2010-04-22</time> &raquo; <a href="/2010/04/22/j2me-jsr-75">Java Me读取本地文件(JSR 75)</a></li>
+ </ul>
+  <h3 id="J2ME文件系统-ref">J2ME文件系统</h3>
+ <ul id="J2ME文件系统" class="collapse in">
+      <li class="listing-item"><time>2010-04-22</time> &raquo; <a href="/2010/04/22/j2me-jsr-75">Java Me读取本地文件(JSR 75)</a></li>
+ </ul>
+  <h3 id="JSR 75-ref">JSR 75</h3>
+ <ul id="JSR 75" class="collapse in">
+      <li class="listing-item"><time>2010-04-22</time> &raquo; <a href="/2010/04/22/j2me-jsr-75">Java Me读取本地文件(JSR 75)</a></li>
+ </ul>
+  <h3 id="LightsOut-ref">LightsOut</h3>
+ <ul id="LightsOut" class="collapse in">
+      <li class="listing-item"><time>2012-05-31</time> &raquo; <a href="/2012/05/31/lights-out-solution">LightsOut 解法小探</a></li>
+ </ul>
+  <h3 id="游戏-ref">游戏</h3>
+ <ul id="游戏" class="collapse in">
+      <li class="listing-item"><time>2012-05-31</time> &raquo; <a href="/2012/05/31/lights-out-solution">LightsOut 解法小探</a></li>
+      <li class="listing-item"><time>2010-08-08</time> &raquo; <a href="/2010/08/08/prototype-clearance">原型体(Prototype)通关</a></li>
+ </ul>
+  <h3 id="算法-ref">算法</h3>
+ <ul id="算法" class="collapse in">
+      <li class="listing-item"><time>2012-05-31</time> &raquo; <a href="/2012/05/31/lights-out-solution">LightsOut 解法小探</a></li>
+ </ul>
+  <h3 id="线性代数-ref">线性代数</h3>
+ <ul id="线性代数" class="collapse in">
+      <li class="listing-item"><time>2012-05-31</time> &raquo; <a href="/2012/05/31/lights-out-solution">LightsOut 解法小探</a></li>
+ </ul>
+  <h3 id="GPT-ref">GPT</h3>
+ <ul id="GPT" class="collapse in">
+      <li class="listing-item"><time>2012-06-24</time> &raquo; <a href="/2012/06/24/madness_of_formatting">误删分区</a></li>
+ </ul>
+  <h3 id="分区恢复-ref">分区恢复</h3>
+ <ul id="分区恢复" class="collapse in">
+      <li class="listing-item"><time>2012-06-24</time> &raquo; <a href="/2012/06/24/madness_of_formatting">误删分区</a></li>
+ </ul>
+  <h3 id="硬盘-ref">硬盘</h3>
+ <ul id="硬盘" class="collapse in">
+      <li class="listing-item"><time>2012-06-24</time> &raquo; <a href="/2012/06/24/madness_of_formatting">误删分区</a></li>
+ </ul>
+  <h3 id="Google Code-ref">Google Code</h3>
+ <ul id="Google Code" class="collapse in">
+      <li class="listing-item"><time>2011-05-11</time> &raquo; <a href="/2011/05/11/managing-google-code-project-with-mercurial">如何用Mercurial开始GoogleCode项目</a></li>
+ </ul>
+  <h3 id="hg-ref">hg</h3>
+ <ul id="hg" class="collapse in">
+      <li class="listing-item"><time>2011-05-11</time> &raquo; <a href="/2011/05/11/managing-google-code-project-with-mercurial">如何用Mercurial开始GoogleCode项目</a></li>
+ </ul>
+  <h3 id="Mercurial-ref">Mercurial</h3>
+ <ul id="Mercurial" class="collapse in">
+      <li class="listing-item"><time>2011-05-11</time> &raquo; <a href="/2011/05/11/managing-google-code-project-with-mercurial">如何用Mercurial开始GoogleCode项目</a></li>
+ </ul>
+  <h3 id="javascript-ref">javascript</h3>
+ <ul id="javascript" class="collapse in">
+      <li class="listing-item"><time>2011-07-14</time> &raquo; <a href="/2011/07/14/maze-generation-algorithm">迷宫生成算法</a></li>
+ </ul>
+  <h3 id="图论-ref">图论</h3>
+ <ul id="图论" class="collapse in">
+      <li class="listing-item"><time>2011-07-14</time> &raquo; <a href="/2011/07/14/maze-generation-algorithm">迷宫生成算法</a></li>
+ </ul>
+  <h3 id="迷宫-ref">迷宫</h3>
+ <ul id="迷宫" class="collapse in">
+      <li class="listing-item"><time>2011-07-14</time> &raquo; <a href="/2011/07/14/maze-generation-algorithm">迷宫生成算法</a></li>
+ </ul>
+  <h3 id="Ad-Hoc-ref">Ad-Hoc</h3>
+ <ul id="Ad-Hoc" class="collapse in">
+      <li class="listing-item"><time>2010-06-25</time> &raquo; <a href="/2010/06/25/my-wifi-for-htc-hero">让HTC Hero通过我的笔记本无线网卡共享上网</a></li>
+ </ul>
+  <h3 id="Hero-ref">Hero</h3>
+ <ul id="Hero" class="collapse in">
+      <li class="listing-item"><time>2010-06-25</time> &raquo; <a href="/2010/06/25/my-wifi-for-htc-hero">让HTC Hero通过我的笔记本无线网卡共享上网</a></li>
+ </ul>
+  <h3 id="HTC G3-ref">HTC G3</h3>
+ <ul id="HTC G3" class="collapse in">
+      <li class="listing-item"><time>2010-06-25</time> &raquo; <a href="/2010/06/25/my-wifi-for-htc-hero">让HTC Hero通过我的笔记本无线网卡共享上网</a></li>
+ </ul>
+  <h3 id="无线网卡-ref">无线网卡</h3>
+ <ul id="无线网卡" class="collapse in">
+      <li class="listing-item"><time>2010-06-25</time> &raquo; <a href="/2010/06/25/my-wifi-for-htc-hero">让HTC Hero通过我的笔记本无线网卡共享上网</a></li>
+ </ul>
+  <h3 id="gfw-ref">gfw</h3>
+ <ul id="gfw" class="collapse in">
+      <li class="listing-item"><time>2010-01-25</time> &raquo; <a href="/2010/01/25/note-at-home-two-ban-by-gfw">回家札记二:网站被墙</a></li>
+ </ul>
+  <h3 id="minesweeper-ref">minesweeper</h3>
+ <ul id="minesweeper" class="collapse in">
+      <li class="listing-item"><time>2010-07-20</time> &raquo; <a href="/2010/07/20/painess-of-minesweeper">玩扫雷的悲剧</a></li>
+ </ul>
+  <h3 id="扫雷-ref">扫雷</h3>
+ <ul id="扫雷" class="collapse in">
+      <li class="listing-item"><time>2010-07-20</time> &raquo; <a href="/2010/07/20/painess-of-minesweeper">玩扫雷的悲剧</a></li>
+ </ul>
+  <h3 id="proguard-ref">proguard</h3>
+ <ul id="proguard" class="collapse in">
+      <li class="listing-item"><time>2010-07-30</time> &raquo; <a href="/2010/07/30/proguard-remove-busy-loop">ProGuard混淆丢掉空循环</a></li>
+ </ul>
+  <h3 id="synchronized-ref">synchronized</h3>
+ <ul id="synchronized" class="collapse in">
+      <li class="listing-item"><time>2010-07-30</time> &raquo; <a href="/2010/07/30/proguard-remove-busy-loop">ProGuard混淆丢掉空循环</a></li>
+ </ul>
+  <h3 id="valatile-ref">valatile</h3>
+ <ul id="valatile" class="collapse in">
+      <li class="listing-item"><time>2010-07-30</time> &raquo; <a href="/2010/07/30/proguard-remove-busy-loop">ProGuard混淆丢掉空循环</a></li>
+ </ul>
+  <h3 id="多线程-ref">多线程</h3>
+ <ul id="多线程" class="collapse in">
+      <li class="listing-item"><time>2010-07-30</time> &raquo; <a href="/2010/07/30/proguard-remove-busy-loop">ProGuard混淆丢掉空循环</a></li>
+ </ul>
+  <h3 id="空循环-ref">空循环</h3>
+ <ul id="空循环" class="collapse in">
+      <li class="listing-item"><time>2010-07-30</time> &raquo; <a href="/2010/07/30/proguard-remove-busy-loop">ProGuard混淆丢掉空循环</a></li>
+ </ul>
+  <h3 id="Prototype-ref">Prototype</h3>
+ <ul id="Prototype" class="collapse in">
+      <li class="listing-item"><time>2010-08-08</time> &raquo; <a href="/2010/08/08/prototype-clearance">原型体(Prototype)通关</a></li>
+ </ul>
+  <h3 id="原型体-ref">原型体</h3>
+ <ul id="原型体" class="collapse in">
+      <li class="listing-item"><time>2010-08-08</time> &raquo; <a href="/2010/08/08/prototype-clearance">原型体(Prototype)通关</a></li>
+ </ul>
+  <h3 id="随机副标题-ref">随机副标题</h3>
+ <ul id="随机副标题" class="collapse in">
+      <li class="listing-item"><time>2010-12-04</time> &raquo; <a href="/2010/12/04/random-words-my-chosen">Random Words My Chosen</a></li>
+ </ul>
+  <h3 id="adb-ref">adb</h3>
+ <ul id="adb" class="collapse in">
+      <li class="listing-item"><time>2012-06-26</time> &raquo; <a href="/2012/06/26/selecting-adb-device">可交互的 adb devices</a></li>
+ </ul>
+  <h3 id="ADT-ref">ADT</h3>
+ <ul id="ADT" class="collapse in">
+      <li class="listing-item"><time>2012-06-26</time> &raquo; <a href="/2012/06/26/selecting-adb-device">可交互的 adb devices</a></li>
+ </ul>
+  <h3 id="Chrome-ref">Chrome</h3>
+ <ul id="Chrome" class="collapse in">
+      <li class="listing-item"><time>2011-05-24</time> &raquo; <a href="/2011/05/24/update-css">更新了下CSS</a></li>
+ </ul>
+  <h3 id="css-ref">css</h3>
+ <ul id="css" class="collapse in">
+      <li class="listing-item"><time>2011-05-24</time> &raquo; <a href="/2011/05/24/update-css">更新了下CSS</a></li>
+ </ul>
+  <h3 id="通用字体-ref">通用字体</h3>
+ <ul id="通用字体" class="collapse in">
+      <li class="listing-item"><time>2011-05-24</time> &raquo; <a href="/2011/05/24/update-css">更新了下CSS</a></li>
+ </ul>
+  <h3 id="WebGL-ref">WebGL</h3>
+ <ul id="WebGL" class="collapse in">
+      <li class="listing-item"><time>2010-09-26</time> &raquo; <a href="/2010/09/26/webgl-v5">WebGL V5!</a></li>
+ </ul>
+ 
+
+
+</article>
+
+
+	      </div>  <!-- content -->
+      </div>  <!-- row -->
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <footer class="statement">
+	    <small class＝"copyright">&copy;2009-2013  |</small>
+	    <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+	      和 <a href="http://twitter.github.com/bootstrap/"
+	  	  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+	    <small class="license">
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+	    </small>
+	  </footer>
+	  
+	      </div>
+      </div>
+	
+	
+<script type="text/javascript">
+   $(function(){
+   $(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+   var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+   if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+	$("#gotop").fadeIn(400); //淡出     
+	}else{      
+	$("#gotop").stop().fadeOut(400); //如果返回或者没有超过,就淡入.必须加上stop()停止之前动画,否则会出现闪动   
+	}
+	});
+	$("#gotop").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+	$("html,body").animate({scrollTop:"0px"},200);
+	});
+	});
+</script>
+<a id="gotop" href="#">   
+	<span>▲</span> 
+</a>
+    </div> <!-- /container -->
+    
+    <!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+  </body>
+
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      在Netbeans上配置Android开发环境 | 
+      DouO's Blog
+    </title>
+    <meta name="author" content="DouO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-93b47f97c3444c4711853ed5140d82a1.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/bootstrap-responsive.min-6be942c8ec424a44aa4f31e099bae1fc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-2a78e0c366d18704c93f8db7772659c6.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>    
+
+    <!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/bootstrap.min-240e44e4195f0836ced0eab636f9cb0c.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>    
+    
+	
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+    
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+
+    <link rel="shortcut icon" href="/assets/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	 <link rel="shortcut icon" href="images/favicon.ico">
+	 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	 <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	 -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    <!-- processing -->
+    
+<script type="text/javascript"
+  src="http://cdn.staticfile.org/processing.js/1.4.1/processing.min.js">
+</script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <header class="header pull-left">
+	    <h1>在Netbeans上配置Android开发环境</h1>
+	  </header>
+  	  <button type="button" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    </button>
+	</div> <!-- header -->
+
+         </div>
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8 content">
+	  <div class="nav-wrapper nav-collapse collapse"   data-spy="affix" data-offset-top="70" >
+	    <nav class="nav moon-nav-list">
+	      <ul>
+	        <li><a href="/" rel="tooltip" data-placement="top" title="主頁">home</a></li>
+	        <li><a href="/archives" rel="tooltip" data-placement="top" title="文章歸檔">archives</a></li>
+	        <li><a href="/notes" rel="tooltip" data-placement="top" title="我的個人筆記">notes</a></li>
+	        <li><a href="/rss.xml" rel="tooltip" data-placement="top" title="訂閱">feed</a></li>
+	        <li><a href="/about" rel="tooltip" data-placement="top" title="關於我">about</a></li>
+	        <li  class="separate"></li>
+	        <li> 
+	  	<a class="meta-nav next" href="/2010/06/24/convert-gbk-to-unicode">
+	  	  <span>←<br></span>从GBK到Unicode的中文字符映射
+	  	</a>
+	        </li>
+	        <li>
+	  	<a class="meta-nav previous" href="/2010/05/15/a-logger-for-j2me">
+	  	  Java ME通用Logger包和控制台<span><br>→</span>
+	  	</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	      <article class="post box">
+<ul class="category-label">
+<li><a href="/categories#coder-ref" class="coder">coder</a></li>
+</ul>
+<div class="cf"></div>
+<div class="cf"></div><div id="toc_container" class="toc_wrap_right toc_black no_bullets" ><p class="toc_title">目录</p><ul class="toc_list">
+     <li><a href="#toc_0">NBAndroid</a>
+     <ul>
+     </ul>
+     </li>
+     
+     <li><a href="#toc_1">安装与设置</a>
+     <ul>
+     </ul>
+     </li>
+     
+     <li><a href="#toc_2">一个简单例子</a>
+     <ul>
+     </ul>
+     </li>
+     
+     <li><a href="#toc_3">查看源码（Attach Sources）</a>
+     <ul>
+     </ul>
+     </li>
+     
+     <li><a href="#toc_4">一些可能有用的链接</a>
+     <ul>
+     </ul>
+     </li>
+     
+</div>
+
+
+<h1 id="toc_0">NBAndroid</h1>
+<p>突发奇想要看看Android应用程序的开发，在网上找了些文章，发现android的开发环境大多是Eclipse+ADT，其实在netbeans上也是可以的。有个netbeabs插件叫NBAndroid，如果想在Netbeans上开发Android应用第一步就是要安装它，下面是NBAndroid的项目主页
+<a href="http://kenai.com/projects/nbandroid" title="">http://kenai.com/projects/nbandroid</a>。</p>
+<h1 id="toc_1">安装与设置</h1>
+<p>要安装NBAdroid，推荐的方法是在NetBeans中注册NBAdroid的更新中心（Update
+Center），具体的步骤是：</p>
+
+<ul>
+<li>  打开工具(Tools )-&gt; 插件(Plugins) -&gt; 设置选项卡(Setting)</li>
+<li>  点&quot;添加&quot;按钮将这个链接<a href="http://kenai.com/downloads/nbandroid/updatecenter/updates.xml" title="「更新链接已更改」">http://kenai.com/downloads/nbandroid/updatecenter/updates.xml</a>加进去，改个名字，确定。</li>
+<li>  转到可用插件选项卡（Available
+Plugins），找到Android插件，安装。出现验证警告点继续就可以了。</li>
+</ul>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/05/11.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/05/11.png" title="添加NBAndroid更新中心"  alt=""></a>
+添加NBAndroid更新中心</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/05/21.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/05/21.png" title="安装NBAndroid"  alt=""></a>
+安装NBAndroid</p>
+
+<p>~~安装的步骤很简单，下载后将压缩包解压，然后把所有*.nbm的文件导入到netbeans便可。在netbeans中添加插件的方法也说一下，在&quot;菜单栏&quot;
+-&gt; 工具 -&gt; 插件
+在插件页面的&quot;已下载&quot;选项卡中可找到按钮&quot;添加插件&quot;，这个按钮便是可以用来添加nbm文件，如图1所示~~</p>
+
+<p>接下来，指定Android SDK的位置，方法:&quot;菜单栏&quot; -&gt; 工具 -&gt;
+选项，点击&quot;Android&quot;标签页。就可以看到类似下面的界面：
+<a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/05/android_tab.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/05/android_tab.png" title="Xfce下的UI，2011-10-26截图"  alt=""></a>
+选择SDK的目录便可。</p>
+
+<p>如果还没有Google Android SDK 的话要先下载Android
+SDK，下载页在<a href="http://developer.android.com/sdk/index.html" title="">这里</a>。官方的安装说明在<a href="http://developer.android.com/sdk/installing.html" title="">这里(英文)</a>。（网站已被墙，推荐Google
+搜索GappProxy）安装SDK的步骤要多一些，将下载后的压缩包解压到你要放的位置。运行SDK
+Setup.exe应该会看到下面的界面，记得在win7下得用管理员权限运行。
+<a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/05/nba3.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/05/nba3.png" title="nba3"  alt=""></a> 图3</p>
+
+<p>我这张图是更新后截的，没更新前只有Android SDK Tools,revision
+6一个项。嗯，没错更新服务器也被墙了，可在setting了设置Http
+代理服务器，因为GappProxy对Https的支持不好，下图那个选项也打上勾。</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/05/nba4.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/05/nba4.png" title="nba4"  alt=""></a> 图4</p>
+
+<p>更新好之后先别急着关掉，还要新建一个设备，选择Virtual
+Devices，单击&quot;New&quot;，建好之后就可以重新回到NetBeans了。
+<a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/05/nba5.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/05/nba5.png" title="nba5"  alt=""></a> 图5</p>
+<h1 id="toc_2">一个简单例子</h1>
+<p>现在就可以创建项目了，见图8，我创建了一个AndroidHelloWorld的程序。默认平台已经选好了Android。还有最好也更改下包名。</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/05/nba8.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/05/nba8.png" title="nba8"  alt=""></a> 图8</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/05/nba9.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/05/nba9.png" title="nba9"  alt=""></a> 图9</p>
+
+<p>项目初始化后，在MainActivity写了些测试代码如下：</p>
+<pre><code class="java">public void onCreate(Bundle icicle) {
+setTitle(&quot;Hello Android&quot;);
+super.onCreate(icicle);
+setContentView(new AnalogClock(this));
+}
+</code></pre>
+<p>现在就可以运行了，不过第一次运行要启动模拟器，相当的久，我差不多花了2分钟。而且，我第一次运行时程序没有载入，重新运行一次便可以了，因为不用启动模拟器第二次的运行快很多了，差不多10来秒。记得不要把模拟器关了，不然下次运行要重启模拟器，又要花很多时间。OK，我的第一个Android程序诞生鸟～</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/05/nba10.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/05/nba10.png" title="nba10"  alt=""></a> 图10</p>
+
+<p>还有一点就是NBAndroid的R.java不能实时自动生成，作者说过是在pre-build的时候生成，所以改动资源要习惯下按F11生成下项目才可以更新R.java。</p>
+
+<p>哦，在项目属性还有一些可以设置的,比如选择模拟器。
+<a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/05/nba11.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/05/nba11.png" title="nba11"  alt=""></a> 图11</p>
+
+<p>NBAndroid还支持Logcat，在窗口 -&gt; 输出 -&gt; ADB Log
+可以打开Logcat窗口，不过只能够通过PID来过滤消息。我第一次开的时候还遇到Bug，假死了，重启NetBeans才能恢复。</p>
+
+<p>总的来说，NBAndroid相比Eclipse上的ADT不足的地方很多（<a href="http://kenai.com/jira/browse/NBANDROID" title="">Issue
+Tracking</a>）。但相比Eclipse我又更喜欢Netbeans，所以到底用哪个IDE我也很纠结啊，不过最近一直是用Eclipse+ADT。NBAndroid的活跃度一直不高啊，很多Bug还没有修复，大家有心的话也去帮忙做点贡献吧。再发一下NBAndroid的项目地址<a href="http://kenai.com/projects/nbandroid" title="">http://kenai.com/projects/nbandroid</a></p>
+<h1 id="toc_3">查看源码（Attach Sources）</h1>
+<p>Netbeans7.1终于有像Eclipse一样的Attach
+Sources按钮，可以为android.jar附加源码了。虽然现在Netbeans 7.1
+还处在测试阶段，但这个功能太重要了，迫不及待要去尝鲜，不过其实现在也足够稳定了。
+<a class="fancybox" rel="group" href="1/assets/media/wp-content/uploads/2010/05/11.png" title=""><img class="lazy img-polaroid display" src="1/assets/media/wp-content/uploads/2010/05/11.png" title="attach_sources"  alt=""></a>
+先下载<a href="http://netbeans.org/community/releases/71/" title="">Netbeans 7.1
+beta</a>，然后在这里：<a href="http://adt-addons.googlecode.com/svn/trunk/source/com.android.ide.eclipse.source.update/plugins/" title="">http://adt-addons.googlecode.com/svn/trunk/source/com.android.ide.eclipse.source.update/plugins/</a>
+可以下载到打包好android各版本的源码，这是个jar档案需要解压出来。</p>
+
+<p>另外，如果已安装有旧版本的netbeans，如7.0；需要注意一个问题，如<a href="http://netbeans.org/bugzilla/show_bug.cgi?id=200698" title="">Bug
+200698</a>里
+<a href="mailto:jn0101@netbeans.org">jn0101@netbeans.org</a>
+的描述。如果7.1和旧版的netbeans共用一个userdir可能会导致&quot;Attach
+Sources&quot;按钮失效。我试过了确实会这样（linux下）。解决方法可以用<a href="http://wiki.netbeans.org/FaqAlternateUserdir" title="">--userdir</a>给netbeans
+7.1重新指定一个新userdir。不过，我是直接把.netbeans文件删掉，当然有先备份，然后，先配置好7.1的nbandroid和为项目的android.jar附加源码。再把备份的7.0拷回来。再把7.0的一些config拷给7.1，如：Editors和Keymaps等等。这样两个版本都可以正常工作了。
+<a class="fancybox" rel="group" href="1/assets/media/wp-content/uploads/2010/05/21.png" title=""><img class="lazy img-polaroid display" src="1/assets/media/wp-content/uploads/2010/05/21.png" title="view_sources"  alt=""></a></p>
+
+<p>另外，意外的是在debug下还能工作的挺好的。
+<a class="fancybox" rel="group" href="1/assets/media/wp-content/uploads/2010/05/android_tab.png" title=""><img class="lazy img-polaroid display" src="1/assets/media/wp-content/uploads/2010/05/android_tab.png" title="debug_view"  alt=""></a></p>
+
+<p><a href="http://kenai.com/jira/browse/NBANDROID-71" title="">NBANDROID-71</a>基本可以算解决了。</p>
+<h1 id="toc_4">一些可能有用的链接</h1>
+<ol>
+<li> <a href="http://developer.android.com/index.html" title="">http://developer.android.com/index.html</a>
+Android开发者主页，（墙）</li>
+<li> <a href="http://androidappdocs.appspot.com/index.html" title="">http://androidappdocs.appspot.com/index.html</a>没有被墙的开发者主页镜像</li>
+<li> <a href="http://kenai.com/projects/nbandroid/pages/Home" title="">http://kenai.com/projects/nbandroid/pages/Home</a>NBAndroid
+Wiki</li>
+</ol>
+
+<div class="footer">
+  <ul class="tag_box inline">
+  <li><a href="/tags#Android-ref">Android</a></li>
+  <li><a href="/tags#NBAdroid-ref">NBAdroid</a></li>
+  <li><a href="/tags#Netbeans-ref">Netbeans</a></li>
+  </ul>
+  <span class="date">
+  2010-05-22
+  </span>
+</div>
+</article>
+
+
+<div class="box">
+  <div class="plus">
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_kaixin001"></a>
+<a href="http://www.jiathis.com/share?uid=1677096" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677096" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+	
+
+  </div>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_developer = 1;
+	var disqus_title = '在Netbeans上配置Android开发环境';
+
+	var disqus_identifier ='50 http://dourok.info/?p=50';
+
+	var disqus_shortname = 'doousblog';
+	
+	var disqus_url = 'https://douo.github.io/moon-2013//2010/05/22/netbeans-as-android-ide';
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<!-- disqus end-->
+
+ </div>
+
+	      </div>  <!-- content -->
+      </div>  <!-- row -->
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <footer class="statement">
+	    <small class＝"copyright">&copy;2009-2013  |</small>
+	    <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+	      和 <a href="http://twitter.github.com/bootstrap/"
+	  	  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+	    <small class="license">
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+	    </small>
+	  </footer>
+	  
+	      </div>
+      </div>
+	
+	
+<script type="text/javascript">
+   $(function(){
+   $(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+   var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+   if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+	$("#gotop").fadeIn(400); //淡出     
+	}else{      
+	$("#gotop").stop().fadeOut(400); //如果返回或者没有超过,就淡入.必须加上stop()停止之前动画,否则会出现闪动   
+	}
+	});
+	$("#gotop").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+	$("html,body").animate({scrollTop:"0px"},200);
+	});
+	});
+</script>
+<a id="gotop" href="#">   
+	<span>▲</span> 
+</a>
+    </div> <!-- /container -->
+    
+    <!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+  </body>
+
+</html>

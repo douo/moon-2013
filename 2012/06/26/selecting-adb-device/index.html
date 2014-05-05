@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      可交互的 adb devices | 
+      DouO's Blog
+    </title>
+    <meta name="author" content="DouO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-93b47f97c3444c4711853ed5140d82a1.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/bootstrap-responsive.min-6be942c8ec424a44aa4f31e099bae1fc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-2a78e0c366d18704c93f8db7772659c6.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>    
+
+    <!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/bootstrap.min-240e44e4195f0836ced0eab636f9cb0c.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>    
+    
+	
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+    
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+
+    <link rel="shortcut icon" href="/assets/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	 <link rel="shortcut icon" href="images/favicon.ico">
+	 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	 <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	 -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    <!-- processing -->
+    
+<script type="text/javascript"
+  src="http://cdn.staticfile.org/processing.js/1.4.1/processing.min.js">
+</script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <header class="header pull-left">
+	    <h1>可交互的 adb devices</h1>
+	  </header>
+  	  <button type="button" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    </button>
+	</div> <!-- header -->
+
+         </div>
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8 content">
+	  <div class="nav-wrapper nav-collapse collapse"   data-spy="affix" data-offset-top="70" >
+	    <nav class="nav moon-nav-list">
+	      <ul>
+	        <li><a href="/" rel="tooltip" data-placement="top" title="主頁">home</a></li>
+	        <li><a href="/archives" rel="tooltip" data-placement="top" title="文章歸檔">archives</a></li>
+	        <li><a href="/notes" rel="tooltip" data-placement="top" title="我的個人筆記">notes</a></li>
+	        <li><a href="/rss.xml" rel="tooltip" data-placement="top" title="訂閱">feed</a></li>
+	        <li><a href="/about" rel="tooltip" data-placement="top" title="關於我">about</a></li>
+	        <li  class="separate"></li>
+	        <li> 
+	  	<a class="meta-nav next" href="/2012/07/20/cat">
+	  	  <span>←<br></span>猫
+	  	</a>
+	        </li>
+	        <li>
+	  	<a class="meta-nav previous" href="/2012/06/24/madness_of_formatting">
+	  	  误删分区<span><br>→</span>
+	  	</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	      <article class="post box">
+<ul class="category-label">
+<li><a href="/categories#coder-ref" class="coder">coder</a></li>
+</ul>
+<div class="cf"></div>
+
+
+<pre><code class="bash">$ adb hell
+1) HT18HTB00535 device
+2) HT04RL901008 device
+Select the device to use, &lt;q&gt; to quit: 1
+shell@android:/ $
+</code></pre>
+<p>即便有了方便的 Eclipse+ADT ，偶尔在命令行下敲个 adb
+也是少不了的。像我这样每天要切换操作系统的开发者，下面这个错误提示是每天都要遇到的：</p>
+
+<blockquote>
+<p>Re-installation failed due to different application signatures. You
+must perform a full uninstall of the application. WARNING: This will
+remove the application data! Please execute &#39;adb uninstall
+your.package.namespace&#39; in a shell.<a href="#e1" title="">^1)^</a></p>
+</blockquote>
+
+<p>如果你忘记了你已连接了多台设备就兴匆匆地敲入， </p>
+<pre><code class="bash">adb uninstall your.package.namespace
+</code></pre>
+<p>那么下面这个错误也是不可避免的： </p>
+<pre><code class="bash">error: more than one device and emulator
+</code></pre>
+<p>这时候又得用</p>
+<pre><code class="bash">adb devices
+</code></pre>
+<p>然后再选择，复制，粘帖打印出来的目标序列号，才能再执行。</p>
+<pre><code class="bash">adb -s uninstall your.package.namespace
+</code></pre>
+<p>不过现在好了，<a href="http://dtmilano.blogspot.com/" title="">dtmilano</a>
+提供了一个可交互的adb，<a href="http://dtmilano.blogspot.com/2012/03/selecting-adb-device.html" title="">原文见此。</a></p>
+
+<p>这个交互的 adb
+由两个脚本组成，第一个是 <strong>android-select-device</strong> 。用于提示用户选择设备。</p>
+<pre><code class="bash">#! /bin/bash
+# selects an android device
+
+PROGNAME=$(basename $0)
+UNAME=$(uname)
+DEVICE_OPT=
+for opt in &quot;$@&quot;
+do
+case &quot;$opt&quot; in
+-d|-e|-s)
+DEVICE_OPT=$opt
+;;
+esac
+done
+[ -n &quot;$DEVICE_OPT&quot; ] &amp;&amp; exit 0
+DEV=$(adb devices 2&gt;&amp;1 | tail -n +2 | sed '/^$/d')
+if [ -z &quot;$DEV&quot; ]
+then
+echo &quot;$PROGNAME: ERROR: There's no connected devices.&quot; &gt;&amp;2
+exit 1
+fi
+N=$(echo &quot;$DEV&quot; | wc -l | sed 's/ //g')
+
+case $N in
+1)
+# only one device detected
+D=$DEV
+;;
+
+*)
+# more than one device detected
+OLDIFS=$IFS
+IFS=&quot;
+&quot;
+PS3=&quot;Select the device to use, &lt;q&gt; to quit: &quot;
+select D in $DEV
+do
+[ &quot;$REPLY&quot; = 'q' -o &quot;$REPLY&quot; = 'Q' ] &amp;&amp; exit 2
+[ -n &quot;$D&quot; ] &amp;&amp; break
+done&lt;/q&gt;
+
+IFS=$OLDIFS
+;;
+esac
+if [ -z &quot;$D&quot; ]
+then
+echo &quot;$PROGNAME: ERROR: target device coulnd't be determined&quot; &gt;&amp;2
+exit 1
+fi
+
+# this didn't work on Darwin
+# echo &quot;-s ${D%% *}&quot;
+echo &quot;-s $(echo ${D} | sed 's/ .*$//')&quot;
+</code></pre>
+<p>把上面代码复制保存到 <strong>android-select-device</strong> 
+这个文件里。第二个文件是 <strong>my-adb</strong> ，它是用来代替原本的adb的。当adb
+devices 多于一个的时候就会调用 <strong>android-select-device</strong> 让用户选择设备。 </p>
+<pre><code class="bash">#! /bin/bash
+# This command can be used as an alias for adb and it will prompt for the
+# device selection if needed
+# alias adb=my-adb
+
+set +x
+PROGNAME=$(basename $0)
+ADB=$(which adb)
+if [ -z &quot;$ADB&quot; ]
+then
+echo &quot;$PROGNAME: ERROR: cannot found adb&quot;
+exit 1
+fi
+
+set -e
+if [ $# == 0 ]
+then
+# no arguments
+exec $ADB
+elif [ &quot;$1&quot; == 'devices' ]
+then
+# adb devices should not accept -s, -e or -d
+exec $ADB devices
+else
+# because of the set -e, if selecting the device fails it exits
+S=$(android-select-device &quot;$@&quot;)
+exec $ADB $S &quot;$@&quot;
+fi
+</code></pre>
+<p>同样的把上面代码复制保存到文件
+<strong>my-adb</strong> 。 接下来把这两个脚本加入到 \$PATH 里面。我的做法是在
+\$ANDROID_SDK_HOME 里面建个 my-tools 文件夹，再把脚本放进去。然后直接在
+\$PATH 里添加这个目录 </p>
+<pre><code class="bash">export PATH=$PATH:$ANDROID_SDK_HOME/my-tools
+</code></pre>
+<p>最后给 my-adb 加个 adb 别名，让它替换掉原来的 adb。 </p>
+<pre><code class="bash">alias adb=my-adb
+</code></pre>
+<p>确保环境变量生效后，就可以键入 adb
+试试看了。如果运行失败，确保两个脚本的权限为可执行，如 744 。</p>
+
+<p>运行 adb hell 后，如果有多个设备的话，你应该可以看到文章一开始的输出：</p>
+<pre><code class="bash">$ adb hell
+1) HT18HTB00535 device
+2) HT04RL901008 device
+Select the device to use, &lt;q&gt; to quit: 1
+shell@android:/ $
+</code></pre>
+<p>不过这个脚本也是有缺陷的，不管 adb
+的子命令需不需要指定device，只要多于一个设备连接着，它都会提示选择设备。</p>
+<h3 id="toc_0">注解</h3>
+<p>​1)
+这个问题是由于不同的机器使用不同的<strong>debug.keystore</strong>，导致安装的时候验证错误。所有开发的机器使用相同的<strong>debug.keystore</strong>便可以避免这个问题再次发生。在
+Eclipse 下 Window -&gt; Preferences -&gt; Android -&gt; Build -&gt; Custom debug
+keystore 中可以更改。</p>
+
+<div class="footer">
+  <ul class="tag_box inline">
+  <li><a href="/tags#adb-ref">adb</a></li>
+  <li><a href="/tags#ADT-ref">ADT</a></li>
+  <li><a href="/tags#Android-ref">Android</a></li>
+  </ul>
+  <span class="date">
+  2012-06-26
+  </span>
+</div>
+</article>
+
+
+<div class="box">
+  <div class="plus">
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_kaixin001"></a>
+<a href="http://www.jiathis.com/share?uid=1677096" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677096" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+	
+
+  </div>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_developer = 1;
+	var disqus_title = '可交互的 adb devices';
+
+	var disqus_identifier ='854 http://dourok.info/?p=854';
+
+	var disqus_shortname = 'doousblog';
+	
+	var disqus_url = 'https://douo.github.io/moon-2013//2012/06/26/selecting-adb-device';
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<!-- disqus end-->
+
+ </div>
+
+	      </div>  <!-- content -->
+      </div>  <!-- row -->
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <footer class="statement">
+	    <small class＝"copyright">&copy;2009-2013  |</small>
+	    <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+	      和 <a href="http://twitter.github.com/bootstrap/"
+	  	  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+	    <small class="license">
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+	    </small>
+	  </footer>
+	  
+	      </div>
+      </div>
+	
+	
+<script type="text/javascript">
+   $(function(){
+   $(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+   var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+   if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+	$("#gotop").fadeIn(400); //淡出     
+	}else{      
+	$("#gotop").stop().fadeOut(400); //如果返回或者没有超过,就淡入.必须加上stop()停止之前动画,否则会出现闪动   
+	}
+	});
+	$("#gotop").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+	$("html,body").animate({scrollTop:"0px"},200);
+	});
+	});
+</script>
+<a id="gotop" href="#">   
+	<span>▲</span> 
+</a>
+    </div> <!-- /container -->
+    
+    <!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+  </body>
+
+</html>

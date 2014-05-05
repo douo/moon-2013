@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      System.in的困惑 | 
+      DouO's Blog
+    </title>
+    <meta name="author" content="DouO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-93b47f97c3444c4711853ed5140d82a1.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/bootstrap-responsive.min-6be942c8ec424a44aa4f31e099bae1fc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-2a78e0c366d18704c93f8db7772659c6.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>    
+
+    <!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/bootstrap.min-240e44e4195f0836ced0eab636f9cb0c.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>    
+    
+	
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+    
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+
+    <link rel="shortcut icon" href="/assets/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	 <link rel="shortcut icon" href="images/favicon.ico">
+	 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	 <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	 -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    <!-- processing -->
+    
+<script type="text/javascript"
+  src="http://cdn.staticfile.org/processing.js/1.4.1/processing.min.js">
+</script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <header class="header pull-left">
+	    <h1>System.in的困惑</h1>
+	  </header>
+  	  <button type="button" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    </button>
+	</div> <!-- header -->
+
+         </div>
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8 content">
+	  <div class="nav-wrapper nav-collapse collapse"   data-spy="affix" data-offset-top="70" >
+	    <nav class="nav moon-nav-list">
+	      <ul>
+	        <li><a href="/" rel="tooltip" data-placement="top" title="主頁">home</a></li>
+	        <li><a href="/archives" rel="tooltip" data-placement="top" title="文章歸檔">archives</a></li>
+	        <li><a href="/notes" rel="tooltip" data-placement="top" title="我的個人筆記">notes</a></li>
+	        <li><a href="/rss.xml" rel="tooltip" data-placement="top" title="訂閱">feed</a></li>
+	        <li><a href="/about" rel="tooltip" data-placement="top" title="關於我">about</a></li>
+	        <li  class="separate"></li>
+	        <li> 
+	  	<a class="meta-nav next" href="/2011/06/05/one_of_spams">
+	  	  <span>←<br></span>悠哉悠哉，辗转反侧
+	  	</a>
+	        </li>
+	        <li>
+	  	<a class="meta-nav previous" href="/2011/05/24/update-css">
+	  	  更新了下CSS<span><br>→</span>
+	  	</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	      <article class="post box">
+<ul class="category-label">
+<li><a href="/categories#coder-ref" class="coder">coder</a></li>
+</ul>
+<div class="cf"></div>
+
+
+<p>先看下下面代码先 </p>
+<pre><code class="java">static class Thread1 extends Thread {
+        @Override
+        public void run() {
+            try {
+                InputStream in = System.in;
+                OutputStream out = System.out;
+                int i = 0;
+                while ((i = in.read()) != -1) {
+                    out.write(i);
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+</code></pre>
+<p>这段代码很正常，线程跑起来的结果和你想的一样，在终端上输入一行，按下回车就回显这一行，显然System.in是行缓冲的(linebuffered)，不是像getch那样输入一个就回显一个。在没有按下回车之前in.read()就一直阻塞。
+再来看下这一段代码 </p>
+<pre><code class="java">static class Thread2 extends Thread {
+        @Override
+        public void run() {
+            try {
+                InputStream in = System.in;
+                OutputStream out = System.out;
+                byte buffer[] = new byte[10];
+                int i = 0;
+                    while ((i=in.read(buffer))!=-1) {
+                        out.write(buffer, 0, i);
+                    }
+            } catch (IOException ex) {
+               ex.printStackTrace();
+            }
+        }
+    }
+</code></pre>
+<p>Thread2跑起来结果跟Thread1一模一样，输入一行回显一行，但代码却有点区别，多了<code>byte buffer[] = new byte[10];</code>这是一个缓冲，读取的时候不是一次一个字节了，而是<code>in.read(buffer)</code>，这个方法等同于<code>in.read(buffer, 0, buffer.length)</code>，也就是说要先把buffer读满，read方法才会结束。然后我困惑了，Thread2运行起来竟然Thread1一模一样。如果你输入abc然后回车，Thread2也会立刻回显abc。这时候的字节数只有4还没把buffer填满，但in.read(buffer)却返回了，我参考了文档对InputStream中read(byte[]
+b, int off, int len) 的说明：</p>
+
+<blockquote>
+<p>...将输入流中最多 len 个数据字节读入字节数组。尝试读取多达 len
+字节，但可能读取较少数量。以整数形式返回实际读取的字节数。
+在输入数据可用、检测到流的末尾或者抛出异常前，此方法一直阻塞。...</p>
+</blockquote>
+
+<p>前一句又「尝试&quot;又&quot;可能&quot;的，太模糊暂时忽略，第二提出了不阻塞的情况，看似除了「输入数据可用」理解有点模糊外，其他都明显不符合，那理应阻塞的方法是什么原因让它提前返回呢？带着这个疑问，我看了下InputStream的源码，并在Thread3中实现了一个一模一样的方法（如文档所说的，就是反复调用read()）：</p>
+<pre><code class="java">static class Thread3 extends Thread {
+       static int read(InputStream in, byte b[], int off, int len) throws IOException {
+        if (b == null) {
+            throw new NullPointerException();
+        } else if (off &lt; 0 || len &lt; 0 || len &gt; b.length - off) {
+            throw new IndexOutOfBoundsException();
+        } else if (len == 0) {
+            return 0;
+        }
+        int c;
+             c= in.read();
+            if (c == -1) {
+                return -1;
+            }
+        b[off] = (byte) c;
+
+        int i = 1;
+        try {
+            for (; i &lt; len; i++) {
+                    c = in.read();
+                    if (c == -1) {
+                        break;
+                    }
+                b[off + i] = (byte) c;
+            }
+        } catch (IOException ee) {
+        }
+        return i;
+    }
+        @Override
+        public void run() {
+            try {
+                InputStream in = System.in;
+                OutputStream out = System.out;
+                byte buffer[] = new byte[10];
+                int i = 0;
+                    while ((i=read(in,buffer,0,buffer.length))!=-1) {
+                        out.write(buffer, 0, i);
+                    }
+            } catch (IOException ex) {
+               ex.printStackTrace();
+            }
+        }
+    }
+</code></pre>
+<p>Thread3跑起来果然跟Thread2不一样，算是比较可理解了，不管你按下多少次回车，只有但buffer读满了，read(in,buffer,0,buffer.length)才会返回。当然这并不是说明System.in有什么问题，System.in必须是InputStream的子类，read(byte[]
+b, int off, int len)
+被重载，必须的。我只是好奇它到底是怎么实现的，在Thread4我做了一些尝试：</p>
+<pre><code class="java">static class Thread4 extends Thread {
+       static int read(InputStream in, byte b[], int off, int len) throws IOException {
+        if (b == null) {
+            throw new NullPointerException();
+        } else if (off &lt; 0 || len &lt; 0 || len &gt; b.length - off) {
+            throw new IndexOutOfBoundsException();
+        } else if (len == 0) {
+            return 0;
+        }
+        int c;
+             c= in.read();
+            if (c == -1) {
+                return -1;
+            }
+        b[off] = (byte) c;
+
+        int i = 1;
+        try {
+            for (; i &lt; len; i++) {
+                if (in.available() &gt; 0) {
+                    c = in.read();
+                    if (c == -1) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+                b[off + i] = (byte) c;
+            }
+        } catch (IOException ee) {
+        }
+        return i;
+    }
+        @Override
+        public void run() {
+            try {
+                InputStream in = System.in;
+                OutputStream out = System.out;
+                byte buffer[] = new byte[10];
+                int i = 0;
+                    while ((i=read(in,buffer,0,buffer.length))!=-1) {
+                        out.write(buffer, 0, i);
+                    }
+            } catch (IOException ex) {
+               ex.printStackTrace();
+            }
+        }
+    }
+</code></pre>
+<p>在in.available()永远有效且准确的前提下这个方法就跟System.in一样了，但我觉得这个前提很无力啊，但实际System.in它的实现是怎样的呢，还有为什么？</p>
+
+<p>希望能在<a href="http://book.douban.com/subject/1230413/" title="">深入理解计算机系统</a>找到答案，</p>
+
+<p>最近看开始这本书，太棒了，才看第一章就对它入迷了，大学时代与它失之交臂真是遗憾啊。。。。啊。。。</p>
+
+<div class="footer">
+  <ul class="tag_box inline">
+  <li><a href="/tags#Java-ref">Java</a></li>
+  <li><a href="/tags#System.in-ref">System.in</a></li>
+  </ul>
+  <span class="date">
+  2011-05-28
+  </span>
+</div>
+</article>
+
+
+<div class="box">
+  <div class="plus">
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_kaixin001"></a>
+<a href="http://www.jiathis.com/share?uid=1677096" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677096" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+	
+
+  </div>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_developer = 1;
+	var disqus_title = 'System.in的困惑';
+
+	var disqus_identifier ='519 http://dourok.info/?p=519';
+
+	var disqus_shortname = 'doousblog';
+	
+	var disqus_url = 'https://douo.github.io/moon-2013//2011/05/28/a-puzzle-of-system-in';
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<!-- disqus end-->
+
+ </div>
+
+	      </div>  <!-- content -->
+      </div>  <!-- row -->
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <footer class="statement">
+	    <small class＝"copyright">&copy;2009-2013  |</small>
+	    <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+	      和 <a href="http://twitter.github.com/bootstrap/"
+	  	  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+	    <small class="license">
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+	    </small>
+	  </footer>
+	  
+	      </div>
+      </div>
+	
+	
+<script type="text/javascript">
+   $(function(){
+   $(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+   var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+   if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+	$("#gotop").fadeIn(400); //淡出     
+	}else{      
+	$("#gotop").stop().fadeOut(400); //如果返回或者没有超过,就淡入.必须加上stop()停止之前动画,否则会出现闪动   
+	}
+	});
+	$("#gotop").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+	$("html,body").animate({scrollTop:"0px"},200);
+	});
+	});
+</script>
+<a id="gotop" href="#">   
+	<span>▲</span> 
+</a>
+    </div> <!-- /container -->
+    
+    <!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+  </body>
+
+</html>

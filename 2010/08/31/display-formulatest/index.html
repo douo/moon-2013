@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      插入!数学公式测试，附上一个很SB的Java程序 | 
+      DouO's Blog
+    </title>
+    <meta name="author" content="DouO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-93b47f97c3444c4711853ed5140d82a1.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/bootstrap-responsive.min-6be942c8ec424a44aa4f31e099bae1fc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-2a78e0c366d18704c93f8db7772659c6.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>    
+
+    <!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/bootstrap.min-240e44e4195f0836ced0eab636f9cb0c.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>    
+    
+	
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+    
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+
+    <link rel="shortcut icon" href="/assets/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	 <link rel="shortcut icon" href="images/favicon.ico">
+	 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	 <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	 -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    <!-- processing -->
+    
+<script type="text/javascript"
+  src="http://cdn.staticfile.org/processing.js/1.4.1/processing.min.js">
+</script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <header class="header pull-left">
+	    <h1>插入!数学公式测试，附上一个很SB的Java程序</h1>
+	  </header>
+  	  <button type="button" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    </button>
+	</div> <!-- header -->
+
+         </div>
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8 content">
+	  <div class="nav-wrapper nav-collapse collapse"   data-spy="affix" data-offset-top="70" >
+	    <nav class="nav moon-nav-list">
+	      <ul>
+	        <li><a href="/" rel="tooltip" data-placement="top" title="主頁">home</a></li>
+	        <li><a href="/archives" rel="tooltip" data-placement="top" title="文章歸檔">archives</a></li>
+	        <li><a href="/notes" rel="tooltip" data-placement="top" title="我的個人筆記">notes</a></li>
+	        <li><a href="/rss.xml" rel="tooltip" data-placement="top" title="訂閱">feed</a></li>
+	        <li><a href="/about" rel="tooltip" data-placement="top" title="關於我">about</a></li>
+	        <li  class="separate"></li>
+	        <li> 
+	  	<a class="meta-nav next" href="/2010/09/26/webgl-v5">
+	  	  <span>←<br></span>WebGL V5!
+	  	</a>
+	        </li>
+	        <li>
+	  	<a class="meta-nav previous" href="/2010/08/08/prototype-clearance">
+	  	  原型体(Prototype)通关<span><br>→</span>
+	  	</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	      <article class="post box">
+<ul class="category-label">
+<li><a href="/categories#coder-ref" class="coder">coder</a></li>
+<li><a href="/categories#otaku-ref" class="otaku">otaku</a></li>
+</ul>
+<div class="cf"></div>
+
+
+<p>实际上我不喜欢插入这个词!</p>
+
+<p>在网页上嵌入数学公式，之前已经在wiki上试过，尝试了<a href="http://www.math.union.edu/~dpvc/jsmath/" title="">jsMath</a>和<a href="http://www.mathjax.org/" title="">mathJax</a>。这两个都不是在服务器是渲染Latex代码，而是用javascript在客户端渲染，而且渲染出来的不是图片而是文本，也就是说可以复制粘贴到文本编辑器上，不知这个算不算优点，好处节省下带宽，但实际在IE8上可以说又慢又卡，chromium还可以接受但下标有点错位，也许是我配置的问题，对FireFox的支持是最好的。但是为了获得最佳的显示效果客户端必须要安装某种最佳字体，选择mathJax会自动下载该字体。点击<a href="http://dourok.info/mathjax/test/" title="">这里看下mathJax的效果</a>。相对来说mathJax比jsMath更方便些。</p>
+
+<p>总的来说，用js还是有点麻烦，所以回到传统考虑在服务器上生成图片。这个可以自己架设，也可以用一些公共服务，比如说forkosh.dreamhost，更多的参考<a href="http://blog.chaoskey.com/2009/06/21/857" title="">这篇文章</a>。
+forkosh的使用十分简单，只需在<code>http://www.forkosh.dreamhost.com/mathtex.cgi?」</code>后面加入Latex代码。如加上e^{i}+1=0，即<code>http://www.forkosh.dreamhost.com/mathtex.cgi?e^{i\pi}+1=0」</code>，出来的就是欧拉恒等式</p>
+
+<p><img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%24e%5E%7Bi%5Cpi%7D+1=0%24%7D" title="欧拉恒等式"  alt=""></p>
+
+<p>可以用来指定颜色，如<code>\color{red}\frac{\int_{-\pi}^\pi \sqrt{1+\cos^2{t}}dt }{2\pi}</code>。</p>
+
+<p>出来的效果是：<img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%20%5CLarge%5Cparstyle%5Ccolor%7Bred%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%24%5Cfrac%7B%5Cint_%7B-%5Cpi%7D%5E%5Cpi%20%5Csqrt%7B1+%5Ccos%5E2%7Bt%7D%7Ddt%20%7D%7B2%5Cpi%7D%24%7D%7D" title="\color{red}\frac{\int_{-\pi}^\pi \sqrt{1+\cos^2{t}}dt }{2\pi}"  alt="">。</p>
+
+<p>更多forkosh参考<a href="http://ggggqqqqihc.javaeye.com/blog/161957" title="">这篇文章</a>，和<a href="http://www.forkosh.com/" title="">forkosh主页</a>，forkosh提供一个很实用的<a href="http://www.forkosh.com/mathtextutorial.html" title="">practice
+box</a>，编辑时候用来测试很方便。</p>
+
+<p>话说贴图片的时候还遇到不少麻烦，<a href="http://interjc.net/dev/shadowblue" title="">ShadowBlue</a>这个主题为图片添加了样式——渐变的边框和白色背景，在内嵌图片到文本的时候相当不和谐。但自己改了css后，发现居然不生效，费了我半天时间改css和半天时间学习css的优先级。后来发现居然是我把css代码复制了多一份，改的时候是改前面的然后又被后面的改覆盖了，不过总算搞定了。</p>
+
+<p>发现以前的一篇文章来测试数学公式，倒是挺合用的。</p>
+<h3 id="toc_0">很SB的Java程序在此</h3>
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/08/9191a5cc799b343d01e928d8.jpg.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/08/9191a5cc799b343d01e928d8.jpg.png" title="SB"  alt="SB"></a></p>
+
+<p>其实这个程序的行为很简单，就是用java来控制鼠标，确切的说应该是用java来控制鼠标的运动轨迹。想用java来控制鼠标并不是一件困难的事。因为java本身提供了一个类Robot。在帮助文档中对Robot类是这样描叙的：此类用于为测试自动化、自运行演示程序和其他需要控制鼠标和键盘的应用程序生成本机系统输入事件。Robot
+的主要目的是便于 Java 平台实现自动测试。</p>
+
+<p>虽说字都看的懂，不过什么意思还真有点不明白。不过这个程序我们主要用到的就是Robot类里的mouseMove(int
+x, int
+y)方法。这个方法可以将鼠标移动到屏幕上坐标(x,y)的位置上。通过这个方法就可以来控制鼠标的运动轨迹。比如说，要让鼠标画上图的轨迹。</p>
+
+<p>那么只需让鼠标跟着这些轨迹移动就可以，具体的实现可以逐个像素改变y坐标的值，并实时计算x的值。每次更新都调用一次Robot的实例化方法mouseMove(x,
+y)，这样就可以实现鼠标指针沿轨迹移动的效果。</p>
+
+<p>另外也可以一次性运算好所有点。并保存成Point[]，之后每一次画轨迹，只需按顺序历遍Point[]上的值。代码大致如下:</p>
+<pre><code class="java">for(int i = 0 ; points.length ; i++){
+
+           robot.delay(speed);
+
+           robot.mouseMove(points[i].x， points[i].y);
+
+       }
+</code></pre>
+<p>接下来，我们再来看下如何画出上图的轨迹。首先，我们看下红色的轨迹，似乎可以很牵强地把它看成字母’S’，但是实际上它是一条正弦函数取区间<img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%24%5Cleft%5B-%5Cpi,%5Cpi%5Cright%5D%24%7D" title="\left[-\pi,\pi\right]"  alt="">的曲线。当然也可以说是余弦函数。这不是重点，重点是如何这条曲线映射到屏幕上的实际位置。无非通过缩放、旋转、移位。知道曲线和横坐标距离是<img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%242%5Cpi%24%7D" title="2\pi"  alt="">。而相对应于屏幕上的距离<img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%24d=p_2-p_1%24%7D" title="d=p_2-p_1"  alt="">。所以可以知道曲线放大的倍数就是<img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%24n=(p_2-p_1" title=""  alt="">/2%5Cpi%24%7D &quot;n=(p<em>2-p</em>1)/2\pi&quot;)。显示在屏幕上的曲线是旋转<img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%2490%5Ctextdegree%24%7D" title="90\textdegree"  alt="">的。也就是原本曲线的y变成屏幕上的x。而x变成屏幕上的y。在加上偏移量m。就可以算出屏幕上x，y的值了。让i为正弦函数的变量，取<img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%24i=-%5Cpi%24%7D" title="i=-\pi"  alt="">
+可知y每增加一个像素，<img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%24i%24%7D" title="i"  alt="">便增加<img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%24%20%5Cfrac%20in%24%7D" title="\frac in"  alt="">。</p>
+
+<p><img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5CLarge%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Cbegin%7Bequation%7D%5Cleft%5C%7B%5Cbegin%7Barray%7D%7Bc%7Dsx_k%20=%20m%20+%20n%20*%20sin(i%20+%20k*%5Cfrac%201n" title=""  alt="">,%20%5C%5Csy<em>k%20=%20y</em>1%20+%20k,%20%5C%5C0&lt;k%5Cleq%7Bd%7D,k%5Cin%5Cmathbb%7BZ%7D.%5Cend%7Barray%7D%5Cright.%5Cend%7Bequation%7D &quot;\Large\parstyle \begin{equation}\left{\begin{array}{c}sx<em>k = m + n * sin(i + k*\frac 1n), \sy</em>k = y_1 + k, \0&lt;k\leq{d},k\in\mathbb{Z}.\end{array}\right.\end{equation}&quot;)</p>
+
+<p>这样就定义红色曲线的轨迹方程。当然屏幕上的点是离散。只能是整数。需要对sx的值取整，这个调用<code>Math.round(double d)</code>就可以实现四舍五入，另外d也是这轨迹上所有离散的点的个数。</p>
+
+<p>接下来看蓝色的轨迹，很明显是条直线。其方程也一目了然。</p>
+
+<p><img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5CLarge%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Csetcounter%7Bequation%7D%7B1%7D%5Cbegin%7Bequation%7D%5Cleft%5C%7B%20%5Cbegin%7Barray%7D%7Bc%7Dlx_k%20=%20x_3,%20%5C%5Cly_k%20=%20y_1%20+%20k,%20%5C%5C0<k%5Cleq%7Bd%7D,k%5Cin%5Cmathbb%7BZ%7D.%5Cend%7Barray%7D%5Cright.%5Cend%7Bequation%7D" title="\Large\parstyle\setcounter{equation}{1}\begin{equation}\left\{ \begin{array}{c}lx_k = x_3, \\ly_k = y_1 + k, \\0<k\leq{d},k\in\mathbb{Z}.\end{array}\right.\end{equation}"  alt=""></p>
+
+<p>最后看下橙色的轨迹，其实就是对正弦函数取绝对值得到的曲线。实际上，是可以不用进行正弦计算的，因为我们已经计算好保存在sx里了。利用sx我们可以得到橙色轨迹的方程如下，当然这里是建立在<img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Ccolorbox%5Brgb%5D%7B0.067,0.067,0.067%7D%7B%24y_1=y_3%24%7D" title="y_1=y_3"  alt="">的前提下。</p>
+
+<p><img class="lazy img-polaroid display" src="http://www.forkosh.dreamhost.com/mathtex.cgi?%5CLarge%5Cparstyle%5Ccolor%5Brgb%5D%7B0.73,0.73,0.73%7D%5Csetcounter%7Bequation%7D%7B2%7D%5Cbegin%7Bequation%7D%5Cleft%5C%7B%20%5Cbegin%7Barray%7D%7Bc%7Dbx_k%20=%20x_3%20+%20%7Csx_k-x_1%7C,%20%20%5C%5Cby_k%20=%20y_1%20+%20k,%20%20%5C%5C0<k%5Cleq%7Bd%7D,k%5Cin%5Cmathbb%7BZ%7D.%5Cend%7Barray%7D%5Cright.%5Cend%7Bequation%7D" title="\Large\parstyle\setcounter{equation}{2}\begin{equation}\left\{ \begin{array}{c}bx_k = x_3 + |sx_k-x_1|,  \\by_k = y_1 + k,  \\0<k\leq{d},k\in\mathbb{Z}.\end{array}\right.\end{equation}"  alt=""></p>
+
+<p>现在就可以写出生成所有轨迹的点的集合的代码了，具体如下:</p>
+<pre><code class="java">final int m = 150;// 上下的边距
+final int xpoints[];// 保存x坐标.因为y是递增的，规律简单，可以不用保存
+final int dist = 200;// 两条曲线间的距离
+final int y1 = m,
+y2 = Toolkit.getDefaultToolkit().getScreenSize().height - m;
+final int d = y2 - y1;
+final double n = (y2 - y1) / (2 * Math.PI);
+final int x1 = (Toolkit.getDefaultToolkit().getScreenSize().width - dist)
+                / 2 - (int) Math.round(n);
+final int x3 = x1 + dist;
+xpoints = new int[d * 3];// 点的总量是d*3;
+double i = -Math.PI;
+int nn = 0;
+while (nn &lt; d) {
+        xpoints[nn] = (int) Math.round(x1 + n * Math.sin(i));// 红色轨迹
+        xpoints[d + nn] = x3;// 蓝色轨迹
+        xpoints[2 * d + nn] = x3 + Math.abs(xpoints[nn] - x1);// 橙色轨迹
+        nn++;
+        i += 1 / n;
+}
+</code></pre>
+<p>接下来就是主角登场了。 </p>
+<pre><code class="java">final int speed=5;//休眠时间，就是是鼠标运动的速度
+     try {
+        Robot r = new Robot();//实例化一个Robot对象
+        int tmpY= 0 ;
+       while(true){
+           if(nn&gt;=d&amp;&amp;nn&lt;=2*d)
+        //为保持鼠标移动速度的一致，直线的距离要比两条曲线的距离短，而实际的关键点是一样多.所以每个关键像素的
+           //停留时间都要缩短一下，当然1/2是不准确的估计.见@http://dourok.info/2010/08/316/最上面的红色公式.
+               r.delay(speed/2);
+           else
+               r.delay(speed);
+        r.mouseMove(xpoints[nn]，(tmpY+y1));//mouseMove移动的是绝对位置而不是相对位置
+        tmpY=(tmpY+1)%(d);
+        nn=(nn+1)%xpoints.length;//让鼠标不断循环的画轨迹
+       }
+    }catch (AWTException ex) {
+        ex.printStackTrace();
+    }
+</code></pre>
+<p>程序到此就完成了，直接放在main方法里就可以运行。请注意，程序无法退出,并且鼠标无法操作，要怎么结束呢?没错，任务管理器。嗯，确实挺无聊的。当Robot非但不无聊，还很强大，顺便一提delay()其实就是睡眠当前线程。Thread.sleep()一样。不过注意delay()里的参数是int。而且如果不在
+0 到 60，000 毫秒的范围内，就会抛出错误。</p>
+
+<p>还有另一个方法setAutoDelay()是设置Robot
+在生成一个事件后睡眠的毫秒数。貌似该程序更适合用这个方法。如果问我为啥不用，我只能说，我写完程序后才发现。懒得改了。</p>
+
+<p>Robot的强大还在于它不只能控制鼠标，键盘的任意行为，还有</p>
+
+<p>public BufferedImage createScreenCapture(Rectangle
+screenRect)这个方法用来获取屏幕在Rect区域内的图像。基本上有这个方法，做抓屏软件就不是什么问题了。</p>
+
+<p>public Color getPixelColor(int x,int
+y)这个方法是返回给定屏幕坐标处的像素颜色。是不是感觉更按键精灵的功能很相像。</p>
+
+<p>可以得到当前屏幕的图像，又可以控制鼠标，键盘的行为，实际上，Robot就是经常被用来做远程操控软件的。在游戏开发中Robot也可以用来做鼠标强制居中，对这个类也是停留在刚刚认识的阶段。</p>
+
+<p><a href="http://dourok.info/wp-content/uploads/2010/09/Robot.jar" title="">程序在此！</a></p>
+
+<div class="footer">
+  <ul class="tag_box inline">
+  <li><a href="/tags#forkosh-ref">forkosh</a></li>
+  <li><a href="/tags#LaTex-ref">LaTex</a></li>
+  <li><a href="/tags#mathtex-ref">mathtex</a></li>
+  <li><a href="/tags#Robot-ref">Robot</a></li>
+  <li><a href="/tags#数学公式-ref">数学公式</a></li>
+  </ul>
+  <span class="date">
+  2010-08-31
+  </span>
+</div>
+</article>
+
+
+<div class="box">
+  <div class="plus">
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_kaixin001"></a>
+<a href="http://www.jiathis.com/share?uid=1677096" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677096" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+	
+
+  </div>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_developer = 1;
+	var disqus_title = '插入!数学公式测试，附上一个很SB的Java程序';
+
+	var disqus_identifier ='316 http://dourok.info/?p=316';
+
+	var disqus_shortname = 'doousblog';
+	
+	var disqus_url = 'https://douo.github.io/moon-2013//2010/08/31/display-formulatest';
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<!-- disqus end-->
+
+ </div>
+
+	      </div>  <!-- content -->
+      </div>  <!-- row -->
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <footer class="statement">
+	    <small class＝"copyright">&copy;2009-2013  |</small>
+	    <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+	      和 <a href="http://twitter.github.com/bootstrap/"
+	  	  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+	    <small class="license">
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+	    </small>
+	  </footer>
+	  
+	      </div>
+      </div>
+	
+	
+<script type="text/javascript">
+   $(function(){
+   $(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+   var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+   if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+	$("#gotop").fadeIn(400); //淡出     
+	}else{      
+	$("#gotop").stop().fadeOut(400); //如果返回或者没有超过,就淡入.必须加上stop()停止之前动画,否则会出现闪动   
+	}
+	});
+	$("#gotop").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+	$("html,body").animate({scrollTop:"0px"},200);
+	});
+	});
+</script>
+<a id="gotop" href="#">   
+	<span>▲</span> 
+</a>
+    </div> <!-- /container -->
+    
+    <!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+  </body>
+
+</html>

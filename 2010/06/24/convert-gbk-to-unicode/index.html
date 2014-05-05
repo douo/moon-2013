@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      从GBK到Unicode的中文字符映射 | 
+      DouO's Blog
+    </title>
+    <meta name="author" content="DouO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-93b47f97c3444c4711853ed5140d82a1.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/bootstrap-responsive.min-6be942c8ec424a44aa4f31e099bae1fc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-2a78e0c366d18704c93f8db7772659c6.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>    
+
+    <!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/bootstrap.min-240e44e4195f0836ced0eab636f9cb0c.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>    
+    
+	
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+    
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+
+    <link rel="shortcut icon" href="/assets/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	 <link rel="shortcut icon" href="images/favicon.ico">
+	 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	 <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	 -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    <!-- processing -->
+    
+<script type="text/javascript"
+  src="http://cdn.staticfile.org/processing.js/1.4.1/processing.min.js">
+</script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <header class="header pull-left">
+	    <h1>从GBK到Unicode的中文字符映射</h1>
+	  </header>
+  	  <button type="button" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    </button>
+	</div> <!-- header -->
+
+         </div>
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8 content">
+	  <div class="nav-wrapper nav-collapse collapse"   data-spy="affix" data-offset-top="70" >
+	    <nav class="nav moon-nav-list">
+	      <ul>
+	        <li><a href="/" rel="tooltip" data-placement="top" title="主頁">home</a></li>
+	        <li><a href="/archives" rel="tooltip" data-placement="top" title="文章歸檔">archives</a></li>
+	        <li><a href="/notes" rel="tooltip" data-placement="top" title="我的個人筆記">notes</a></li>
+	        <li><a href="/rss.xml" rel="tooltip" data-placement="top" title="訂閱">feed</a></li>
+	        <li><a href="/about" rel="tooltip" data-placement="top" title="關於我">about</a></li>
+	        <li  class="separate"></li>
+	        <li> 
+	  	<a class="meta-nav next" href="/2010/06/25/my-wifi-for-htc-hero">
+	  	  <span>←<br></span>让HTC Hero通过我的笔记本无线网卡共享上网
+	  	</a>
+	        </li>
+	        <li>
+	  	<a class="meta-nav previous" href="/2010/05/22/netbeans-as-android-ide">
+	  	  在Netbeans上配置Android开发环境<span><br>→</span>
+	  	</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	      <article class="post box">
+<ul class="category-label">
+<li><a href="/categories#coder-ref" class="coder">coder</a></li>
+</ul>
+<div class="cf"></div>
+<div class="cf"></div><div id="toc_container" class="toc_wrap_right toc_black no_bullets" ><p class="toc_title">目录</p><ul class="toc_list">
+     <li><a href="#toc_0">前言</a>
+     <ul>
+     </ul>
+     </li>
+     
+     <li><a href="#toc_1">GBK</a>
+     <ul>
+     </ul>
+     </li>
+     
+     <li><a href="#toc_2">Unicode</a>
+     <ul>
+     </ul>
+     </li>
+     
+     <li><a href="#toc_3">转换代码</a>
+     <ul>
+     </ul>
+     </li>
+     
+     <li><a href="#toc_4">参考阅读</a>
+     <ul>
+     </ul>
+     </li>
+     
+     <li><a href="#toc_5">附录</a>
+     <ul>
+     </ul>
+     </li>
+     
+</div>
+
+
+<h2 id="toc_0">前言</h2>
+<p>最近在做MTK开发，需要在程序中将GBK编码的文本文件实时转换为unicode编码，因为MTK只认Unicode。经尝试网上提供的mmi_chset_convert函数在我手上的SDK里没有用，很奇怪这个函数的只是调用了memcpy。无奈之下只能自己动手实现转换，也好趁这个机会摸清以前一直一知半解的字符编码。</p>
+
+<p>说到字符编码，第一误解就是字符集（character set）和字符编码（character
+encoding）的混淆。以前经常把所有名词都当成字符编码(encoding)，比如我就把GB2312叫成编码，实际上GB2312应该是字符集，
+而它用的编码方式应该叫做EUC-CN。对于字符集跟字符编码的区别还是很难理解的（可看维基百科<a href="http://zh.wikipedia.org/zh/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81" title="">这里</a>、<a href="http://zh.wikipedia.org/zh-cn/Gb2312" title="">这里</a>跟<a href="http://zh.wikipedia.org/zh-cn/EUC" title="">这里</a>），我也模糊，再说下我的理解，比如说思密达们用的字符集是<a href="http://zh.wikipedia.org/zh-cn/KS_X_1001" title="KS X 1001">KS X 1001</a>，而他们的编码方式也是EUC，不过是叫做EUC-KR。关于EUC编码方式，实际上就是对于ASCII字符用一个字节（8bit）表示，高位(第一位)为0来表示它是
+ASCII字符，而其他字符用两个字节表示（16bit），且每个字节加上0xA0(16进制)，也就将它们的高位置为1，以跟ASCII字符区分开来（后面在我的程序里就可以看到这个应用）。关于这个问题可再参考Blogjava上的两篇系列文章，<a href="#ref1" title="">[1]</a>、<a href="#ref2" title="">[2]</a>。</p>
+
+<p>当然如今把GB2312等同于编码了也不会有任何问题了。Html文档头经常出现的
+charset=utf-8
+对此贡献不少，这里的charset应该是指encoding，再比如说charset=gb2312实际上指的就是「EUC-CN」（强调一下utf-8、iso-8859-1都是字符编码，unicode才是字符集）。所以关于标题《从GBK到Unicode的中文字符映射》，实际上应该叫做《GBK到UTF-16（UCS2）的中文字符映射》，</p>
+<h2 id="toc_1">GBK</h2>
+<p>GBK即汉字内码扩展规范，是「国家标准扩展」三个词的拼音缩写。具体可参考<a href="http://zh.wikipedia.org/zh-cn/GBK" title="">维基百科</a>。</p>
+
+<p>GBK既是字符集也是字符编码(够讨厌的吧…)<a href="#ref2" title="">[2]</a>。不过这不重要，解决问题的关键是摸清GBK的编码方式，才能找到GBK到Unicode的映射规律。在此贴下维基百科上的图片：</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/06/GBK%E7%BC%96%E7%A0%81%E8%8C%83%E5%9B%B4.jpg" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/06/GBK%E7%BC%96%E7%A0%81%E8%8C%83%E5%9B%B4.jpg" title="GBK编码范围"  alt=""></a>
+<img class="lazy img-polaroid display" src="http://upload.wikimedia.org/wikipedia/en/thumb/0/0c/GBK_encoding.svg/500px-GBK_encoding.svg.png" title="GBK"  alt=""></p>
+
+<p>由上表可见，GBK编码主要将字符分为五个区域。</p>
+
+<p>其中GBK/1、GBK/2就是GB2312的字符集，其编码跟GB2312的编码是一致的，所以说GBK是向下兼容GB2312。GBK/3、GBK4就是GBK新增的汉字，许多繁体字、偏僻字都集中在此。但GBK/4中并不是全都是汉字，或者是不存在Unicode字符集中的汉字，经我统计实际上只有8059个汉字是在Unicode中存在的。剩下的GBK/5跟GBK/1一样存放都是特殊符号。</p>
+<h2 id="toc_2">Unicode</h2>
+<p>前面提到Unicode是字符集，常用的编码是UTF-8和UTF-16，还有另一种叫UTF-32，因为UTF-32每个字符都要占用4个字节不大实用所以比较少见。UTF-8、UTF-16则都是变长编码，我要实现的实际就是GBK到UTF-16的转换。UTF-16的好处是在0x0到0xFFFF这个区域，也就是说字符编码小于65535的都用2个字节表示，不过因此UTF-16不兼容于ASCII。在此区域UTF-16就等同于UCS-2，所以说UCS-2是UTF-16的子集。GBK中的字符都是属于这个区域，所以这里提到的UTF-16也就是等同于UCS-2（维基百科也将UCS-2重定向到
+UTF-16）。<a href="#ref4" title="">[4]</a></p>
+
+<p>UTF-16还有个历史问题，就是字节序问题，也就是传说中的大尾、小尾问题，比如说<strong>‘A’</strong>的ASCII码是0x41，那么其对应的UTF-16编码是0x0041还是0x4100呢?这个区别就是字节序问题。传说Windows用的就是0x4100即小尾序，苹果的Mac有个性地用0x0041表示，即是大尾序。其他字符也要这样区分，比如汉字‘朱’小尾序表示是0x3167，大尾序表示是0x6731。因为UTF-16有字节序问题，为了区分一般文本编辑器都会在UTF-16编码的文档前面加上0xFFFE（小尾序）或）0xFEFF(大尾序)来区分，这个标记称为BOM，即字节序标记（Byte
+Order Mark）。<a href="#ref5" title="">[5]</a></p>
+<h2 id="toc_3">转换代码</h2>
+<p>知道了这些基础，接下来就可以开始转换了。由于GBK到Unicode的汉字没有直接的映射关系，传说GBK是按拼音排序，Unicode是按部首排序的。所以要转换之前必须得有个对照表，一开始我就在网上找到这张表(<a href="#add1" title="">附录1)</a>，表的结构如下所示。</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/06/%E6%B1%89%E5%AD%97%E7%BC%96%E7%A0%81%E5%AF%B9%E7%85%A7%E8%A1%A8.jpg" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/06/%E6%B1%89%E5%AD%97%E7%BC%96%E7%A0%81%E5%AF%B9%E7%85%A7%E8%A1%A8.jpg" title="汉字编码对照表"  alt=""></a></p>
+
+<p>从上表比较相同汉字的
+unicode编码跟gbk编码确实看不出有什么规律。区位码是GB2312的特色，也可以说EUC的特色。注意上表的区位码是十进制的，比如汉字<strong>‘一’</strong>区位码5027，将50转换为16进制得0x32，加上0xa0得0xd2；同样的27+0xa0
+= 0x1b+0xa0=0xbb。</p>
+
+<p>该表总共20902个汉字，Unicode范围从0x4e00到0x9fa5。整张表占用空间2.73Mb，是xlt格式的缘故。考虑到我只需做GBK到
+UTF-16的单向转换，要对表做一些处理，实际上只需保存unicode编码一项便可，为了让unicode编码方便用gbk编码索引，我先将编码按
+GBK的各个范围分段排列，不包括特殊符号只有三个段，分别对应GBK/1、GBK/2、GBK/3。在段内则按编码的数值大小排列。比如表的第一位是
+‘啊’，是GBK/1的第一个字符，而它的UTF-16编码是0x554a。这样出来的结果是这样的：</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/06/Unicode.jpg" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/06/Unicode.jpg" title="Unicode"  alt=""></a></p>
+
+<p>我还在表头添加了BOM以便文本编辑器能够识别，在这里用的是小尾序，所以添加的便是0xFFFE。整张表大小40.8KB((20902+1)*2
+= 41806
+byte)。这样在移动设备中也可以全部读取到内存中。写到这里代码也呼之欲出了。</p>
+<pre><code class="c">typedef int S32;
+typedef char S8;
+static S8 ULE[(20902 + 1) * 2 + (1040) * 2]; //Unicode Little-Endian 表，读取自上文所生成的文件。 总共20902个汉字  1040个特殊符号
+const static S32 GBK2_OFFSET = 2; //GBK/2的偏移地址,头两个字符是BOM(0xFFFE)
+const static S32 GBK3_OFFSET = GBK2_OFFSET + 6763 * 2; //GBK/3的偏移地址,GBK/2有6763个字符
+const static S32 GBK4_OFFSET = GBK3_OFFSET + 6080 * 2; //GBK/4的偏移地址,GBK/3有6080个字符
+const static S32 GBK1_OFFSET = 41806; //  GBK/4即gb2312的符号的偏移地址
+const static S32 GBK5_OFFSET = 41806 + 846 * 2; // GBK5符号的偏移地址
+
+/**
+ * dest 输出的UTF-16(UCS-2)编码字符。
+ * src_size
+ * src GBK编码的字符
+ *
+ **/
+S32 gbk_to_ule(S8* dest, S32 src_size, S8* src) {
+    S32 h, l; //h 高位字节  l 低位字节
+    S32 i; //dest的索引
+    S32 j; //src的索引
+    S32 seek; //
+    for (i = 0, j = 0; j &lt; src_size; i += 2) {
+        h = src[j++] &amp; 0xff; //读取一个字节
+        if ((h &amp; 0x80) == 0) { // 高位为0 是Ascii 码
+            l = 0x0;
+        } else {
+            l = src[j++] &amp; 0xff; // 高位为1 为gbk字符集字符,读取下一个字节
+            //将gbk编码映射到ULE表中的位置
+            if (h &gt;= 0xB0 &amp;&amp; h &lt;= 0xF7 &amp;&amp; l &gt;= 0xA1 &amp;&amp; l &lt;= 0xFE) { //GBK/2的编码范围 ,实际上GBK2高字节包含在GBK/4的范围内,只是低字节的范围不同
+            //GBK/2实际就是GB2312,GB2312是区位码,16-87区为汉字编码区，每区有94个字符
+                seek = GBK2_OFFSET + ((h -16 - 0xA0) * 94 + (l -1 - 0xA0)) * 2;//GBK2偏移+区位偏移+区内码数偏移为该GBK字符对应的unicode编码位置.
+                h = ULE[seek];
+                l = ULE[seek + 1];
+            } else if (h &gt;= 0x81 &amp;&amp; h &lt;= 0xA0 &amp;&amp; l &gt;= 0x40 &amp;&amp; l &lt;= 0xFE) { //GBK/3的编码范围
+                seek = GBK3_OFFSET + ((h - 0x81) * 190 + (l - 0x40)
+                        - (l &gt; 0x7F ? 1 : 0)) * 2;//GBK3偏移+区位偏移+区内码数偏移因为低位字节0x7F处不编码,所以大于0x7F要-1已更正位置. 190=0xFE -  0x40+1-1 低字节 0x0-0x39 与 0x7F,0xFF 不放  总共空出66个字节
+                h = ULE[seek];
+                l = ULE[seek + 1];
+            } else if (h &gt;= 0xAA &amp;&amp; h &lt;= 0xFE &amp;&amp; l &gt;= 0x40 &amp;&amp; l &lt;= 0xA0) { //GBK/4的编码范围
+                seek = GBK4_OFFSET + ((h - 0xAA) * 96 + (l - 0x40)
+                        - (l &gt; 0x7F ? 1 : 0)) * 2;//除了低位字符范围不同外,GBK4与GBK3大致相同
+                h = ULE[seek];
+                l = ULE[seek + 1];
+            }
+            //后来再添加的对GBK/1、GBK/2也就是GBK符号的支持.
+            else if (h &gt;= 0xA1 &amp;&amp; h &lt;= 0xA9 &amp;&amp; l &gt;= 0xA1 &amp;&amp; l &lt;= 0xFE) {
+                seek = GBK1_OFFSET + ((h - 0xA1) * 94 + (l - 0xA1)) * 2;
+                h = ULE[seek];
+                l = ULE[seek + 1];
+            } else if (h &gt;= 0xA8 &amp;&amp; h &lt;= 0xA9 &amp;&amp; l &gt;= 0x40 &amp;&amp; l &lt;= 0xA0) {
+                seek = GBK5_OFFSET + ((h - 0xA8) * 96 + (l - 0x40)- (l &gt; 0x7F ? 1 : 0)) * 2;
+                h = ULE[seek];
+                l = ULE[seek + 1];
+            }
+        }
+        dest[i] = h;
+        dest[i + 1] = l;
+    }
+    //wchar 宽字符字符串的结束标记
+    dest[i] = 'placeholderfor0code';
+    dest[i + 1] = 'placeholderfor0code';
+    return i;
+}
+</code></pre>
+<p>基于这个函数我实现了一个命令行程序<a href="#add2" title="">gbktoule</a>，来将GBK编码的文件转换为UTF-16
+LE 编码的文件。当然这个程序主要是用来测试的，不支持批量转换。</p>
+
+<p>使用时，可以在控制台键入 gbktoule file1 file2
+来将GBK文件file1的字符转换到UTF-16的文件file2中。</p>
+
+<p>如 键入gbktoule gbkt.txt ule.txt。结果如下图所示：</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2010/06/result.jpg" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2010/06/result.jpg" title="result"  alt=""></a> It work!</p>
+
+<p>程序下载<a href="#add2" title="">点此</a>，其实符号索引是后来才生成。以便能够完整的转换GBK文档，但是GBK/4缺少的那101个字符还是让我觉得很诡异。<a href="#add3" title="">可在附录找到全部GBK符号</a>。</p>
+<h2 id="toc_4">参考阅读</h2>
+<hr>
+
+<ol>
+<li> <a href="http://www.blogjava.net/zhenandaci/archive/2008/12/24/248041.html" title="">Java
+中的字符集编码入门（二）编码字符集与字符集编码的区别</a></li>
+<li> <a href="http://www.blogjava.net/zhenandaci/archive/2008/12/24/248056.html" title="">Java
+中的字符集编码入门（三）GB2312，GBK与中文网页</a></li>
+<li> <a href="http://kore-nordmann.de/blog/0082_charset_versus_encoding.html" title="">Charset vs.
+Encoding</a></li>
+<li> <a href="http://zh.wikipedia.org/zh-cn/UCS-2" title="">http://zh.wikipedia.org/zh-cn/UCS-2</a></li>
+<li> <a href="http://blog.csdn.net/linuxsystem/archive/2009/06/03/4238089.aspx" title="">字符集编码的文本文件头标识</a></li>
+</ol>
+<h2 id="toc_5">附录</h2>
+<hr>
+
+<ol>
+<li> <a href="http://dourok.info/wp-content/uploads/2010/06/%E6%B1%89%E5%AD%97%E7%BC%96%E7%A0%81%E5%AF%B9%E7%85%A7%E8%A1%A8.xls" title="">汉字编码对照表.xls</a></li>
+<li> <a href="http://dourok.info/wp-content/uploads/2010/06/gbktoule.7z" title="">源码、编译的可执行文件、及ULE表都在这里</a></li>
+<li> GBK/1、GBK/5符号集合，当然在我网页上显示的是UTF-8编码的：</li>
+</ol>
+
+<div class="footer">
+  <ul class="tag_box inline">
+  <li><a href="/tags#GBK-ref">GBK</a></li>
+  <li><a href="/tags#MTK-ref">MTK</a></li>
+  <li><a href="/tags#Unicode-ref">Unicode</a></li>
+  </ul>
+  <span class="date">
+  2010-06-24
+  </span>
+</div>
+</article>
+
+
+<div class="box">
+  <div class="plus">
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_kaixin001"></a>
+<a href="http://www.jiathis.com/share?uid=1677096" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677096" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+	
+
+  </div>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_developer = 1;
+	var disqus_title = '从GBK到Unicode的中文字符映射';
+
+	var disqus_identifier ='85 http://dourok.info/?p=85';
+
+	var disqus_shortname = 'doousblog';
+	
+	var disqus_url = 'https://douo.github.io/moon-2013//2010/06/24/convert-gbk-to-unicode';
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<!-- disqus end-->
+
+ </div>
+
+	      </div>  <!-- content -->
+      </div>  <!-- row -->
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <footer class="statement">
+	    <small class＝"copyright">&copy;2009-2013  |</small>
+	    <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+	      和 <a href="http://twitter.github.com/bootstrap/"
+	  	  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+	    <small class="license">
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+	    </small>
+	  </footer>
+	  
+	      </div>
+      </div>
+	
+	
+<script type="text/javascript">
+   $(function(){
+   $(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+   var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+   if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+	$("#gotop").fadeIn(400); //淡出     
+	}else{      
+	$("#gotop").stop().fadeOut(400); //如果返回或者没有超过,就淡入.必须加上stop()停止之前动画,否则会出现闪动   
+	}
+	});
+	$("#gotop").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+	$("html,body").animate({scrollTop:"0px"},200);
+	});
+	});
+</script>
+<a id="gotop" href="#">   
+	<span>▲</span> 
+</a>
+    </div> <!-- /container -->
+    
+    <!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+  </body>
+
+</html>

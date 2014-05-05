@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>
+			斯坦福CS193P |
+			DouO's Note </title>
+
+		<meta name="author" content="DouO">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Le styles -->
+<link href='/assets/stylesheets/semantic-91be4534b368c69b3ae34ebe17bb9928.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/note-abdc38b478e2e51aafac266fed65bb36.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>		
+		<!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/semantic-54cc5e8b6a700ce47e0d951c470b6bb6.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/note-613cb7a88bab975ffe3bbf1be9fbbd6a.js'></script>		
+		
+
+		
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+		
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+		<link rel="shortcut icon" href="/assets/media/favicon.ico">
+		<!-- Le fav and touch icons -->
+		<!-- Update these with your own images
+
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+	</head>
+	<body>
+		<div class="ui vertical inverted labeled sidebar menu sidebar accordion">
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes" title="我的笔记" ><i class="book large icon"></i></a>
+				</div>
+				<div class="menu content">
+					<a class="item" href="/">博客</a>
+					<a class="item" href="http://wiki.dourok.info/doku.php">Wiki</a>
+					<a class="item" href="/about">关于我</a>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Uncategory">其他</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/tags">笔记标签</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/greendao">greenDao</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/gradle">gradle</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/chinese-calendar">天朝历法</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/amazon">amazon</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/Holistic-Learning">Holistic Learning</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Tools">工具</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Emacs</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Tools/Emacs/orgmode">orgmode</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Tools/Emacs/emacs-diary">Emacs 日记</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/xcode">Xcode</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/trello">Trello</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/ruhoh">Ruhoh</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/ruhoh-env">配置 RUHOH 环境</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/online-toolkits">在线工具集合</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/imagemagick">ImageMagick</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/git">git</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/eclipse">Eclipse</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/android-studio">Android Studio</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/Mustache">Mustache</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Study">兴趣</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Music</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Study/Music/guitar-note">吉他笔记</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+										<a>Astronomy</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/spherical-astronomy">球面天文学基础</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/solar-system">太阳系</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/physics">物理学基础</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Study/metadata">Metadata</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Reading">读书笔记</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Reading/the-productive-programmer">卓有成效的程序员</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/some_mind">Some mind</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/philosophy-of-note">记录的哲学</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/evernote">Evernote</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Quick">便签</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>2013</a>
+					
+					<div class="menu">
+						<div class="item">
+												<a>03</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/03/note-2013-03-06">2013年03月06日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>02</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/02/note-2013-02-14">2013年02月14日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/02/note-2013-02-04">2013年02月04日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>01</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/01/note-2013-01-09">2013年01月09日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/01/note-2013-01-08">2013年01月08日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+										<a>2012</a>
+					
+					<div class="menu">
+						<div class="item">
+												<a>12</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-22">2012年12月22日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-21">2012年12月21日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-20">2012年12月20日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-11">2012年12月11日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-10">2012年12月10日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>11</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-22">2012年11月22日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-21">2012年11月21日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-20">2012年11月20日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-15">2012年11月15日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-14">2012年11月14日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-07">2012年11月07日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Programming">编码</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Programming/iOS">iOS</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/snippets">常用代码片段</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/WindowsAndView">WindowsAndView</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/Objective-C">Objective-C</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/CS193P">斯坦福CS193P</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Programming/Ruby">Ruby</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/ri-and-rdoc">ri and RDoc</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/nokogiri">nokogiri</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/metaprogramming-ruby">Metaprogramming Ruby</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Programming/Android">Android</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/weird-android">Weird Android</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/surfaceview">SurfaceView</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/service">Service</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/screen-support">Screen Support</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/fragment">Fragment</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/cocos2dx">Cocos2dx</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/android-decompilation">android 逆向工程</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/activity">Activity</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/NDK">NDK</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/Google-IO-2013">Google IO 2013</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Computer">计算机</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Mac</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Computer/Mac/mountain-lion-memo">山狮备忘</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Computer/Mac/mavericks-memo">Mavericks 备忘</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Computer/pc">PC折腾记录</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<a href="/notes/log">站点日志</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui black huge launch right attached button">
+			<i class="icon list layout"></i>
+			<span class="text">菜单</span>
+		</div>
+
+		<header class="segment container">
+			<h1 class="ui dividing header">斯坦福CS193P</h1>
+			<p class="segment">
+				
+				<p>
+				</p>
+			</p>
+		</header>
+		<div class="container">
+			<article>
+				<h3 id="toc_0">C04</h3><h4 id="toc_1">Views</h4>
+<p>UIView 是所有控件的根類，</p>
+
+<p>UIWindow 是iOS 應用的View 樹的根節點</p>
+
+<p>添加View 到父View 調用的是父View的方法，將View移除用的是這個View本身的方法</p>
+<pre><code class="">- (void)addSubview:(UIView *)aView;
+- (void)removeFromSuperview;
+</code></pre>
+<p>View 的數值用的是 <code>CGFloat</code>，屏幕上的點用的是 <code>CGPoint</code> ，面積用的是
+<code>CGSize</code> ，屏幕上的矩形用的是<code>CGRect</code></p>
+
+<p>iOS 在屏幕上的單位用的是point 而不是pixel，point 應該是設備無關的單位</p>
+<pre><code class="">@property CGFloat contentScaleFactor;
+</code></pre>
+<p>這個屬性提供point 到 pixel 的轉換</p>
+
+<p>view 還有3個屬性來定義它的位置和大小</p>
+<pre><code class="">@property CGRect bounds; // view 的內部大小，就是可繪製的空間。起始點總是{0,0}
+@property CGPoint center; // view 的中點在父view 的座標
+@property CGRect frame;  // view 在 父view 佔用的空間
+</code></pre>
+<p>View 的繪製方法</p>
+<pre><code class="">- (void)drawRect:(CGRect)aRect; // 由系統調用
+</code></pre>
+<p>View 用 Core Graphics Framework 來繪製圖形。C的api，不是面向對象的。</p>
+<pre><code class="">- (void)drawRect:(CGRect)rect
+{
+    CGContextRef context = UIGraphicsGetCurrentContext(); //獲取繪製上下文，可以是View，Printer，離屏圖像，PDF等等，跟Android 的Canvas 有點相像。一般是 drawRect 的第一行代碼
+    CGContextBeginPath(context); // setup context
+    CGContextMoveToPoint(context, 75, 10);
+    CGContextAddLineToPoint(context, 160, 150);
+    CGContextAddLineToPoint(context, 10, 150);
+    CGContextClosePath(context);
+    [[UIColor greenColor] setFill]; // 設置 context 的填充顏色
+    [[UIColor redColor] setStroke];
+    CGContextDrawPath(context, kCGPathFillStroke); 
+}
+</code></pre><h5 id="toc_2">UIColor</h5><pre><code class="">UIColor *red = [UIColor redColor]; // class method, returnsautoreleased instance
+UIColor *custom = [[UIColor alloc] initWithRed:(CGFloat)red // 0.0 to 1.0
+                                          blue:(CGFloat)blue
+                                         green:(CGFloat)green
+                                         alpha:(CGFloat)alpha]; // 0.0 to 1.0 (opaque)
+[redsetFill]; //fillcolorsetincurrentgraphicscontext(strokecolornotset)
+[custom set]; // sets both stroke and fill color to custom (would override [red setFill])
+</code></pre>
+<p>UIView 有個 <code>backgroundColor</code> 屬性可以設置支持alpha通道的顏色。 不用透明度時確保<code>@property BOOL opaque</code> 爲 <code>NO</code> 可以提高繪製效率</p>
+
+<p><code>UIView @property CGFloat alpha</code> 控制整個View的透明度</p>
+<h5 id="toc_3">UIFont</h5><pre><code class="">UIFont *myFont = [UIFont systemFontOfSize:12.0];
+UIFont *theFont = [UIFont fontWithName:@「Helvetica」 size:36.0];
+NSArray *availableFonts = [UIFont familyNames];
+NSString *text = ...;
+[textdrawAtPoint:(CGPoint)pwithFont:theFont]; //NSStringinstancemethod How much space will a piece of text will take up when drawn?
+CGSize textSize = [text sizeWithFont:myFont]; // NSString instance method?
+</code></pre><h5 id="toc_4">UIImage</h5><pre><code class="">UIImage *image = [UIImage imageNamed:@「foo.jpg」];
+UIImage *image = [[UIImage alloc] initWithContentsOfFile:(NSString *)fullPath];
+UIImage *image = [[UIImage alloc] initWithData:(NSData *)imageData];
+[image drawAtPoint:(CGPoint)p]; // p is upper left corner of the image 
+[image drawInRect:(CGRect)r]; // scales the image to fit in r 
+[image drawAsPatternInRect:(CGRect)patRect; //tilestheimageintopatRect
+</code></pre>
+			</article>
+			<footer class="statement">
+			  <small class＝"copyright">&copy;2009-2013  |</small>
+			  <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+			    和 <a href="http://twitter.github.com/bootstrap/"
+				  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+			  <small class="license">
+			    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+			  </small>
+			</footer>
+			
+		</div>
+		
+		<!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+	</body>
+</html>
+

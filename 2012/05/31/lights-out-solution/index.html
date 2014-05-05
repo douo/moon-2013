@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      LightsOut 解法小探 | 
+      DouO's Blog
+    </title>
+    <meta name="author" content="DouO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-93b47f97c3444c4711853ed5140d82a1.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/bootstrap-responsive.min-6be942c8ec424a44aa4f31e099bae1fc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-2a78e0c366d18704c93f8db7772659c6.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>    
+
+    <!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/bootstrap.min-240e44e4195f0836ced0eab636f9cb0c.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>    
+    
+	
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+    
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+
+    <link rel="shortcut icon" href="/assets/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	 <link rel="shortcut icon" href="images/favicon.ico">
+	 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	 <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	 -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    <!-- processing -->
+    
+<script type="text/javascript"
+  src="http://cdn.staticfile.org/processing.js/1.4.1/processing.min.js">
+</script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <header class="header pull-left">
+	    <h1>LightsOut 解法小探</h1>
+	  </header>
+  	  <button type="button" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    </button>
+	</div> <!-- header -->
+
+         </div>
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8 content">
+	  <div class="nav-wrapper nav-collapse collapse"   data-spy="affix" data-offset-top="70" >
+	    <nav class="nav moon-nav-list">
+	      <ul>
+	        <li><a href="/" rel="tooltip" data-placement="top" title="主頁">home</a></li>
+	        <li><a href="/archives" rel="tooltip" data-placement="top" title="文章歸檔">archives</a></li>
+	        <li><a href="/notes" rel="tooltip" data-placement="top" title="我的個人筆記">notes</a></li>
+	        <li><a href="/rss.xml" rel="tooltip" data-placement="top" title="訂閱">feed</a></li>
+	        <li><a href="/about" rel="tooltip" data-placement="top" title="關於我">about</a></li>
+	        <li  class="separate"></li>
+	        <li> 
+	  	<a class="meta-nav next" href="/2012/06/24/madness_of_formatting">
+	  	  <span>←<br></span>误删分区
+	  	</a>
+	        </li>
+	        <li>
+	  	<a class="meta-nav previous" href="/2012/04/29/lonely-android">
+	  	  Lonely Android<span><br>→</span>
+	  	</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	      <article class="post box">
+<ul class="category-label">
+<li><a href="/categories#coder-ref" class="coder">coder</a></li>
+</ul>
+<div class="cf"></div>
+
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2012/05/light_out_banner.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2012/05/light_out_banner.png" title="light_out_banner"  alt=""></a></p>
+
+<p>Lights Out(关灯游戏) 是一款经典的老游戏，维基百科上说Lights Out
+是在1995年由 <a href="https://en.wikipedia.org/wiki/Tiger_Toys" title="Tiger Toys">Tiger
+Toys</a> 第一次发行。接触它却在去年的时候Gnome3的小游戏里。Lights
+Out 的规则很简单，游戏由一个 5 * 5
+格的棋盘构成，每格子都是一颗灯，灯肯定是有两种状态，亮或者暗。游戏一开始棋盘上会亮起一些灯，你的目标就是把所有亮起灯都关掉，亮起的灯点一下就会关掉，但游戏当然不会这么简单，点一下灯的时候还会有一些附加影响，准确的说就是点一下灯的时候会切换它和四周也就是是上下左右的灯的状态。找到了一个在线的Lights
+Out，<a href="http://www.addictinggames.com/puzzle-games/lightsout.jsp" title="">http://www.addictinggames.com/puzzle-games/lightsout.jsp</a>。一般能过第五关就差不多了吧。</p>
+
+<p>不过即便是第一关，如果一开始摸不到基本的门道，乱点的话基本上想点回来是很难的，为什么？<script type="math/tex">2^{25}</script>等于多少
+，作为一个合格的码农应该脱口而出，33554432
+！好吧我承认我也是用计算器的。要玩这游戏首先要明白一个道理：你关的不是灯，是寂寞…噢不，是开关！先不管棋盘上的灯光状态如何，也不管一个开关可以控制多少颗灯，只要知道你点一下方块，就等于切换一次开关，开关就从状态1转换到状态0，再点一下方块，开关又从状态0切换回状态1。这里的0和1也就是开关开和关两种状态，明白这一点很重要，把所有开着的开关都关闭就是完成游戏，所有开着的开关都关闭，肯定没有灯是亮的是吧，但是反过来并不一定成立哦，后面会说到这个。它还可以继续往下推，第一点，<strong>每一个方块只有点第一下才是有意义的</strong>，点第二下也就切换会原始状态，点N下也就是来来回回切换而已。第二点，<strong>开关关闭的顺序无关紧要</strong>。从上往下点，从下往上点都没关系。</p>
+
+<p>如果你有迈克那么牛逼的话，相信现在已经能够透过亮着灯光看到后面隐藏的开关了吧，看不到也没关系先想象一下。我们知道一个开关控制着上下左右和本身的灯光，相对的，<strong>一颗灯亮与否，取决于它本身和四周开关的状态，当有奇数个开关开着的时候，灯就亮，偶数个的时候灯就是暗着的</strong>。再看看第一行，第一行上的一颗灯，能影响到它的开关有本身、左右，这三个都是第一
+行上的开关，另外还有下方位于第二行的开关，而上方的开关因为是第一行所以是不存在的。现在假设一下，第一行所有开关都被关闭了，那么此时第一行如果还有亮着的灯，能控制这些灯的开关就只剩下第二行的开关，一颗亮着的灯，显然第二行其对着的开关肯定是打开的，相反的，第一行的灯是暗的，那么第二行对应的开关肯定是关闭的，这样第二行打开的开关就是其上面的灯还亮着的那些。照着第一行亮着的灯把第二行的开关全部关掉，现在一行的灯应该是全暗的，第二行的开关也全部关闭了，第二行还亮着的灯也就只有第三开关能影响到了。同样的，此时第二、三行的情况就跟前面第一、二行的情形一样了。以此类推，第三、四、五行的开关都可以这样关掉，此时游戏也就解决了。终于有一条有用的结论了，<strong>当第一行的开关全部关闭后，其他行的开关通过一个唯一且固定的模式来把开关全部关闭，也就是说对应着上一行亮着的灯把下一行对应的开关关闭就行。</strong>有了这个结论，现在已经把游戏的难度降低不少了，我们只要猜对第一行打开的开关就可以把游戏K.O.了。这个结论，我们把问题猜测的规模从<script type="math/tex">2^{25}=33554432</script>降到<script type="math/tex">2^5=32 </script>。当然这样有点无趣，也不会变得完全没有难度。
+但对于计算机来说，那确实是易过吃碗水，遍历第一行的所有可能性，再校验是不是一个解。</p>
+
+<p>但是这种方法不能脱离暴力搜索，始终有点丑陋。我在看Gnome Lights Out
+的源码的时候，发现了一篇论文讨论了如何用线性代数的方法来解决这个问题。非常简单的一个方法。</p>
+
+<p>首先我们随便找一个开局状态，1表示灯是亮的，0表示灯是暗的。如下所示，</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2012/05/light_out_state_1.png" title=""><img class="lazy img-polaroid pull-left" src="/assets/media/wp-content/uploads/2012/05/light_out_state_1.png" title="light_out_state_1"  alt=""></a></p>
+<script type="math/tex; mode=display">
+        \begin{vmatrix}1 & 0 & 0 & 0 & 0 \\1 & 1 & 1 & 1 & 0 \\1 & 1 & 1 & 1 & 1 \\1 & 1 & 1 & 1 & 0 \\1 & 0 & 0 & 0 & 0\\\end{vmatrix}
+
+        </script>
+<p>把这些数字放到一列里并标上号，就成了向量<script type="math/tex">\vec b=(b_{1,1},b_{1,2},\cdots,b_{1,5},b_{2,1},\cdots,b_{5,5})^T</script></p>
+
+<p>当我们按一下开关，<script type="math/tex">\vec b</script>又会发生什么变化呢？比如按下位于坐标(1,1)的开关，记为<script type="math/tex">s_{1,1}</script>。当<script type="math/tex">s_{1,1}</script>按下时，他会改变<script type="math/tex">b_{1,1} ,b_{1,2},b_{2,1}</script>的状态，如果灯光原来的状态为0，那么就变成1，原来为1就变成0。这个刚好是GF(2)上的加法，GF(2)怎么说呢，其实和一般的数域没什么区别，因为只有两个元素
+0， 1 。那么在这个域上 1 + 1 就等于 0
+。我们把<script type="math/tex">s_{1,1}</script>也用向量表示，它就是这个样子的</p>
+<script type="math/tex; mode=display">
+        \vec s_{1,1}=(1,1,0,0,0,1,0,\cdots,0)
+
+        </script>
+<p>当我们在游戏中点一下开关<script type="math/tex">s_{1,1}</script>，数学上就等于<script type="math/tex">\vec b + \vec s_{1,1}</script>
+。我们还可以继续表示其他开关的向量，比如，</p>
+<script type="math/tex; mode=display">
+        \vec s_{1,2}=(1,1,1,0,0,0,1,\cdots,0)
+
+        </script><script type="math/tex; mode=display">
+        \vec s_{5,5}=(0,\cdots,0,1,0,0,0,1,1)
+
+        </script>
+<p>。</p>
+
+<p>前面我们说过，这个游戏的目的就是把全部打开着的开关都关闭了，开关的状态我们已经用<script type="math/tex"> s_{1,1},\cdots,s_{5,5}</script>
+表示，不多不少刚好25个，如果我们用1来表示这个开关是打开，0来表示关闭，那么一个游戏初始的开关状态也可以用一个向量来表示，</p>
+<script type="math/tex; mode=display">
+        \vec x=(x_{1,1},x_{1,2},\cdots,x_{1,5},x_{2,1},\cdots,x_{5,5})^T
+
+        </script>
+<p>。由于游戏的开关状态时未知的，是我们玩这个游戏的目的，所以这里用x表示。<script type="math/tex">\vec x</script>即是初始局面打开的开关，也是灯全暗变换到棋盘初始状态所需要点开的开关，所以我们也把<script type="math/tex">\vec x</script>称为一个策略。<script type="math/tex">\vec b</script>表示初始状态，<script type="math/tex">\underline{0}</script>灯光全暗的状态。</p>
+<script type="math/tex; mode=display">
+        \vec b =\underline{0}+x_{1,1}\vec s_{1,1}+\cdots+x_{1,5}\vec s_{1,5}+x_{2,1}\vec s_{2,1}+\cdots+x_{5,5}\vec s_{5,5}
+
+        </script>
+<p>解上面的方程可以用下面这个线性方程来表示：<script type="math/tex">A\vec x=\vec b</script> 其中A是一个 25 * 25
+的矩阵：</p>
+<script type="math/tex; mode=display">
+        A = \begin{vmatrix}B & I & O & O & O \\I & B & I & O & O \\O & I & B & I & O \\O & O & I & B & I \\O & O & O & I & B \\\end{vmatrix}
+
+        </script>
+<p>I是一个 5 * 5 的单位矩阵，O是一个 5 * 5
+其元全部为零的矩阵。而B是这样一个矩阵：</p>
+<script type="math/tex; mode=display">
+        B = \begin{vmatrix}1 & 1 & 0 & 0 & 0 \\1 & 1 & 1 & 0 & 0 \\0 & 1 & 1 & 1 & 0 \\0 & 0 & 1 & 1 & 1 \\0 & 0 & 0 & 1 & 1 \\\end{vmatrix}
+
+        </script>
+<p>如果把 I, O, B 代入 A 那么 A 的每一列都对应着一个开关的s向量。</p>
+
+<p>采用高斯-若爾當消元法对A的增广矩阵<script type="math/tex">(A   \vec b)</script>，就可以求出<script type="math/tex">\vec x</script> 。</p>
+
+<p>如果令 <script type="math/tex">\vec b = \bf{0}</script>，在 5 * 5
+的游戏规模下，解<script type="math/tex">A\vec x=\bf{0}</script>。除了 <script type="math/tex">\vec x = \bf{0}</script>外，还有另外两个解，分别是：</p>
+<script type="math/tex; mode=display">
+        \vec x_{1}=(0,1,1,1,0,1,0,1,0,1,1,1,0,1,1,1,0,1,0,1,0,1,1,1,0)^T
+
+        </script><script type="math/tex; mode=display">
+        \vec x_{2}=(1,0,1,0,1,1,0,1,0,1,0,0,0,0,0,1,0,1,0,1,1,0,1,0,1)^T
+
+        </script>
+<p>由此可见，5 * 5
+游戏的解并不是唯一的，即便是灯光全暗，也不一定表示开关全部被关闭。另外，并不是所有可能性都有解。好了就先到这里，了解更多请见下面的链接：</p>
+
+<ul>
+<li>  <a href="http://git.gnome.org/browse/gnome-games/tree/lightsoff" title="">gnome game
+lightsout的源码</a></li>
+<li>  <a href="www.math.ksu.edu/~dmaldona/math551/lights_out.pdf" title="">Turning Lights Out with Linear
+Algebra</a></li>
+<li>  <a href="http://mathworld.wolfram.com/LightsOutPuzzle.html" title="">mathworld
+上的一个讨论</a></li>
+<li>  <a href="http://www.cnblogs.com/pegasus/archive/2011/07/31/2123195.html" title="">高斯-若尔当消元法的算法</a></li>
+</ul>
+
+<div class="footer">
+  <ul class="tag_box inline">
+  <li><a href="/tags#LightsOut-ref">LightsOut</a></li>
+  <li><a href="/tags#游戏-ref">游戏</a></li>
+  <li><a href="/tags#算法-ref">算法</a></li>
+  <li><a href="/tags#线性代数-ref">线性代数</a></li>
+  </ul>
+  <span class="date">
+  2012-05-31
+  </span>
+</div>
+</article>
+
+
+<div class="box">
+  <div class="plus">
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_kaixin001"></a>
+<a href="http://www.jiathis.com/share?uid=1677096" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677096" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+	
+
+  </div>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_developer = 1;
+	var disqus_title = 'LightsOut 解法小探';
+
+	var disqus_identifier ='778 http://dourok.info/?p=778';
+
+	var disqus_shortname = 'doousblog';
+	
+	var disqus_url = 'https://douo.github.io/moon-2013//2012/05/31/lights-out-solution';
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<!-- disqus end-->
+
+ </div>
+
+	      </div>  <!-- content -->
+      </div>  <!-- row -->
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <footer class="statement">
+	    <small class＝"copyright">&copy;2009-2013  |</small>
+	    <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+	      和 <a href="http://twitter.github.com/bootstrap/"
+	  	  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+	    <small class="license">
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+	    </small>
+	  </footer>
+	  
+	      </div>
+      </div>
+	
+	
+<script type="text/javascript">
+   $(function(){
+   $(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+   var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+   if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+	$("#gotop").fadeIn(400); //淡出     
+	}else{      
+	$("#gotop").stop().fadeOut(400); //如果返回或者没有超过,就淡入.必须加上stop()停止之前动画,否则会出现闪动   
+	}
+	});
+	$("#gotop").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+	$("html,body").animate({scrollTop:"0px"},200);
+	});
+	});
+</script>
+<a id="gotop" href="#">   
+	<span>▲</span> 
+</a>
+    </div> <!-- /container -->
+    <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+  </body>
+
+</html>

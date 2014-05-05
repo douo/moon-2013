@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>
+			山狮备忘 |
+			DouO's Note </title>
+
+		<meta name="author" content="DouO">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Le styles -->
+<link href='/assets/stylesheets/semantic-91be4534b368c69b3ae34ebe17bb9928.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/note-abdc38b478e2e51aafac266fed65bb36.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>		
+		<!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/semantic-54cc5e8b6a700ce47e0d951c470b6bb6.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/note-613cb7a88bab975ffe3bbf1be9fbbd6a.js'></script>		
+		
+
+		
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+		
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+		<link rel="shortcut icon" href="/assets/media/favicon.ico">
+		<!-- Le fav and touch icons -->
+		<!-- Update these with your own images
+
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+	</head>
+	<body>
+		<div class="ui vertical inverted labeled sidebar menu sidebar accordion">
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes" title="我的笔记" ><i class="book large icon"></i></a>
+				</div>
+				<div class="menu content">
+					<a class="item" href="/">博客</a>
+					<a class="item" href="http://wiki.dourok.info/doku.php">Wiki</a>
+					<a class="item" href="/about">关于我</a>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Uncategory">其他</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/tags">笔记标签</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/greendao">greenDao</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/gradle">gradle</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/chinese-calendar">天朝历法</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/amazon">amazon</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/Holistic-Learning">Holistic Learning</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Tools">工具</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Emacs</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Tools/Emacs/orgmode">orgmode</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Tools/Emacs/emacs-diary">Emacs 日记</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/xcode">Xcode</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/trello">Trello</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/ruhoh">Ruhoh</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/ruhoh-env">配置 RUHOH 环境</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/online-toolkits">在线工具集合</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/imagemagick">ImageMagick</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/git">git</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/eclipse">Eclipse</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/android-studio">Android Studio</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/Mustache">Mustache</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Study">兴趣</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Music</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Study/Music/guitar-note">吉他笔记</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+										<a>Astronomy</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/spherical-astronomy">球面天文学基础</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/solar-system">太阳系</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/physics">物理学基础</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Study/metadata">Metadata</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Reading">读书笔记</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Reading/the-productive-programmer">卓有成效的程序员</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/some_mind">Some mind</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/philosophy-of-note">记录的哲学</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/evernote">Evernote</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Quick">便签</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>2013</a>
+					
+					<div class="menu">
+						<div class="item">
+												<a>03</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/03/note-2013-03-06">2013年03月06日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>02</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/02/note-2013-02-14">2013年02月14日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/02/note-2013-02-04">2013年02月04日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>01</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/01/note-2013-01-09">2013年01月09日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/01/note-2013-01-08">2013年01月08日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+										<a>2012</a>
+					
+					<div class="menu">
+						<div class="item">
+												<a>12</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-22">2012年12月22日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-21">2012年12月21日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-20">2012年12月20日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-11">2012年12月11日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-10">2012年12月10日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>11</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-22">2012年11月22日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-21">2012年11月21日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-20">2012年11月20日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-15">2012年11月15日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-14">2012年11月14日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-07">2012年11月07日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Programming">编码</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Programming/iOS">iOS</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/snippets">常用代码片段</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/WindowsAndView">WindowsAndView</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/Objective-C">Objective-C</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/CS193P">斯坦福CS193P</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Programming/Ruby">Ruby</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/ri-and-rdoc">ri and RDoc</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/nokogiri">nokogiri</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/metaprogramming-ruby">Metaprogramming Ruby</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Programming/Android">Android</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/weird-android">Weird Android</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/surfaceview">SurfaceView</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/service">Service</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/screen-support">Screen Support</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/fragment">Fragment</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/cocos2dx">Cocos2dx</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/android-decompilation">android 逆向工程</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/activity">Activity</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/NDK">NDK</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/Google-IO-2013">Google IO 2013</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Computer">计算机</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Mac</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Computer/Mac/mountain-lion-memo">山狮备忘</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Computer/Mac/mavericks-memo">Mavericks 备忘</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Computer/pc">PC折腾记录</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<a href="/notes/log">站点日志</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui black huge launch right attached button">
+			<i class="icon list layout"></i>
+			<span class="text">菜单</span>
+		</div>
+
+		<header class="segment container">
+			<h1 class="ui dividing header">山狮备忘</h1>
+			<p class="segment">
+				
+				<p>
+				</p>
+			</p>
+		</header>
+		<div class="container">
+			<article>
+				<h3 id="toc_0">配置</h3><pre><code class="">Mobo：GA-Z77-D3H
+CPU： i5 3450
+GC： MSI HAWK r6850
+MEN： 8G 1600Mzh
+</code></pre><h3 id="toc_1">安装</h3>
+<p>通过 Clover 引导进入（不同的引导应该没有影响）已有的10.8.1系统后，可以直接挂载原版<code>InstallESD</code> 安装。因为我显卡的原因需要移除<code>ATI6000Controller.kext</code>来避免重启进入安装界面后白屏。关于如果修改可以见<code>InstallESD</code> </p>
+
+<p><a href="http://www.insanelymac.com/forum/topic/282787-clover-v2-instructions/page__st__20#entry1869539" title="">How to modify InstallESD.dmg</a> </p>
+
+<p><a href="http://bbs.pcbeta.com/viewthread-1230436-1-1.html" title="">Clover 引导原版 InstallESD.dmg全盘安装指路</a></p>
+<h3 id="toc_2">Clover</h3>
+<p>kexts 放于<code>EFI/kexts/10.8</code></p>
+
+<p><code>FakeSMC.kext</code> 还有 <code>AtherosL1cEthernet.kext</code>驱动有线网卡</p>
+<h4 id="toc_3">config.plist</h4>
+<p>使用这个配置可以引导老 10.8.1 的系统，显卡驱动也能被加载。
+<code>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;key&gt;PCI&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;USBInjection&lt;/key&gt;
+        &lt;string&gt;Yes&lt;/string&gt;
+        &lt;key&gt;USBFixOwnership&lt;/key&gt;
+        &lt;string&gt;Yes&lt;/string&gt;
+        &lt;key&gt;InjectClockID&lt;/key&gt;
+        &lt;string&gt;Yes&lt;/string&gt;
+    &lt;/dict&gt;
+    &lt;key&gt;SystemParameters&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;boot-args&lt;/key&gt;
+        &lt;string&gt;-v npci=0x2000 slide=0 WithKexts&lt;/string&gt;
+        &lt;key&gt;prev-lang:kbd&lt;/key&gt;
+        &lt;string&gt;zh-CN:0&lt;/string&gt;
+        &lt;key&gt;InjectSystemID&lt;/key&gt;
+        &lt;string&gt;Yes&lt;/string&gt;
+    &lt;/dict&gt;
+    &lt;key&gt;Graphics&lt;/key&gt;
+    &lt;dict&gt;
+            &lt;key&gt;GraphicsInjector&lt;/key&gt;
+        &lt;string&gt;Yes&lt;/string&gt;
+        &lt;key&gt;PatchVBios&lt;/key&gt;
+        &lt;string&gt;Yes&lt;/string&gt;
+        &lt;key&gt;FBName&lt;/key&gt;
+        &lt;string&gt;Futomaki&lt;/string&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+</code>
+<a href="http://www.insanelymac.com/forum/topic/282787-clover-v2-instructions/page__st__20#entry1869539">http://www.insanelymac.com/forum/topic/282787-clover-v2-instructions/page__st__20#entry1869539</a>
+这里有一些配置的解释</p>
+<h4 id="toc_4">drivers64UEFI</h4>
+<p>加<code>*</code>号为我正在使用efi，可以正确引导。</p>
+<pre><code class="">文件名   功能说明    备注
+*1  CsmVideoDxe-64.efi  增强显卡在EFI模式下的兼容性 源自Intel EFI规范，与分辨率的实现相关
+*2  DataHubDxe-64.efi   Data Hub可抓取data集合成SMBios    源自Intel EFI规范
+2   EmuVariableRuntimeDxe.efi   针对某些 Phoenix UEFI 本本    例如DELL Vostro，某些ThinkPad
+*3  FSInject-64.efi 为强制加载某些kext或注入提供支持  kext patcher，如ATIConnectorInfo patch
+*4  HFSPlus64.efi   识别OSX分区 OSX必备，与VBoxHfs.efi通用
+5   NTFS64.efi  识别Win分区 单碟多系统必备
+*6  OsxAptioFixDrv-64.efi   针对AMI Aptio UEFI 台式主板多见 技嘉、华硕、华擎等，解决找不到内核问题
+*7  OsxFatBinaryDrv-64.efi  胖二进制，对多架构提供支持，
+如OSX的boot.efi   OSX必备，或称通用二进制Universal Binary
+即Intel/PPC
+8   OsxLowMemFixDrv-64.efi  针对 Insyde H2O UEFI 的本本    修复低位内存问题
+*9  PartitionDxe-64.efi 提供对MBR、GPT等多分区表的支持  源自Intel EFI规范
+10  Ps2MouseDxe-64.efi  PS鼠标    源自Intel EFI规范，待测试
+11  UsbMouseDxe-64.efi  USB鼠标   源自Intel EFI规范，鼠标仍不可用
+12  VBoxExt2-64.efi 识别Linux分区   源自VBox，Ext4未能识别
+13  VBoxHfs.efi 识别OSX分区 源自VBox，GUI界面不显示HFS卷名
+14  XhciDxe-64.efi  USB3.0支持    USB2.0的情况正常，据说NEC Reneas勿选
+</code></pre><h3 id="toc_5">问题</h3>
+<p>安装完成后，如何恢复显卡驱动？</p>
+
+<p><a href="http://www.insanelymac.com/forum/topic/282787-clover-v2-instructions/#entry1853099">http://www.insanelymac.com/forum/topic/282787-clover-v2-instructions/#entry1853099</a></p>
+
+<p><a href="http://www.insanelymac.com/forum/topic/282787-clover-v2-instructions/#entry1853010">http://www.insanelymac.com/forum/topic/282787-clover-v2-instructions/#entry1853010</a></p>
+<h3 id="toc_6">实验一</h3>
+<p>clover usb 引导</p>
+
+<p><a href="http://tonymacx64.blogspot.hk/2013/03/guide-how-to-build-reliable-usb.html">http://tonymacx64.blogspot.hk/2013/03/guide-how-to-build-reliable-usb.html</a></p>
+
+<p><a href="http://arstechnica.com/apple/2012/07/how-to-create-a-bootable-backup-mountain-lion-install-disk/">http://arstechnica.com/apple/2012/07/how-to-create-a-bootable-backup-mountain-lion-install-disk/</a>
+diy 方式制造启动盘</p>
+
+<p>命令行挂载 dmg <code>hdiutil attach /path/to/diskimage.dmg</code></p>
+
+<p>kextcache 失败</p>
+
+<p>MBR 方式安装的黑苹果能否用 Clover 启动</p>
+
+<p>开机慢 <a href="http://bbs.pcbeta.com/viewthread-1082297-1-1.html">http://bbs.pcbeta.com/viewthread-1082297-1-1.html</a></p>
+<h3 id="toc_7">DSDT</h3>
+<p>区分系统描述表（Differentiated System Description Table (DSDT)）
+OEM厂商必须为ACPI兼容的OS提供一个DSDT。这个DSDT包含Differentiated Definition Block，它能提供关于基本系统的实现和配置信息。OS总是在ACPI Namespace中插入DSDT信息，当系统启动的时候，而且绝不会删除它。</p>
+
+<p>SSDT – Secondary System Description Table</p>
+
+<p><a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1288363">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1288363</a></p>
+
+<p><a href="http://bbs.pcbeta.com/viewthread-484842-1-1.html" title="">使用ACPI Patcher制作DSDT补丁</a></p>
+<h3 id="toc_8">Clover</h3>
+<p>如果要加载额外的 kext 一定要有以下三项条件，
+1. /efi/drivers/FSInject.efi。
+2. 适当文件夹位置的 kexts 驱动。
+3. 开机选用加载选项 &quot;Boot Mac OS X with extra kexts (skips cache)&quot;。</p>
+
+<p>其他功能：
+/EFI/drivers32 文件夹：
+/EFI/drivers64 文件夹：
+进入 GUI 之前会载入的额外 EFI-drivers，通常使用于 mouse 及 其他系统格式的驱动，如果未使用可直接移除。</p>
+
+<p>/EFI/misc 文件夹：
+为开机按 F2 开机纪录 及 F10截图 储存位置，Fat32 专用，HFS+ 不可用。</p>
+
+<p>F1：帮助选单。
+F2：储存开机纪录（Fat32专用）。
+F4：储存原始 DSDT（Fat32专用）。
+F10：储存开机截图（Fat32专用）。
+F12：退出光盘。
+?：显示分区信息。</p>
+
+<p>cool: <a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1197452">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1197452</a></p>
+
+<p><a href="https://github.com/STLVNUB/CloverGrower/blob/master/Files/HFSPlus/x64/HFSPlus.efi">https://github.com/STLVNUB/CloverGrower/blob/master/Files/HFSPlus/x64/HFSPlus.efi</a></p>
+<h4 id="toc_9">启动参数</h4>
+<p>npci=0x2000 <a href="http://legacy.tonymacx86.com/viewtopic.php?p=222908">http://legacy.tonymacx86.com/viewtopic.php?p=222908</a></p>
+
+<p>OSX的安装</p>
+
+<p>0）恢复：用硬盘安装助手将懒人版镜像恢复到事先准备好的分区中，如果U盘空间足够，推荐划一分区存放OSX安装文件
+1）准备：将原/Extra/Extensions中的kext拷贝到Clover UEFI U盘的/EFI/BOOT/kexts/10.8中
+2）启动：用准备好的Clover U盘启动，按F8选择 UEFI：USB 字样，在Clover界面中找到安装盘，按空格，
+                用方向键移动光栅至（skip cache）一项， 回车进入安装</p>
+<h3 id="toc_10">阶段总结</h3>
+<p>可以进入u盘 clover uefi 模式</p>
+
+<p>下载了 ntfs.efi hfsplus.efi</p>
+
+<p>clover 引导 安装程序出错，提示 ‘error loading drivers’</p>
+
+<p>clover 引导到已经装好的mac，一开始可以成功引导，忘记改了什么，现在进入
+登陆界面前就重启</p>
+<h3 id="toc_11">显卡问题</h3>
+<p>尝试 GraphicsInjector </p>
+
+<p>如果你之前有执行过以下操作：
+①、在 com.apple.Boot.plist 加入过 EFI 代码
+②、安装、使用过任何显卡驱动
+③、在 DSDT 中加入相关显卡代码的</p>
+
+<p>请将它们一并移除/恢复，祝您顺利驱动！</p>
+
+<p>尝试 白屏修复</p>
+
+<p><a href="http://bbs.pcbeta.com/viewthread-1310849-1-1.html">http://bbs.pcbeta.com/viewthread-1310849-1-1.html</a></p>
+
+<p><a href="http://bbs.pcbeta.com/viewthread-1060313-1-1.html" title="">ATI 5系和6系显卡驱动&amp;修改FB探讨</a></p>
+<h4 id="toc_12">成功</h4>
+<p><a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1314577">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1314577</a>
+<a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1314269">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1314269</a></p>
+
+<p><a href="http://bbs.pcbeta.com/viewthread-1296580-1-1.html">http://bbs.pcbeta.com/viewthread-1296580-1-1.html</a></p>
+
+<p><a href="http://www.insanelymac.com/forum/topic/285756-hd-7xxx-can-we-eliminate-the-sleep-trick/page__st__120">http://www.insanelymac.com/forum/topic/285756-hd-7xxx-can-we-eliminate-the-sleep-trick/page__st__120</a></p>
+
+			</article>
+			<footer class="statement">
+			  <small class＝"copyright">&copy;2009-2013  |</small>
+			  <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+			    和 <a href="http://twitter.github.com/bootstrap/"
+				  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+			  <small class="license">
+			    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+			  </small>
+			</footer>
+			
+		</div>
+		
+		<!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+	</body>
+</html>
+

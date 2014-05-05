@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      如何为MTK平台添加新模块 | 
+      DouO's Blog
+    </title>
+    <meta name="author" content="DouO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-93b47f97c3444c4711853ed5140d82a1.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/bootstrap-responsive.min-6be942c8ec424a44aa4f31e099bae1fc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-2a78e0c366d18704c93f8db7772659c6.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>    
+
+    <!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/bootstrap.min-240e44e4195f0836ced0eab636f9cb0c.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>    
+    
+	
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+    
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+
+    <link rel="shortcut icon" href="/assets/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	 <link rel="shortcut icon" href="images/favicon.ico">
+	 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	 <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	 -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    <!-- processing -->
+    
+<script type="text/javascript"
+  src="http://cdn.staticfile.org/processing.js/1.4.1/processing.min.js">
+</script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <header class="header pull-left">
+	    <h1>如何为MTK平台添加新模块</h1>
+	  </header>
+  	  <button type="button" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    </button>
+	</div> <!-- header -->
+
+         </div>
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8 content">
+	  <div class="nav-wrapper nav-collapse collapse"   data-spy="affix" data-offset-top="70" >
+	    <nav class="nav moon-nav-list">
+	      <ul>
+	        <li><a href="/" rel="tooltip" data-placement="top" title="主頁">home</a></li>
+	        <li><a href="/archives" rel="tooltip" data-placement="top" title="文章歸檔">archives</a></li>
+	        <li><a href="/notes" rel="tooltip" data-placement="top" title="我的個人筆記">notes</a></li>
+	        <li><a href="/rss.xml" rel="tooltip" data-placement="top" title="訂閱">feed</a></li>
+	        <li><a href="/about" rel="tooltip" data-placement="top" title="關於我">about</a></li>
+	        <li  class="separate"></li>
+	        <li> 
+	  	<a class="meta-nav next" href="/2010/07/20/painess-of-minesweeper">
+	  	  <span>←<br></span>玩扫雷的悲剧
+	  	</a>
+	        </li>
+	        <li>
+	  	<a class="meta-nav previous" href="/2010/06/25/my-wifi-for-htc-hero">
+	  	  让HTC Hero通过我的笔记本无线网卡共享上网<span><br>→</span>
+	  	</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	      <article class="post box">
+<ul class="category-label">
+<li><a href="/categories#coder-ref" class="coder">coder</a></li>
+</ul>
+<div class="cf"></div>
+<div class="cf"></div><div id="toc_container" class="toc_wrap_right toc_black no_bullets" ><p class="toc_title">目录</p><ul class="toc_list">
+     <li><a href="#toc_0">包含源码的第三方库</a>
+     <ul>
+     </ul>
+     </li>
+     
+     <li><a href="#toc_1">生成自己的Lib库</a>
+     <ul>
+          <li><a href="#toc_2">也可以不用remake，可以用命令行来编译</a>
+          <ul>
+          </ul>
+          </li>
+          
+          <li><a href="#toc_3">Modis</a>
+          <ul>
+          </ul>
+          </li>
+          
+          <li><a href="#toc_4">PC Simulator</a>
+          <ul>
+          </ul>
+          </li>
+          
+     </ul>
+     </li>
+     
+     <li><a href="#toc_5">参考资料</a>
+     <ul>
+     </ul>
+     </li>
+     
+</div>
+
+
+<h2 id="toc_0">包含源码的第三方库</h2>
+<p>以添加一个TTS模块为例，可以按如下步骤添加：</p>
+
+<ol>
+<li> 把TTS的源码包复制到你的MTK软件系统根目录下，以让TTS的源码都在TTS目录中</li>
+<li> 在make目录下新增一个tts目录，在tts目录下添加4个新文件，分别是，tts.def、tts.inc、tts.lis、tts.pth。tts.def文件的内容需要根据内容来修改，其他3个文件中加上源文件及其目录、头文件目录即可。</li>
+<li> 在REL_CR_MMI_&lt;project&gt;.mak 中加上如下语句 CUS_REL_SRC_COMP
++= tts</li>
+<li> 把MTK工程remake一下，若没有错误，tts模块就成功加上去了。</li>
+<li> <strong>如果要为Modis模拟器添加该模块，须进入到Modis目录，在createMoDIS.ini文件中，[GLOBAL_SETTINGS]下，追加
+**enable_libs += tts</strong> createMoDIS.ini会在createMoDIS.pl中加载**</li>
+</ol>
+
+<p>添加一个无源码的库，如xxx.lib，可按照下面步骤：</p>
+
+<ol>
+<li> 在MTK软件系统根目录中新建一个xxx文件夹，把xxx.lib放在里面</li>
+<li> 在make\Option.mak里增加下面几行，ifeq语句不是必要。 ifeq (\$(strip
+\$(XXX_SUPPORT)),TRUE) COMPOBJS += xxx\xxx.lib CUS_REL_OBJ_LIST
++= xxx\xxx.lib endif</li>
+<li> 有 头文件，要将头文件路径加入，用CUSTOM_COMMINC如： CUSTOM_COMMINC +=
+....</li>
+<li> 如果加了XXX_SUPPORT判断，须在&lt;customer&gt;_&lt;project&gt;.mak文件中添加，并初始化为
+TRUE： XXX_SUPPORT = TRUE;</li>
+<li> 修改完成后，remake就可以将新模块添加到工程里了。</li>
+<li> 关于 ifeq
+((XXX_SUPPORT)),TRUE)语句的意思是如果XXX_SUPPORT的值为TRUE则继续执行。strip函数详见<a href="http://dourok.info/wiki/doku.php?id=%E7%A8%8B%E5%BA%8F:makefile:strip" title="程序:makefile:strip">这里</a>。</li>
+</ol>
+
+<p><strong>Modis模拟器不能调用该库，Modis模拟器调用的库要经过VC编译。</strong></p>
+<h2 id="toc_1">生成自己的Lib库</h2>
+<p>比如说新建一个源文件dou.c，代码如下： </p>
+<pre><code class="c">#include &quot;dou.h&quot;
+int dou_max(int a , int b){
+return a&gt;b?a:b;
+}
+</code></pre>
+<p>接下来建立头文件dou.h, </p>
+<pre><code class="c">#ifndef _DOU_H
+#define _DOU_H
+extern int dou_max(int a,int b);
+#endif
+</code></pre>
+<p>若要将程序打包成库发布，这里跟上面添加包含源码的第三方库一样，在MTK软件系统根目录下，新增一个dou目录，在创建inc和src文件夹，把dou.h放在dou，dou.c放在dou。接着在make目录下新增一个dou目录,再添加4个新文件，分别是，dou.def、dou.inc、dou.lis、dou.pth。</p>
+
+<p>dou.inc添加 </p>
+<pre><code class="">dou\inc
+</code></pre>
+<p>dou.lis添加 </p>
+<pre><code class="">dou\src\dou.c
+</code></pre>
+<p>dou.pth添加 </p>
+<pre><code class="">dou\src
+</code></pre>
+<p>.inc是头文件目录，.lis是源文件列表，.pth是源文件目录。</p>
+
+<p>remake一下，完成后可在build文件夹里，搜索到dou.lib文件。接下来可以如上面所说的无源码的库的添加方法那样去添加。</p>
+<h3 id="toc_2">也可以不用remake，可以用命令行来编译</h3><pre><code class="">armcc [options] file1 file2 ... filen
+</code></pre>
+<p>不过我用armmcc编译出来的obj文件加入MTK工程后链接出错。后来用</p>
+<pre><code class="">tcc
+</code></pre>
+<p>就OK了。
+用armcc还是tcc，在Option.mak里是有定义的，具体看COMPILE_MODE这个参数。好像默认就是tcc。</p>
+
+<p>tcc编译出来的是obj文件，还要打包成lib库,用命令 </p>
+<pre><code class="">armar -r libfile objfile...
+</code></pre>
+<p>之后把lib加入工程的方法一开始说过了。但如果要把lib添加进模拟器中还需要多几个步骤。</p>
+
+<p>首先，这个lib库是用在真机上，而模拟器中的库是需要经过vc编译的。</p>
+<h3 id="toc_3">Modis</h3>
+<p>如按照包含源码的第三方库第5步操作过，那么重新生成、编译模拟器就可以在模拟器中使用该库。在模拟器的目录Modis中可以库目录dou，dou.lib应该就在Debug目录下。这个dou.lib就是vc编译过的库。
+如果第三方要在模拟器里使用该库，那么可以按下面几个步骤操作。
+确保lib文件是vc编译的 将lib复制到 _lib..
+这个目录是不确定的，在CreateModis.pl里有定义，具体可查看\${modislibroot}这个变量</p>
+
+<p>在CreateModis.pl里，添加一句 </p>
+<pre><code class="">push(@liblist, &quot;${modislibroot}\\dou\.lib&quot;);
+</code></pre>
+<p>这里可以参考了其它\${modislibroot}里的lib库的添加方法。 然后</p>
+<pre><code class="">make gen_modis
+make codegen_modis
+</code></pre>
+<p>编译Modis，不报错便大功告成。</p>
+<h3 id="toc_4">PC Simulator</h3>
+<p>如果用PC Simulator
+，并且确保代码是不依赖于MTK平台的，就是说没有使用MTK平台现有模块的任何函数，如dou.c。那么可以在VC6里面新建个静态库项目，把源文件添加进去，让编译打包成LIB库。再打开PC_Simulator.dsw。在project→setting把新生成的lib添加进去。接着再tools→options加入Lib库的路径，有的话在加入头文件的路径。这样可以在模拟器里使用该库了。</p>
+
+<p>最后调用下dou_max函数验证之。</p>
+<h2 id="toc_5">参考资料</h2>
+<p>[1]陈智鹏. 走出山寨-MTK芯片开发指南. 人民邮电出版社</p>
+
+<p>[2]52rd论坛.
+添加新模块模拟器编译出现问题<a href="http://www.52rd.com/bbs/Detail_RD.BBS_189450_5_1_1.html" title="">http://www.52rd.com/bbs/Detail_RD.BBS_189450_5_1_1.html</a></p>
+
+<div class="footer">
+  <ul class="tag_box inline">
+  <li><a href="/tags#Modis-ref">Modis</a></li>
+  <li><a href="/tags#MTK-ref">MTK</a></li>
+  </ul>
+  <span class="date">
+  2010-07-15
+  </span>
+</div>
+</article>
+
+
+<div class="box">
+  <div class="plus">
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_kaixin001"></a>
+<a href="http://www.jiathis.com/share?uid=1677096" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677096" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+	
+
+  </div>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_developer = 1;
+	var disqus_title = '如何为MTK平台添加新模块';
+
+	var disqus_identifier ='116 http://dourok.info/?p=116';
+
+	var disqus_shortname = 'doousblog';
+	
+	var disqus_url = 'https://douo.github.io/moon-2013//2010/07/15/how-to-add-new-module-in-mtk';
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<!-- disqus end-->
+
+ </div>
+
+	      </div>  <!-- content -->
+      </div>  <!-- row -->
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <footer class="statement">
+	    <small class＝"copyright">&copy;2009-2013  |</small>
+	    <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+	      和 <a href="http://twitter.github.com/bootstrap/"
+	  	  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+	    <small class="license">
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+	    </small>
+	  </footer>
+	  
+	      </div>
+      </div>
+	
+	
+<script type="text/javascript">
+   $(function(){
+   $(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+   var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+   if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+	$("#gotop").fadeIn(400); //淡出     
+	}else{      
+	$("#gotop").stop().fadeOut(400); //如果返回或者没有超过,就淡入.必须加上stop()停止之前动画,否则会出现闪动   
+	}
+	});
+	$("#gotop").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+	$("html,body").animate({scrollTop:"0px"},200);
+	});
+	});
+</script>
+<a id="gotop" href="#">   
+	<span>▲</span> 
+</a>
+    </div> <!-- /container -->
+    
+    <!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+  </body>
+
+</html>

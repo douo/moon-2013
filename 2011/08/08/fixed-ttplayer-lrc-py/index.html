@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      修复了 Lyrics Grabber2 的千千静听歌词抓取脚本 | 
+      DouO's Blog
+    </title>
+    <meta name="author" content="DouO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    <!-- Le styles -->
+<link href='/assets/stylesheets/bootstrap.min-93b47f97c3444c4711853ed5140d82a1.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/bootstrap-responsive.min-6be942c8ec424a44aa4f31e099bae1fc.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/style-2a78e0c366d18704c93f8db7772659c6.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>    
+
+    <!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/bootstrap.min-240e44e4195f0836ced0eab636f9cb0c.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>    
+    
+	
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+    
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+
+    <link rel="shortcut icon" href="/assets/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+	 <link rel="shortcut icon" href="images/favicon.ico">
+	 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	 <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	 -->
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    <!-- processing -->
+    
+<script type="text/javascript"
+  src="http://cdn.staticfile.org/processing.js/1.4.1/processing.min.js">
+</script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <header class="header pull-left">
+	    <h1>修复了 Lyrics Grabber2 的千千静听歌词抓取脚本</h1>
+	  </header>
+  	  <button type="button" class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    </button>
+	</div> <!-- header -->
+
+         </div>
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8 content">
+	  <div class="nav-wrapper nav-collapse collapse"   data-spy="affix" data-offset-top="70" >
+	    <nav class="nav moon-nav-list">
+	      <ul>
+	        <li><a href="/" rel="tooltip" data-placement="top" title="主頁">home</a></li>
+	        <li><a href="/archives" rel="tooltip" data-placement="top" title="文章歸檔">archives</a></li>
+	        <li><a href="/notes" rel="tooltip" data-placement="top" title="我的個人筆記">notes</a></li>
+	        <li><a href="/rss.xml" rel="tooltip" data-placement="top" title="訂閱">feed</a></li>
+	        <li><a href="/about" rel="tooltip" data-placement="top" title="關於我">about</a></li>
+	        <li  class="separate"></li>
+	        <li> 
+	  	<a class="meta-nav next" href="/2011/10/10/browse-android-sources-on-netbeans">
+	  	  <span>←<br></span>在Netbeans上查看Android源码
+	  	</a>
+	        </li>
+	        <li>
+	  	<a class="meta-nav previous" href="/2011/07/14/maze-generation-algorithm">
+	  	  迷宫生成算法<span><br>→</span>
+	  	</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	  
+	      <article class="post box">
+<ul class="category-label">
+<li><a href="/categories#coder-ref" class="coder">coder</a></li>
+<li><a href="/categories#otaku-ref" class="otaku">otaku</a></li>
+</ul>
+<div class="cf"></div>
+
+
+<p>之前修改过现在查词失败的同学请点<a href="#attention" title="">这里</a></p>
+
+<p><a href="http://code.google.com/p/lyricsgrabber2/" title="">Lyrics Grabber2</a>
+可以说我理想中的歌曲下载插件，主要是它可以批量抓取更新歌词，又可以自定义抓取脚本方便扩展(见<a href="http://code.google.com/p/lyricsgrabber/wiki/HowToMakeProviderInPython" title="">此HowToMakeProviderInPython</a>)，实在强大。不过还是有一些不足，比如找到的歌词没有给出来源（Provider），歌词服务器（Provier）不能更改优先级，还有就是出现多个歌词的匹配问题，既有多个服务器的，也有一个服务器的多个歌词的，希望能增加人工选择的选项。不过 Lyrics
+Grabber2刚好一年没更新了，再更新实在希望不大。</p>
+
+<p>再者，现在Lyrics
+Grabber2里面的千千静听歌词抓取脚本（TTPlayer(LRC).py）是用不了的。我了解一下，把bug总结如下：</p>
+
+<p>bug_1：<a href="http://code.google.com/p/lyricsgrabber2/source/browse/trunk/foo_lyricsgrabber2/dist/pygrabber/scripts/TTPlayer(LRC).py#36" title="">36行</a>，导致搜索失败的主要原因，现在千千静听搜索歌词的服务器变了</p>
+
+<p>bug_2：<a href="http://code.google.com/p/lyricsgrabber2/source/browse/trunk/foo_lyricsgrabber2/dist/pygrabber/scripts/TTPlayer(LRC).py#103" title="">103行</a>，另一个导致搜索失败的原因，用来生成code的字符串应该用utf-8编码，而用<code>minidom.parseString</code>出来的字符串已经是utf-16le的了.</p>
+
+<p>bug_3：<a href="http://code.google.com/p/lyricsgrabber2/source/browse/trunk/foo_lyricsgrabber2/dist/pygrabber/scripts/TTPlayer(LRC).py#114" title="">114行</a>，这一行应该是打错了. 条件应该是<code>c &gt;= 0x80</code></p>
+
+<p>bug_4：<a href="http://code.google.com/p/lyricsgrabber2/source/browse/trunk/foo_lyricsgrabber2/dist/pygrabber/scripts/TTPlayer(LRC).py#42" title="">42行</a>，同样是编码问题，导致Levenshtein算法失效，因为比对的是两个不同编码的字符串。</p>
+
+<p>修复完bug后，就可以成功查词了。但是结果并不理想。
+<a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2011/08/t2.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2011/08/t2.png" title="t2"  alt=""></a></p>
+
+<p>由上图可以看出是，英文和简体没压力但繁（正）体中文就不行了。显然还需对title做些处理。通过对千千静听进行测试，发现千千静听对查询串的处理远不止
+<a href="http://code.google.com/p/lyricsgrabber2/source/browse/trunk/foo_lyricsgrabber2/dist/pygrabber/scripts/TTPlayer(LRC).py#71" title="">71</a>、<a href="http://code.google.com/p/lyricsgrabber2/source/browse/trunk/foo_lyricsgrabber2/dist/pygrabber/scripts/TTPlayer(LRC).py#72" title="">72</a>、<a href="http://code.google.com/p/lyricsgrabber2/source/browse/trunk/foo_lyricsgrabber2/dist/pygrabber/scripts/TTPlayer(LRC).py#73" title="">73</a>
+所在的那样。 大概做了下面这些过滤：</p>
+
+<ul>
+<li>  英文转小写</li>
+<li>  去括号，大中小还有全角的小括号</li>
+<li>  去除半角特殊符号，空格，逗号，etc。</li>
+<li>  去除全角特殊符号</li>
+<li>  繁（正）体转换为简体</li>
+</ul>
+
+<p>繁（正）体转换为简体，找不到好的现成方案（针对unicode字符集uft-8编码的）。只能动用谷歌翻译的api了。没想到谷歌翻译倒工作的很好。不过毕竟是多一个网络请求，建议不需要的时候可以把它注释掉，以加快查询速度。其他过滤功能也可以根据情况去掉，已加强效率。FYI:脚本更改后立即生效，无须重启foobar2000的。</p>
+
+<p>针对这些，增加了下面的新方法 </p>
+<pre><code class="python">def QianQianStringFilter(self,string):
+s = string
+# 英文转小写
+s = s.lower()
+# 去括号，大中小还有全角的小括号
+s = re.sub('\(.*?\)|\[.*?]|{.*?}|（.*?）', '', s);
+# 去除半角特殊符号，空格，逗号，etc。
+s = re.sub('[ -/:-@[-`{-~]+', '', s);
+# 繁（正）体转换为简体
+s = translate(s,'zh-tw','zh-cn')
+s = unicode(s, 'utf_8')
+# 去除全角特殊符号
+s = re.sub(u'[\u2014\u2018\u201c\u2026\u3001\u3002\u300a\u300b\u300e\u300f\u3010\u3011\u30fb\uff01\uff08\uff09\uff0c\uff1a\uff1b\uff1f\uff5e\uffe5]+','',s)
+return s
+</code></pre><pre><code class="python">def translate(text,lang_from,lang_to):
+url = ('http://ajax.googleapis.com/ajax/services/language/translate?' +
+'v=1.0&amp;q='+urllib.quote(text)+'&amp;langpair='+lang_from+'%7C'+lang_to)
+json = urllib.urlopen(url).read()
+# return json;
+p = re.compile('&quot;translatedText&quot;:&quot;(.+?)&quot;')
+m = p.search(json);
+return m.group(1);
+</code></pre>
+<p><a id="attention"></a><strong>注意:</strong>谷歌翻译的api已经过期了，会导致查词失败，新的翻译api又要收费还很贵，见<a href="http://code.google.com/apis/language/translate/v2/pricing.html" title="">http://code.google.com/apis/language/translate/v2/pricing.html</a>，坑爹呢这是。幸好还有Bing做后援。虽然不给力，但简繁转换还是没问题的。下面的代码改用Bing的翻译服务：</p>
+<pre><code class="python">def translate(text,lang_from,lang_to):
+url = ('http://api.microsofttranslator.com/V2/Ajax.svc/Translate?' +
+'appId=DE2A1CAA235EB52E611BC1243F16E4D301BB600E' +
+'&amp;from='+ lang_from +'&amp;to='+ lang_to +
+'&amp;text='+urllib.quote(text))
+json = urllib.urlopen(url).read()
+p = re.compile('&quot;(.+?)&quot;') #對應必應
+m = p.search(json);
+return m.group(1);
+</code></pre>
+<p>这样，大部分流行歌曲特别是华人音乐，都可以表示毫无压力。
+<a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2011/08/t1.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2011/08/t1.png" title="t1"  alt=""></a>
+千千静听的大部分歌词都是简体的……</p>
+
+<p>歌名特殊符号的也能识别了
+<a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2011/08/t3.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2011/08/t3.png" title="t3"  alt=""></a></p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2011/08/t2_.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2011/08/t2_.png" title="t2_"  alt=""></a> You Ain&#39;t Goin
+Nowhere在千千静听里面也是Fault。</p>
+
+<p>但是这样并不完美，毕竟是黑盒测试，比如
+中千千静听的<strong>後</strong>(/u8C5F)字并没有转换到<strong>后</strong>，如下图：</p>
+
+<p><a class="fancybox" rel="group" href="/assets/media/wp-content/uploads/2011/08/t4.png" title=""><img class="lazy img-polaroid display" src="/assets/media/wp-content/uploads/2011/08/t4.png" title="t4"  alt=""></a></p>
+
+<p><strong>最後の放課後</strong> 在千千静听中可以找到，<strong>花は桜 君は美し
+-instrumental-</strong> 则同样找不到</p>
+
+<p>不过目前也就这能做到这样。</p>
+
+<p>改好的脚本在此:<a href="https://gist.github.com/4361991" title="">TTPlayer(LRC).py</a></p>
+
+<p>另外，乐辞的脚本也是不行的，顺手也改好了。<a href="https://gist.github.com/4361993" title="">Lyricist(LRC).py</a></p>
+
+<p>btw：千千静听的歌词库，只要是热门的，流行的，出名的歌曲都挺全的，不知是从哪里来的。</p>
+
+<div class="footer">
+  <ul class="tag_box inline">
+  <li><a href="/tags#foobar2000-ref">foobar2000</a></li>
+  <li><a href="/tags#Lyrics Grabber2-ref">Lyrics Grabber2</a></li>
+  <li><a href="/tags#python-ref">python</a></li>
+  <li><a href="/tags#歌词搜索-ref">歌词搜索</a></li>
+  </ul>
+  <span class="date">
+  2011-08-08
+  </span>
+</div>
+</article>
+
+
+<div class="box">
+  <div class="plus">
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+    <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style"><span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_renren"></a>
+<a class="jiathis_button_kaixin001"></a>
+<a href="http://www.jiathis.com/share?uid=1677096" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1677096" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+	
+
+  </div>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_developer = 1;
+	var disqus_title = '修复了 Lyrics Grabber2 的千千静听歌词抓取脚本';
+
+	var disqus_identifier ='571 http://dourok.info/?p=571';
+
+	var disqus_shortname = 'doousblog';
+	
+	var disqus_url = 'https://douo.github.io/moon-2013//2011/08/08/fixed-ttplayer-lrc-py';
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<!-- disqus end-->
+
+ </div>
+
+	      </div>  <!-- content -->
+      </div>  <!-- row -->
+      <div class="row-fluid">
+	<div class="span2 hidden-phone"></div>
+	<div class="span8">
+	  <footer class="statement">
+	    <small class＝"copyright">&copy;2009-2013  |</small>
+	    <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+	      和 <a href="http://twitter.github.com/bootstrap/"
+	  	  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+	    <small class="license">
+	      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+	    </small>
+	  </footer>
+	  
+	      </div>
+      </div>
+	
+	
+<script type="text/javascript">
+   $(function(){
+   $(window).scroll(function(){  //只要窗口滚动,就触发下面代码 
+   var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度 
+   if( scrollt >200 ){  //判断滚动后高度超过200px,就显示  
+	$("#gotop").fadeIn(400); //淡出     
+	}else{      
+	$("#gotop").stop().fadeOut(400); //如果返回或者没有超过,就淡入.必须加上stop()停止之前动画,否则会出现闪动   
+	}
+	});
+	$("#gotop").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+	$("html,body").animate({scrollTop:"0px"},200);
+	});
+	});
+</script>
+<a id="gotop" href="#">   
+	<span>▲</span> 
+</a>
+    </div> <!-- /container -->
+    
+    <!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+  </body>
+
+</html>

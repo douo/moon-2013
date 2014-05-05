@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>
+			Google IO 2013 |
+			DouO's Note </title>
+
+		<meta name="author" content="DouO">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Le styles -->
+<link href='/assets/stylesheets/semantic-91be4534b368c69b3ae34ebe17bb9928.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/note-abdc38b478e2e51aafac266fed65bb36.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>		
+		<!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/semantic-54cc5e8b6a700ce47e0d951c470b6bb6.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/note-613cb7a88bab975ffe3bbf1be9fbbd6a.js'></script>		
+		
+
+		
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+		
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+		<link rel="shortcut icon" href="/assets/media/favicon.ico">
+		<!-- Le fav and touch icons -->
+		<!-- Update these with your own images
+
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+	</head>
+	<body>
+		<div class="ui vertical inverted labeled sidebar menu sidebar accordion">
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes" title="我的笔记" ><i class="book large icon"></i></a>
+				</div>
+				<div class="menu content">
+					<a class="item" href="/">博客</a>
+					<a class="item" href="http://wiki.dourok.info/doku.php">Wiki</a>
+					<a class="item" href="/about">关于我</a>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Uncategory">其他</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/tags">笔记标签</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/greendao">greenDao</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/gradle">gradle</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/chinese-calendar">天朝历法</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/amazon">amazon</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/Holistic-Learning">Holistic Learning</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Tools">工具</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Emacs</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Tools/Emacs/orgmode">orgmode</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Tools/Emacs/emacs-diary">Emacs 日记</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/xcode">Xcode</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/trello">Trello</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/ruhoh">Ruhoh</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/ruhoh-env">配置 RUHOH 环境</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/online-toolkits">在线工具集合</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/imagemagick">ImageMagick</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/git">git</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/eclipse">Eclipse</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/android-studio">Android Studio</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/Mustache">Mustache</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Study">兴趣</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Music</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Study/Music/guitar-note">吉他笔记</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+										<a>Astronomy</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/spherical-astronomy">球面天文学基础</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/solar-system">太阳系</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/physics">物理学基础</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Study/metadata">Metadata</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Reading">读书笔记</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Reading/the-productive-programmer">卓有成效的程序员</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/some_mind">Some mind</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/philosophy-of-note">记录的哲学</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/evernote">Evernote</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Quick">便签</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>2013</a>
+					
+					<div class="menu">
+						<div class="item">
+												<a>03</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/03/note-2013-03-06">2013年03月06日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>02</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/02/note-2013-02-14">2013年02月14日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/02/note-2013-02-04">2013年02月04日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>01</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/01/note-2013-01-09">2013年01月09日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/01/note-2013-01-08">2013年01月08日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+										<a>2012</a>
+					
+					<div class="menu">
+						<div class="item">
+												<a>12</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-22">2012年12月22日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-21">2012年12月21日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-20">2012年12月20日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-11">2012年12月11日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-10">2012年12月10日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>11</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-22">2012年11月22日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-21">2012年11月21日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-20">2012年11月20日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-15">2012年11月15日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-14">2012年11月14日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-07">2012年11月07日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Programming">编码</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Programming/iOS">iOS</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/snippets">常用代码片段</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/WindowsAndView">WindowsAndView</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/Objective-C">Objective-C</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/CS193P">斯坦福CS193P</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Programming/Ruby">Ruby</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/ri-and-rdoc">ri and RDoc</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/nokogiri">nokogiri</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/metaprogramming-ruby">Metaprogramming Ruby</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Programming/Android">Android</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/weird-android">Weird Android</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/surfaceview">SurfaceView</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/service">Service</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/screen-support">Screen Support</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/fragment">Fragment</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/cocos2dx">Cocos2dx</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/android-decompilation">android 逆向工程</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/activity">Activity</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/NDK">NDK</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/Google-IO-2013">Google IO 2013</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Computer">计算机</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Mac</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Computer/Mac/mountain-lion-memo">山狮备忘</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Computer/Mac/mavericks-memo">Mavericks 备忘</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Computer/pc">PC折腾记录</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<a href="/notes/log">站点日志</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui black huge launch right attached button">
+			<i class="icon list layout"></i>
+			<span class="text">菜单</span>
+		</div>
+
+		<header class="segment container">
+			<h1 class="ui dividing header">Google IO 2013</h1>
+			<p class="segment">
+				
+				<p>
+				<a class="ui label blue inverted" href="/notes/Uncategory/tags#Google IO-ref">Google IO</a>
+				<a class="ui label blue inverted" href="/notes/Uncategory/tags#ActionBar-ref">ActionBar</a>
+				<a class="ui label blue inverted" href="/notes/Uncategory/tags#Navigation-ref">Navigation</a>
+				<a class="ui label blue inverted" href="/notes/Uncategory/tags#Graphics-ref">Graphics</a>
+				</p>
+			</p>
+		</header>
+		<div class="container">
+			<article>
+				<h3 id="toc_0">Navigation in Android</h3><h4 id="toc_1">taskAffinity</h4>
+<p><a href="http://yelinsen.iteye.com/blog/1122547">http://yelinsen.iteye.com/blog/1122547</a></p>
+<h4 id="toc_2">Launcher</h4>
+<p>在 Launcher 中打开应用的 Intent 带有 <code>FLAG_ACTIVITY_NEW_TASK</code>。一般情况下就是在新 Task 下打开一个 Activity。但是如果已经有相同 affinity 的 task 存在，这个 flag 意味着，如果 intent 跟 task 的 root activity 相同，那会把 task 带到前台，而不启动这个 Intent 的 activity。如果不同，那么新的 Activity 将会创建并压入 task 。</p>
+
+<blockquote>
+<p>创建两个工程，application1和application2，分别含有Activity1和Activity2，它们的taskAffinity相同，首先，我们启动application1,加载Activity1，然后按Home键，使该task（假设为task1）进入后台。然后启动application2，会看到Activity1 被带入前台，Activity2 没有启动。</p>
+</blockquote>
+<h4 id="toc_3">Recent</h4>
+<p>Recent 按钮就是三个标准按钮中，除了 Back 和 Home 外的另外一个。实际上就是用于切换 Task。</p>
+
+<p>Recent 切换就是启动所选 Task 的 root activity，但是带有两个Flag，<code>FLAG_ACTIVITY_NEW_TASK</code>，<code>FLAG_ACTIVITY_TASK_ON_HOME</code>。意味着把这个 Task 和 Home 一起移到顶部，Home 置于 Task 之下。见:<a href="https://docs.google.com/presentation/d/1BaucBbey81e5qEyq_71hVe4kmd7F2x5nt_TcyuxrgK0/edit#slide=id.g63148c4_0_11" title="">Slide</a></p>
+<h4 id="toc_4">ActionBar</h4>
+<p>ActionBar 的后退按钮，称之为<strong>UP</strong> ，UP 是作为应用内导航用的，它让当前 Activity 返回到他的父 Activity，不一定是当前 Task 中的前一个 Activity。Apps 中各个Activity的关系应该是树结构的。见<a href="https://docs.google.com/presentation/d/1BaucBbey81e5qEyq_71hVe4kmd7F2x5nt_TcyuxrgK0/edit#slide=id.g11d81ecd_1_32" title="">Slide</a></p>
+
+<p>具体的实现见: <a href="https://developer.android.com/training/implementing-navigation/ancestral.html" title="">Providing Up Navigation</a></p>
+<h4 id="toc_5">Widget</h4>
+<p>如果 Widget 打开一个某个 Content Activity（位于 App structure 的某个非根节点），<a href="https://docs.google.com/presentation/d/1BaucBbey81e5qEyq_71hVe4kmd7F2x5nt_TcyuxrgK0/edit#slide=id.g1464cfe7_1_208" title="">Slide</a>。下面的代码显示这个 Activity 如何处理<strong>UP</strong>事件的。</p>
+<pre><code class="">Intent upIntent = NavUtils.getParentActivityIntent(this);
+if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
+    //如果当前 Task 找不到它的 parent intent，则通过下面的方法，启动整个 parent statck
+    TaskStackBuilder.from(this)
+        .addParentStack(this)
+        .startActivities();
+    finish();
+} else {
+    NavUtils.navigateUpTo(this, upIntent);
+}
+</code></pre>
+<p><code>navigateUpTo</code> 只是加了個 <code>FLAG_ACTIVITY_CLEAR_TOP</code></p>
+<pre><code class="">    @Override
+    public void navigateUpTo(Activity activity, Intent upIntent) {
+        upIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        activity.startActivity(upIntent);
+        activity.finish();
+    }
+</code></pre><h4 id="toc_6">Notification</h4>
+<p>Notification 打开的 Activity 会启动一个新 Task，但不带<code>FLAG_ACTIVITY_TASK_ON_HOME</code>。<strong>Back</strong>可以返回到前一个 Task。</p>
+<h4 id="toc_7">Test</h4>
+<p>要小心不同方式打开 Acitivty 的不同处理，</p>
+
+<ul>
+<li>widget</li>
+<li>notification</li>
+<li>intent</li>
+</ul>
+<h3 id="toc_8">Android Graphics Performance</h3>
+<p>Android 4.3 优化了图形的绘制效率。<strong>Re-ordering</strong> 重新排序绘制指令，相
+同的指令一起绘制（所有的 Vew），比如先绘制所有 bitmap ，然后 9patch 然
+后text，而不是一个 View 一个 View 地绘制。<strong>Merge</strong> 相同的指令合并成一
+个指令，比如两个 Bitmap 一起绘制。</p>
+
+<p>Drawing 多线程优化，多核心 CPU 优化。</p>
+
+<p>支持 Path Clip。</p>
+<h4 id="toc_9">OverDraw</h4>
+<p>4.2 一个新的 debug tool 选项，<code>show GPU overdraw</code> Overdraw，就是一帧的
+中一个像素被绘制了多少次，前几次绘制都是无用的，只有最后一次绘制的颜色
+才会最终显示给用户。减少 overdraw 可以提供应用绘制的效率。</p>
+
+<p>提供了几个技巧来减少 overdraw</p>
+
+<ol>
+<li>避免使用根View的背景，在 theme 中设置<code>android:windowBackground</code>代替。</li>
+<li>可以将 9patch 的  content area 弄成透明的，前提是显示的内容是非透明的。</li>
+</ol>
+<h4 id="toc_10">Profilie GPU rendering</h4>
+<p>4.2 实时显示每一帧的绘制时间在屏幕上，低于绿线表示帧率超过60。手头没
+有 4.2 的设备可供测试。</p>
+<h4 id="toc_11">systrace</h4>
+<p>新的 API <code>android.os.Trace</code>。对 opengl  比较有用。</p>
+<h4 id="toc_12">Trilinear filtering</h4>
+<p>4.2 Bitmap#setHasMipMap 支持
+<a href="http://zh.wikipedia.org/wiki/Mipmap" title="">MidMap</a> </p>
+<h4 id="toc_13">其他</h4>
+<p>需要进一步详细了解</p>
+
+<ol>
+<li>Canvas layout</li>
+<li>alpha，TextView setTextColor，ImageView setImageAlpha</li>
+<li>如果各个view间不相互覆盖，在4.1中可以通过设置hasOverLappingRendering为false来提高性能</li>
+<li>Canvas confuse, hardware rendering 返回 size of view。softwarerendering 返回 size of window</li>
+<li>clip ronate。 clip border </li>
+</ol>
+
+<p>最后放上 slide：</p>
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/26948262"
+width="98%" height ="500" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<h4 id="toc_14">NVIDIA PerfHUD ES</h4>
+<p><a href="https://developer.nvidia.com/nvidia-perfhud-es" title="">NVIDIA PerfHUD ES</a> 视频里出现了这个工具，看起来很酷的样子，可以逐
+步重现各个绘制的步骤。但貌似只支持 Terga GPU</p>
+
+<p>高通也有个类似的工具，用于调试 OpenGl ES，<a href="https://developer.qualcomm.com/mobile-development/mobile-technologies/gaming-graphics-optimization-adreno/tools-and-resources" title="">ADRENO™ PROFILER</a></p>
+<h3 id="toc_15">Volley</h3>
+<p><a href="https://android-review.googlesource.com/#/admin/projects/platform/frameworks/volley" title="">Volley</a> 类似于 async-http-client 的网络库，很强大的 cancelation 处理机制。（async-http-client 的 cancel 几乎不可用）。有吸引力，正式使用前必须跟 async-http-client 作一番对比才行，接口看起来复杂不少。</p>
+
+<p>mark 一下<a href="http://zh.wikipedia.org/wiki/%E5%BF%AB%E5%8F%96%E6%96%87%E4%BB%B6%E7%BD%AE%E6%8F%9B%E6%A9%9F%E5%88%B6" title="">LRU Cache</a></p>
+<h4 id="toc_16">OkHttp</h4>
+<p><a href="http://square.github.io/okhttp/" title="">OkHttp</a> 有两个优点，其一是更高效地使用 http，并支持 spdy；其二，实现了HttpURLConnection 和  Apache HttpClient 几乎一样的接口，重构成本低。</p>
+
+<p>这里有一份<a href="http://blog.chengyunfeng.com/?p=489#ixzz2i3evPpq0" title="">中文介绍</a>。</p>
+
+			</article>
+			<footer class="statement">
+			  <small class＝"copyright">&copy;2009-2013  |</small>
+			  <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+			    和 <a href="http://twitter.github.com/bootstrap/"
+				  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+			  <small class="license">
+			    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+			  </small>
+			</footer>
+			
+		</div>
+		
+		<!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+	</body>
+</html>
+

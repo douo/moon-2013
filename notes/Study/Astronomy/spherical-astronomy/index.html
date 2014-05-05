@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>
+			球面天文学基础 |
+			DouO's Note </title>
+
+		<meta name="author" content="DouO">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Le styles -->
+<link href='/assets/stylesheets/semantic-91be4534b368c69b3ae34ebe17bb9928.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/note-abdc38b478e2e51aafac266fed65bb36.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>		
+		<!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/semantic-54cc5e8b6a700ce47e0d951c470b6bb6.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/note-613cb7a88bab975ffe3bbf1be9fbbd6a.js'></script>		
+		
+
+		
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+		
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+		<link rel="shortcut icon" href="/assets/media/favicon.ico">
+		<!-- Le fav and touch icons -->
+		<!-- Update these with your own images
+
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+	</head>
+	<body>
+		<div class="ui vertical inverted labeled sidebar menu sidebar accordion">
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes" title="我的笔记" ><i class="book large icon"></i></a>
+				</div>
+				<div class="menu content">
+					<a class="item" href="/">博客</a>
+					<a class="item" href="http://wiki.dourok.info/doku.php">Wiki</a>
+					<a class="item" href="/about">关于我</a>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Uncategory">其他</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/tags">笔记标签</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/greendao">greenDao</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/gradle">gradle</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/chinese-calendar">天朝历法</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/amazon">amazon</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/Holistic-Learning">Holistic Learning</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Tools">工具</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Emacs</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Tools/Emacs/orgmode">orgmode</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Tools/Emacs/emacs-diary">Emacs 日记</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/xcode">Xcode</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/trello">Trello</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/ruhoh">Ruhoh</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/ruhoh-env">配置 RUHOH 环境</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/online-toolkits">在线工具集合</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/imagemagick">ImageMagick</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/git">git</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/eclipse">Eclipse</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/android-studio">Android Studio</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/Mustache">Mustache</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Study">兴趣</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Music</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Study/Music/guitar-note">吉他笔记</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+										<a>Astronomy</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/spherical-astronomy">球面天文学基础</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/solar-system">太阳系</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/physics">物理学基础</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Study/metadata">Metadata</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Reading">读书笔记</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Reading/the-productive-programmer">卓有成效的程序员</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/some_mind">Some mind</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/philosophy-of-note">记录的哲学</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/evernote">Evernote</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Quick">便签</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>2013</a>
+					
+					<div class="menu">
+						<div class="item">
+												<a>03</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/03/note-2013-03-06">2013年03月06日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>02</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/02/note-2013-02-14">2013年02月14日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/02/note-2013-02-04">2013年02月04日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>01</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/01/note-2013-01-09">2013年01月09日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/01/note-2013-01-08">2013年01月08日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+										<a>2012</a>
+					
+					<div class="menu">
+						<div class="item">
+												<a>12</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-22">2012年12月22日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-21">2012年12月21日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-20">2012年12月20日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-11">2012年12月11日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-10">2012年12月10日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>11</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-22">2012年11月22日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-21">2012年11月21日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-20">2012年11月20日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-15">2012年11月15日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-14">2012年11月14日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-07">2012年11月07日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Programming">编码</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Programming/iOS">iOS</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/snippets">常用代码片段</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/WindowsAndView">WindowsAndView</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/Objective-C">Objective-C</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/CS193P">斯坦福CS193P</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Programming/Ruby">Ruby</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/ri-and-rdoc">ri and RDoc</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/nokogiri">nokogiri</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/metaprogramming-ruby">Metaprogramming Ruby</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Programming/Android">Android</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/weird-android">Weird Android</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/surfaceview">SurfaceView</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/service">Service</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/screen-support">Screen Support</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/fragment">Fragment</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/cocos2dx">Cocos2dx</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/android-decompilation">android 逆向工程</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/activity">Activity</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/NDK">NDK</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/Google-IO-2013">Google IO 2013</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Computer">计算机</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Mac</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Computer/Mac/mountain-lion-memo">山狮备忘</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Computer/Mac/mavericks-memo">Mavericks 备忘</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Computer/pc">PC折腾记录</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<a href="/notes/log">站点日志</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui black huge launch right attached button">
+			<i class="icon list layout"></i>
+			<span class="text">菜单</span>
+		</div>
+
+		<header class="segment container">
+			<h1 class="ui dividing header">球面天文学基础</h1>
+			<p class="segment">
+				
+				<p>
+				<a class="ui label blue inverted" href="/notes/Uncategory/tags#月亮-ref">月亮</a>
+				<a class="ui label blue inverted" href="/notes/Uncategory/tags#天球-ref">天球</a>
+				<a class="ui label blue inverted" href="/notes/Uncategory/tags#星宿-ref">星宿</a>
+				</p>
+			</p>
+		</header>
+		<div class="container">
+			<article>
+				<h3 id="toc_0">星体命名</h3>
+<p>Betelgeuse 参宿四</p>
+
+<p>Rigel 参宿七</p>
+
+<p>Capella 五車二</p>
+
+<p>Aldebaran 毕宿五</p>
+<h3 id="toc_1">方位天文学</h3>
+<blockquote>
+<p>人類以肉眼在最好的環境下約可見6,000顆恆星（全天計），但在任何時間都有一半是在地平線下看不見的。現代星圖中，人類把天球劃分成88個星座並有標準的星座邊界，每一顆恆星僅能歸屬於一個星座。星座的升落與天極在航海天文上非常有用，舉例如居於北半球，可利用北極星找到北方，因為他永遠位於北天極附近。</p>
+</blockquote>
+
+<ol>
+<li>在晚上肉眼可見約有3000顆恆星(半天)</li>
+<li>天文学家把天空划分成88个星群</li>
+<li>恒星的相对位置不会改变 (实在是太远了,以至于本身的移动显得无关紧要)，天球模型的基礎</li>
+<li>星星总是东升西落，因為天球是固定的（不是绝对的，参考<a href="https://zh.wikipedia.org/zh/%E8%87%AA%E8%A1%8C" title="">自行</a>），而地球總是由西向東自轉</li>
+</ol>
+<h4 id="toc_2">星座</h4>
+<p><a href="http://zh.wikipedia.org/wiki/%E6%98%9F%E5%BA%A7" title="">星座</a>，宿（Constellations）</p>
+
+<p>学习在天空上找星座。</p>
+<h4 id="toc_3">天球</h4>
+<blockquote>
+<p>天球（Celestial sphere），是在天文学和导航上假想出的一个与地球同圆心，并有相同的自转轴，半径无限大的球。天空中所有的物体都可以当成投影在天球上的物件。地球的赤道和地理极点投射到天球上，就是天球赤道和天极。天球是位置天文学上很实用的工具。</p>
+</blockquote>
+
+<ul>
+<li>恒星的位置在天球中是固定，因此可以用天球坐标系来描述恒星的位置</li>
+<li>太阳不是固定的，在天球上每天移动约1度，一年则移动一周（360度），这称之为太阳周年视运动，太阳中心在天球上视运动的轨迹则是黄道。</li>
+<li>顺行：行星在天球上向东运动。逆行：行星在天球上向西运动。</li>
+</ul>
+
+<p>天球的坐标系统是赤道坐标系统。天极的投影在地球的的极点，天极赤道的投影在地球的赤道。</p>
+
+<p>天球的纬度叫做赤纬（Declination；缩写为Dec；符号为δ）</p>
+
+<p>在观测者天顶的赤纬与该观测地的纬度相同。</p>
+
+<p>天球的经度叫做赤经（Right ascension；缩写为RA；符号为α）</p>
+
+<p>赤经的零点在<a href="http://zh.wikipedia.org/wiki/%E6%98%A5%E5%88%86%E7%82%B9" title="">春分点</a></p>
+
+<p>天球模拟器：<a href="http://astro.unl.edu/classaction/animations/coordsmotion/radecdemo.html">http://astro.unl.edu/classaction/animations/coordsmotion/radecdemo.html</a></p>
+<h4 id="toc_4">地平坐标系</h4>
+<ul>
+<li>高度角（Alt），有时就称为高度或仰角，是天体和观测者所在地的地平线的夹角。</li>
+<li>方位角（Az），是沿着地平线测量的角度（由正北方为起点向东方测量）。</li>
+</ul>
+
+<p>在地平坐标系中的高度角是天顶角(Zenith Angle,ZA)的余角。</p>
+
+<p>天顶: Alt=90, ZA = 0; 地平线: Alt = 0, ZA = 90</p>
+
+<p>天顶的赤纬对于所在地面的纬度</p>
+
+<p>子午圈（Local Meridian），子午圈是在天空中假想的天球上，穿过天顶和在地平圈上北点的一个大圆。他在地平圈上经过过天球北极、通过天顶，再经过地平圈上的南极，然后通过天底，他还会垂直当地的地平圈。详见，<a href="http://zh.wikipedia.org/wiki/%E5%AD%90%E5%8D%88%E5%9C%88">http://zh.wikipedia.org/wiki/%E5%AD%90%E5%8D%88%E5%9C%88</a></p>
+<h4 id="toc_5">本地恒星时</h4>
+<p>恒星时（local sidereal time，LST），本地恒星时的定义是一个地方的子午圈与天球的春分点之间的时角。<strong>规定春分点在当地上中天(子午圈上)的时刻为零时。</strong></p>
+
+<p>时角（Hour Angel，HA），本地恒星时与星星赤经的距离（星星到子午圈的距离）。</p>
+<script type="math/tex; mode=display">
+        HA_{obj} = LST - RA_{obj}
+
+        </script>
+<p>模拟器:<a href="http://astro.unl.edu/naap/motion2/animations/ce_hc.html">http://astro.unl.edu/naap/motion2/animations/ce_hc.html</a></p>
+<h4 id="toc_6">太阳</h4>
+<blockquote>
+<p>sidereal time and solar time simulator </p>
+</blockquote>
+
+<p>24 ST = 23h56m4s LT </p>
+
+<p>9月21 ST ~= LT</p>
+
+<p>ST ~= +/- D*4m</p>
+
+<p><img class="lazy img-polaroid display" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Sidereal_day_%28prograde%29.png/300px-Sidereal_day_%28prograde%29.png" title=""  alt=""></p>
+
+<blockquote>
+<p>在顺行轨道上的行星，像是地球，恒星日会比太阳日短。如图：在时间1，一颗遥远的恒星和太阳都在正上方；在时间2，行星转了360°，遥远的恒星在正上方（1→2 =恒星日），但是要再晚一点，在时间3的位置上太阳才会在正上方（1→3 =太阳日）。</p>
+</blockquote>
+
+<p>来自维基<a href="https://zh.wikipedia.org/wiki/%E5%A4%AA%E9%98%B3%E6%97%A5" title="">太阳日</a></p>
+<h4 id="toc_7">倾斜与季节</h4>
+<p>太阳的赤纬在 23.5 到 -23.5 之间。</p>
+
+<p>在热带(纬度在 23.5 到 -23.5)太阳有两次处于天顶。</p>
+
+<p>计算中午的太阳高度角 ZA = Lat - Dec, Alt = 90 -ZA</p>
+
+<p><a href="http://astro.unl.edu/classaction/animations/coordsmotion/eclipticsimulator.html" title="">季节模拟器</a></p>
+
+<p>岁差（axial precession），地球自转轴的方向逐渐漂移，追踪它摇摆的顶部，以大约26,000年的周期扫掠出一个圆锥（向西旋转 23.5 度）。</p>
+
+<p>历元(epoch)，在天文学中是为指定天球坐标或轨道根数而规定的某一特定时刻。现在使用的标准历元是J2000.0，即TT（Terrestrial Time）时间2000年1月1日12:00。</p>
+
+<p>赤道平面与黄道平面之间的两个交点，一个是春分点，一个是秋分点。</p>
+
+<p>岁差导致黄赤交角的变动，导致回归年的时间不等于地球公转一周（恒星年）的时间。</p>
+
+<p>回归年就是两个春分点之间的间隔。太阳回到赤道</p>
+
+<p>同时还会受到章动的影响</p>
+<h4 id="toc_8">月亮</h4>
+<p>月球绕地球自西先东公转，公转周期为27.32日，为一个恒星月（sidereal month）</p>
+
+<p>月球永远面对地球的是同一面，因为公转周期与自转周期相同，潮汐锁定。</p>
+
+<p>RA 每天增加 52min（24 / 27.32），每天相对太阳移动 48min（太阳每天增加 4min）</p>
+
+<p>一个朔望月（synodic month）是29.53天。</p>
+<h5 id="toc_9">月相</h5>
+<p><img class="lazy img-polaroid display" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Moon_phases_00.jpg/800px-Moon_phases_00.jpg" title=""  alt=""></p>
+<pre><code class="">朔/新月 New
+娥眉月 Waxing crescent
+上弦月   Waxing quarter
+盈凸月   Waxing gibbous
+满月（望） Full
+亏凸月   Waning gibbous
+下弦月 Waning quarter
+残月 Waning crescent
+</code></pre><h4 id="toc_10">Eclipses</h4>
+<p>月球与太阳在空中的大小大致相同，大约等于 0.5°</p>
+
+<p>月球的轨道（白道）与黄道相差 5°，当月球与太阳同时处于黄白交点时，日食便可能发生</p>
+
+<p>Eclipse Season，是指一年中食可能发生的时间。每个季节持续大约34天，每6个月循环一次，一个季节可能发生2~3次食。</p>
+
+<p><a href="http://zh.wikipedia.org/wiki/%E6%9C%88%E7%90%83%E5%81%9C%E8%AE%8A%E6%9C%9F" title="">月球停变期</a>的周期是18.6年，</p>
+
+<blockquote>
+<p>月球可以到达的最大赤纬和最小赤纬也会改变。这是因为月球环绕地球的轨道平面相对于地球绕太阳公转的轨道平面 (黄道) 有大约5°的倾斜，而这倾斜的方向相对于地球23.5 ° 的倾斜方向也会以18.6年的周期逐渐交替的以&quot;和&quot;与&quot;差&quot;的值变换著。结果是，月球赤纬的最大值变化会从(23.5° − 5°) = 18.5° 到 (23.5 ° + 5 °） = 28.5 °之间逐渐变化。</p>
+</blockquote>
+<h4 id="toc_11">其他</h4>
+<p>笔记，<a href="http://astro.wsu.edu/worthey/astro/html/lec-celestial-sph.html">http://astro.wsu.edu/worthey/astro/html/lec-celestial-sph.html</a></p>
+
+			</article>
+			<footer class="statement">
+			  <small class＝"copyright">&copy;2009-2013  |</small>
+			  <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+			    和 <a href="http://twitter.github.com/bootstrap/"
+				  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+			  <small class="license">
+			    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+			  </small>
+			</footer>
+			
+		</div>
+		<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+		<!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+	</body>
+</html>
+

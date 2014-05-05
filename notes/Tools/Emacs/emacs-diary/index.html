@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>
+			Emacs 日记 |
+			DouO's Note </title>
+
+		<meta name="author" content="DouO">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Le styles -->
+<link href='/assets/stylesheets/semantic-91be4534b368c69b3ae34ebe17bb9928.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/toc-24de7073de5e84bbdf82d581655967fa.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/note-abdc38b478e2e51aafac266fed65bb36.css' type='text/css' rel='stylesheet' media='all'>
+<link href='/assets/stylesheets/widgets/google_prettify/moon-a586c0c53856bb03a2050ca5121629fe.css' type='text/css' rel='stylesheet' media='all'>		
+		<!-- script -->
+<script src='/assets/javascripts/jquery-1.8.2.min-cfa9051cc0b05eb519f1e16b2a6645d7.js'></script>
+<script src='/assets/javascripts/semantic-54cc5e8b6a700ce47e0d951c470b6bb6.js'></script>
+<script src='/assets/javascripts/jquery.c.min-e08fd6c1881afcf509255ce8b8f9b32b.js'></script>
+<script src='/assets/javascripts/jquery.smooth-scroll.min-5caac1be39aee89977e39f82d14f0e08.js'></script>
+<script src='/assets/javascripts/front-9bcae9460ba6dd25c936b7bdc47a9998.js'></script>
+<script src='/assets/javascripts/note-613cb7a88bab975ffe3bbf1be9fbbd6a.js'></script>		
+		
+
+		
+
+<script src="/assets/widgets/lazyload/javascripts/jquery.lazyload.min.js"></script>
+    <!-- lazyload -->
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+      if (navigator.platform == "iPad") return;
+      jQuery("img.lazy").not(".cycle img").lazyload({
+      effect:"fadeIn",
+      placeholder: "/assets/media/ajax-loader.gif"
+      });
+      });
+    </script>
+   
+
+		
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="//cdn.staticfile.org/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
+
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="/assets/widgets/fancybox/stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/assets/widgets/fancybox/javascripts/jquery.fancybox.pack.js"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+
+<!-- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+
+<script type="text/javascript">
+      $(document).ready(function() {
+      $(".fancybox").fancybox();
+      });
+    </script>
+   
+
+		<link rel="shortcut icon" href="/assets/media/favicon.ico">
+		<!-- Le fav and touch icons -->
+		<!-- Update these with your own images
+
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12243999-3']);
+  _gaq.push(['_trackPageview']);
+  
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+	</head>
+	<body>
+		<div class="ui vertical inverted labeled sidebar menu sidebar accordion">
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes" title="我的笔记" ><i class="book large icon"></i></a>
+				</div>
+				<div class="menu content">
+					<a class="item" href="/">博客</a>
+					<a class="item" href="http://wiki.dourok.info/doku.php">Wiki</a>
+					<a class="item" href="/about">关于我</a>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Uncategory">其他</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/tags">笔记标签</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/greendao">greenDao</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/gradle">gradle</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/chinese-calendar">天朝历法</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/amazon">amazon</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Uncategory/Holistic-Learning">Holistic Learning</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Tools">工具</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Emacs</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Tools/Emacs/orgmode">orgmode</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Tools/Emacs/emacs-diary">Emacs 日记</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/xcode">Xcode</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/trello">Trello</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/ruhoh">Ruhoh</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/ruhoh-env">配置 RUHOH 环境</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/online-toolkits">在线工具集合</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/imagemagick">ImageMagick</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/git">git</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/eclipse">Eclipse</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/android-studio">Android Studio</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Tools/Mustache">Mustache</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Study">兴趣</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Music</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Study/Music/guitar-note">吉他笔记</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+										<a>Astronomy</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/spherical-astronomy">球面天文学基础</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/solar-system">太阳系</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Study/Astronomy/physics">物理学基础</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Study/metadata">Metadata</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Reading">读书笔记</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Reading/the-productive-programmer">卓有成效的程序员</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/some_mind">Some mind</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/philosophy-of-note">记录的哲学</a>
+					
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Reading/evernote">Evernote</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Quick">便签</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>2013</a>
+					
+					<div class="menu">
+						<div class="item">
+												<a>03</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/03/note-2013-03-06">2013年03月06日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>02</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/02/note-2013-02-14">2013年02月14日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/02/note-2013-02-04">2013年02月04日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>01</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/01/note-2013-01-09">2013年01月09日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2013/01/note-2013-01-08">2013年01月08日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+										<a>2012</a>
+					
+					<div class="menu">
+						<div class="item">
+												<a>12</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-22">2012年12月22日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-21">2012年12月21日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-20">2012年12月20日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-11">2012年12月11日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/12/note-2012-12-10">2012年12月10日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+						<div class="item">
+												<a>11</a>
+						
+						<div class="menu">
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-22">2012年11月22日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-21">2012年11月21日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-20">2012年11月20日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-15">2012年11月15日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-14">2012年11月14日杂记</a>
+							
+							
+							</div>
+							<div class="item">
+							 
+							<a href="/notes/Quick/2012/11/note-2012-11-07">2012年11月07日杂记</a>
+							
+							
+							</div>
+						</div>
+						
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Programming">编码</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+					 
+					<a href="/notes/Programming/iOS">iOS</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/snippets">常用代码片段</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/WindowsAndView">WindowsAndView</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/Objective-C">Objective-C</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/iOS/CS193P">斯坦福CS193P</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Programming/Ruby">Ruby</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/ri-and-rdoc">ri and RDoc</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/nokogiri">nokogiri</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Ruby/metaprogramming-ruby">Metaprogramming Ruby</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Programming/Android">Android</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/weird-android">Weird Android</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/surfaceview">SurfaceView</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/service">Service</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/screen-support">Screen Support</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/fragment">Fragment</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/cocos2dx">Cocos2dx</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/android-decompilation">android 逆向工程</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/activity">Activity</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/NDK">NDK</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Programming/Android/Google-IO-2013">Google IO 2013</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<i class="dropdown icon"></i>
+					<a href="/notes/Computer">计算机</a>
+				</div>
+				<div class="menu content">
+					<div class="item">
+										<a>Mac</a>
+					
+					<div class="menu">
+						<div class="item">
+						 
+						<a href="/notes/Computer/Mac/mountain-lion-memo">山狮备忘</a>
+						
+						
+						</div>
+						<div class="item">
+						 
+						<a href="/notes/Computer/Mac/mavericks-memo">Mavericks 备忘</a>
+						
+						
+						</div>
+					</div>
+					
+					</div>
+					<div class="item">
+					 
+					<a href="/notes/Computer/pc">PC折腾记录</a>
+					
+					
+					</div>
+				</div>
+			</div>
+			<div class="header item">
+				<div class="item title">
+					<a href="/notes/log">站点日志</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui black huge launch right attached button">
+			<i class="icon list layout"></i>
+			<span class="text">菜单</span>
+		</div>
+
+		<header class="segment container">
+			<h1 class="ui dividing header">Emacs 日记</h1>
+			<p class="segment">
+				
+				<p>
+				<a class="ui label blue inverted" href="/notes/Uncategory/tags#月亮-ref">月亮</a>
+				</p>
+			</p>
+		</header>
+		<div class="container">
+			<article>
+				<h3 id="toc_0">2011-12-27</h3>
+<p><code>c-h i     打开Manual</code></p>
+
+<p><code>c-h c-h 或 c-h ? 打开help for help 列出Emacs 所有帮助功能</code></p>
+
+<p>最常用的还是</p>
+
+<p><code>c-h f 查询函数</code></p>
+
+<p><code>c-h v 查询变量</code></p>
+
+<p><code>c-h k 查询按键绑定</code></p>
+
+<p><code>c-h F 查询命令的文档，而不是函数的描述，对进一步了解命令很有帮助</code></p>
+
+<p>另外info这个这个命令也是可以打开Manual的，另外其它info开头的命令都是跟manual有关的。</p>
+
+<p>在Manual也就是info模式中，按h，是可以查看Info模式的使用帮助的。</p>
+
+<p>命令<code>describe-mode（c-h m）</code>，是来查看当前模式的帮助的，在Info模式中使用，也可以看到Info模式的操作说明。</p>
+<h3 id="toc_1">2011-12-28</h3>
+<p>使用 Emacs 宏的计数器</p>
+
+<p><code>C-x ( C-x C-k C-i C-x )</code></p>
+<h3 id="toc_2">2012-01-05</h3>
+<p>emacs 調用外部命令的方法有三种:</p>
+
+<p><code>M-!</code>   shell-command    直接执行shell命令,Emacs一般同步执行命令,也就是说Emacs会锁住整个UI等待命令执行完毕.这时可以用C-g给命令发送中断命令(SIGINT),如果再按一次C-g则强制中断命令(SIGKILL).</p>
+
+<p>如果命令后有&#39;&amp;&#39;,则异步执行命令.在Windows上也是可以的.</p>
+
+<p>完整函数 (shell-command COMMAND &amp;optional OUTPUT-BUFFER ERROR-BUFFER)</p>
+
+<p>OUTPUT-BUFFER 可以指定command的输出位置,指定1的话,可以将output插入到当前buffer. M-1 M-! 也可以达到同样效果.</p>
+
+<p><code>M-&amp;</code>   async-shell-command 异步执行shell命令,实际是在命令后面加上&#39;&amp;&#39;后再调用 shell-command .</p>
+
+<p>但异步命令有个问题,如果为异步命令指定了output-buffer,Emacs又会block整个UI. 所以要使用异步命令必须打开一个 <em>Async Shell Command</em> 的buffer.不知是不是bug.</p>
+
+<p><code>M-|</code>  shell-command-on-region  貌似在Windows下有bug.选择region之后还有输命令.</p>
+
+<p>以上命令都在WIn7下用sleep和dir和echo命令测试过.</p>
+<pre><code class="">dir
+</code></pre><h3 id="toc_3">2012-02-02</h3><h4 id="toc_4">PICTURE-MODE</h4>
+<p>C-o 可以在当前行下插入空白行</p>
+
+<p>C-c C-c 返回前一个模式</p>
+
+<p>其他的看 C-h m 吧</p>
+<h3 id="toc_5">2012-02-07</h3><h4 id="toc_6">缩进</h4>
+<p>C-x tab indent-rigidly 可以强制缩进</p>
+<h4 id="toc_7">插入</h4><pre><code class="lisp">(defun insert-code (beg end code)
+  (interactive (list (point) (mark) (read-string &quot;what's language?&quot;)))
+
+  (goto-char (max beg end))
+  (insert (concat &quot;&lt;/&quot; &quot;code&gt;&quot;))
+  (goto-char (min beg end))
+  (insert &quot;&lt;code &quot; code &quot;&gt;&quot;)
+  )
+</code></pre><h3 id="toc_8">2012-03-24</h3>
+<p>C-x r k 剪切一个矩形块</p>
+
+<p>C-x r y 粘贴一个矩形块</p>
+
+<p>C-x r o 插入一个矩形块</p>
+
+<p>C-x r c 清除一个矩形块(使其变成空白)</p>
+
+<p>C-x r t 在选定区域的所有列前插入样的字符</p>
+<h3 id="toc_9">2012-03-31</h3><h4 id="toc_10">Undo</h4>
+<p>默认的撤销有3个快捷键</p>
+
+<ul>
+<li><p>C-x u</p></li>
+<li><p>C-/</p></li>
+<li><p>C-_ (个人常用这个)</p></li>
+</ul>
+
+<p>emacs的撤销机制与现代的编辑器有很大的不同,最让人困惑的就是没有redo,一旦问起人们最常见的回答就是undo undo = redo.但是如果你真的非常诚实地按了两次undo，emacs就真的非常诚实的只undo了2次。</p>
+
+<p>谈这个问题之前,先说说我的理解,在buffer中做编辑，而每一次改动都会被emacs记录下来，存放到buffer的改动历史列表中，这个列表就称为状态列表S吧，因为实际上每次改动操作都把buffer从当前状态s<em>0映射到一个新状态s</em>1上.所谓改动可以这样定义： </p>
+<pre><code class="">T : C^n
+∀s_0,s_1 ∈ T
+</code></pre>
+<p>改动是一个函数集 <code>F: {f:s0 -&gt; s1|s0!=s1}</code></p>
+
+<p>在emacs中每一个编辑操作,新的状态s_n+1会被追加到buffer的状态列表S中。undo也是属于这个函数集，所以它并不能直接改动状态列表S，下面说说我对undo的理解。</p>
+
+<p>想象这样一个这个状态列表S</p>
+<pre><code class="">s_0 -- s_1 -- s_2 -- ... -- s_n
+                             ^
+                             |
+                          当前视图
+</code></pre>
+<p>第一次调用undo时,先想象已经有一个指针p<em>u，p</em>u -&gt; s<em>n,undo执行这样一个过程U：p</em>u自减,(此时p<em>u -&gt; s</em>n-1).再将p<em>u指向的状态复制一份,插入状态队列的头部( 就是将s</em>n 映射到 s_n-1)，现在队列变成下面那样：</p>
+<pre><code class="">                            p_u
+                             |
+                             v
+s_0 -- s_1 -- s_2 -- ... -- s_n-1 -- s_n -- s_n+1(:s_n-1)
+                                               ^
+                                               |
+                                            当前视图
+</code></pre>
+<p>表面看起来就是 <code>undo: s_n  -&gt; s_n-1</code>.</p>
+
+<p>再一次 undo ,此时p<em>u还是指向s</em>n-1,继续执行上面的过程U。第二次undo，列表S变成下面那样:</p>
+<pre><code class="">                              p_u
+                               v
+ s_0 -- s_1 -- s_2 -- ... -- s_n-2 -- ... -- s_n+2(:s_n-2)
+                                                  ^
+                                                  |
+                                               当前视图
+</code></pre>
+<p>表面看起来就是 undo^2: s<em>n   -&gt; s</em>n-2</p>
+
+<p>FIXME 实际上，连续执行undo，emacs 会把它当成一个连续操作，也可以想象成第一次undo使buffer处在undo mode中，这时只要执行任意操作(比如移动光标,C-g也不错)就可以中断这个连续操作，结束undo mode.具体就是重置p<em>u(p</em>u -&gt; 当前状态),中断连续undo后，如果此时再undo,列表S变成下面那样:</p>
+<pre><code class="">                                 p_u
+                                  V
+s_0 -- s_1 -- s_2 -- ... -- s_n+1(:s_n-1) -- s_n+2(:s_n-2) -- s_n+3(:s_n-1)
+                                                                  ^
+                                                                  |
+                                                               当前视图
+</code></pre>
+<p>表面看起来就是 <code>undo^2 * redo: s_n  -&gt; s_n-1 -&gt; s_n-2  -&gt;(redo) s_n-1</code></p>
+
+<p>回到redo = undo undo的问题，更应该这样表述redo = undo(undo)   实际上的undo操作就是 undo 重置p_u undo。所以在emacs中几次undo后想要做redo，推荐的操作就是 undo undo undo ... C-g redo redo(实际上还是undo的操作) 。</p>
+
+<p>在buffer中做任何操作，包括 undo redo在内，每个操作所产生的状态都会被记录下来，可以看出buffer的状态列表是只增不减的（暂时这样认为,实际上总长度是有限制的，由</p>
+<pre><code class="">`undo-limit' 
+`undo-strong-limit'
+`undo-outer-limit' 
+</code></pre>
+<p>控制），所以在buffer中所做的任何编辑都不会丢失的，有些同学会认为列表来保存历史状态是不是太浪费，分明就是一颗树嘛，但是emacs为什么不这么做（我不知道emacs的内部实现是不是用树结构），但如果用树来表示，那么undo就不能满足上面的F的定义了，undo不再是一个T上的映射，而变成一个移动当前视图指针的操作，所以我觉得emacs用列表示历史状态,空间上是一种浪费，但概念上确是一种简化。</p>
+
+<p>当然，如果想这么做确实有个扩展可以帮忙。 <a href="http://www.dr-qubit.org/download.php?file=undo-tree/undo-tree.el" title="">undo-tree</a></p>
+
+<p>据我所知这个扩展提供一树结构显示状态列表的视图. 见 <a href="http://linuxtoy.org/archives/emacs-undo-tree.html">http://linuxtoy.org/archives/emacs-undo-tree.html</a></p>
+
+<p>看起来很不错的样子，不过当你看到有n多个节点n多个分支的树想必也没什么食欲吧.</p>
+<h3 id="toc_11">2013-01-30</h3><h4 id="toc_12">月相</h4>
+<p>M-x lunar-phases 可以显示最近三个月的月相</p>
+
+			</article>
+			<footer class="statement">
+			  <small class＝"copyright">&copy;2009-2013  |</small>
+			  <small class= "power">基於 <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+			    和 <a href="http://twitter.github.com/bootstrap/"
+				  target="_blank">Twitter Bootstrap</a> <a href="/diary"><img src="/assets/media/broken_heart.png"></img></a></small>
+			  <small class="license">
+			    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img title="知识共享许可协议" style="border-width: 0px; vertical-align: middle; display: inline; " src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" original="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>		
+			  </small>
+			</footer>
+			
+		</div>
+		
+		<!-- Google Prettify -->
+<script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+<!-- end Google Prettify -->
+	</body>
+</html>
+
